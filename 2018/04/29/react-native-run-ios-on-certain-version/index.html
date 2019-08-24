@@ -6,15 +6,20 @@
   <meta charset="utf-8">
 
 
-  <title>アーカイブ | divrots</title>
+  <title>react-native-run-ios-on-certain-simulater | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="divrots">
-  <meta property="og:url" content="https://divrots.com/archives/index.html">
+  <meta name="description" content="$ react-native run-iosの挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。 別デバイスでの起動は検索してよく出てくるけれど、旧iOSでテストしたい時に検索しても見当たらなかったのでメモ。xcodeはVersion 9.3 tl;dr バージョンごとにシミュレータに名前をつけて,                         1">
+  <meta name="keywords" content="React Native,Xcode">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="react-native-run-ios-on-certain-simulater">
+  <meta property="og:url" content="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/index.html">
   <meta property="og:site_name" content="divrots">
+  <meta property="og:description" content="$ react-native run-iosの挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。 別デバイスでの起動は検索してよく出てくるけれど、旧iOSでテストしたい時に検索しても見当たらなかったのでメモ。xcodeはVersion 9.3 tl;dr バージョンごとにシミュレータに名前をつけて,                         1">
   <meta property="og:locale" content="ja">
+  <meta property="og:updated_time" content="2019-08-24T12:50:29.307Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="divrots">
+  <meta name="twitter:title" content="react-native-run-ios-on-certain-simulater">
+  <meta name="twitter:description" content="$ react-native run-iosの挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。 別デバイスでの起動は検索してよく出てくるけれど、旧iOSでテストしたい時に検索しても見当たらなかったのでメモ。xcodeはVersion 9.3 tl;dr バージョンごとにシミュレータに名前をつけて,                         1">
 
   <link rel="alternate" href="/blog/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -225,114 +230,102 @@
       </header>
       <div class="outer">
         <section id="main">
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2019" class="archive-year">2019</a>
+          <article id="post-react-native-run-ios-on-certain-version" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/" class="article-date">
+                <time datetime="2018-04-29T12:46:26.000Z" itemprop="datePublished">2018-04-29</time>
+              </a>
+              <div class="article-category">
+                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+              </div>
             </div>
-            <div class="archives">
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/" class="archive-article-date">
-                      <time datetime="2019-08-24T12:29:01.000Z" itemprop="datePublished">8月 24</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2019/08/24/react-native-reffer-to-flatlist/">react-native-reffer-to-flatlist</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
+            <div class="article-inner">
 
 
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">
+                  react-native-run-ios-on-certain-simulater
+                </h1>
+              </header>
 
+              <div class="article-entry" itemprop="articleBody">
 
+                <p><code>$ react-native run-ios</code>の挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。</p>
+                <p>別デバイスでの起動は検索してよく出てくるけれど、旧iOSでテストしたい時に検索しても見当たらなかったのでメモ。<br><br>xcodeはVersion 9.3</p>
+                <h2 id="tl-dr"><a href="#tl-dr" class="headerlink" title="tl;dr"></a>tl;dr</h2>
+                <p>バージョンごとにシミュレータに名前をつけて,</p>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">$ react-native run-ios --simulator=&quot;iPhone6s - iOS 10.3&quot;</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>ってシミュレータを指定して起動すれば良い。</p>
+                <h2 id="チュートリアル"><a href="#チュートリアル" class="headerlink" title="チュートリアル"></a>チュートリアル</h2>
+                <h3 id="1-シミュレータ用のOSをダウンロード"><a href="#1-シミュレータ用のOSをダウンロード" class="headerlink" title="1, シミュレータ用のOSをダウンロード"></a>1, シミュレータ用のOSをダウンロード</h3>
+                <p>Hardware-&gt;Device-&gt;Manage Devicesを押してxcodeのデバイス管理画面を開きます。<br></p>
+                <p>タブでSimulatorsに切り替えると、インストール済みのシミュレータが左に並びます。<br></p>
+                <p>目的のOSバージョンのシミュレータがすでに表示されていればそのまま2へ。<br><br></p>
+                <p>まだインストールされていない場合は左下の＋から新規Device追加画面を開きます。<br></p>
+                <p>Simulator NameとDevice Type、OS VersionとあるのでOS Versionのプルダウンを選択し、Download more simulator runtimes… を選択<br></p>
+                <p>xcodeの環境設定のComponentsタブが開くので、欲しいos versionを選択してinstall. rootのパスワードとか聞かれるかも<br></p>
+                <p>無事、インストールできると、デバイス管理画面の方で各デバイスのOSバージョン違いが登録されているはず。<br>ぱっと見、重複して見える.</p>
+                <h3 id="2-os-バージョン毎にsimulatorに名前をつける"><a href="#2-os-バージョン毎にsimulatorに名前をつける" class="headerlink" title="2, os バージョン毎にsimulatorに名前をつける"></a>2, os バージョン毎にsimulatorに名前をつける</h3>
+                <p>同じ名前のsimulatorが複数並んでいると勝手に選ばれてしまうので、わかりやすく名前をつけてあげましょう.<br></p>
+                <p>左に並んだシミュレータを右クリックし、Rename.<br><br>“iPhone 6s - iOS10.3”などとわかりやすくバージョン名でも追記してあげましょう。</p>
+                <h3 id="3-指定した名前のSimulatorでrun-ios"><a href="#3-指定した名前のSimulatorでrun-ios" class="headerlink" title="3, 指定した名前のSimulatorでrun-ios"></a>3, 指定した名前のSimulatorでrun-ios</h3>
+                <p>run-iosは<strong>–simulator</strong>オプションでシミュレータの名前を指定できます。<br></p>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">$ react-native run-ios --simulator=&quot;iPhone6s - iOS 10.3&quot; //上で指定した名前</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>とすれば、目的のiOSバージョンのシミュレータを扱えます。</p>
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/" data-id="cjzpjgb0v0010nv60om8i3fqd" class="article-share-link">共有</a>
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Xcode/">Xcode</a></li>
+                </ul>
+              </footer>
             </div>
-          </section>
 
+            <nav id="article-nav">
 
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2018" class="archive-year">2018</a>
-            </div>
-            <div class="archives">
+              <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">次の記事</strong>
+                <div class="article-nav-title">
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:46:26.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
-                    </h1>
-                  </header>
+                  react-native-reffer-to-flatlist
+
                 </div>
-              </article>
+              </a>
 
 
+              <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">前の記事</strong>
+                <div class="article-nav-title">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</div>
+              </a>
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:34:38.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
+            </nav>
 
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/" class="archive-article-date">
-                      <time datetime="2018-04-26T07:04:05.000Z" itemprop="datePublished">4月 26</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/25/realm-error-accessing-object/" class="archive-article-date">
-                      <time datetime="2018-04-25T04:14:43.000Z" itemprop="datePublished">4月 25</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/04/handring-input-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">4月 4</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/04/handring-input-with-react-native/">ReactNativeでのInputの値の取得方法２種</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-            </div>
-          </section>
+          </article>
         </section>
 
         <aside id="sidebar">

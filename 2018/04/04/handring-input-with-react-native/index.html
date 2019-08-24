@@ -6,15 +6,20 @@
   <meta charset="utf-8">
 
 
-  <title>アーカイブ | divrots</title>
+  <title>ReactNativeでのInputの値の取得方法２種 | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="divrots">
-  <meta property="og:url" content="https://divrots.com/archives/index.html">
+  <meta name="description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
+  <meta name="keywords" content="React Native">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ReactNativeでのInputの値の取得方法２種">
+  <meta property="og:url" content="https://divrots.com/2018/04/04/handring-input-with-react-native/index.html">
   <meta property="og:site_name" content="divrots">
+  <meta property="og:description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
   <meta property="og:locale" content="ja">
+  <meta property="og:updated_time" content="2019-08-24T11:56:53.281Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="divrots">
+  <meta name="twitter:title" content="ReactNativeでのInputの値の取得方法２種">
+  <meta name="twitter:description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
 
   <link rel="alternate" href="/blog/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -225,114 +230,108 @@
       </header>
       <div class="outer">
         <section id="main">
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2019" class="archive-year">2019</a>
+          <article id="post-handring-input-with-react-native" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/blog/2018/04/04/handring-input-with-react-native/" class="article-date">
+                <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">2018-04-04</time>
+              </a>
+              <div class="article-category">
+                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+              </div>
             </div>
-            <div class="archives">
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/" class="archive-article-date">
-                      <time datetime="2019-08-24T12:29:01.000Z" itemprop="datePublished">8月 24</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2019/08/24/react-native-reffer-to-flatlist/">react-native-reffer-to-flatlist</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
+            <div class="article-inner">
 
 
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">
+                  ReactNativeでのInputの値の取得方法２種
+                </h1>
+              </header>
 
+              <div class="article-entry" itemprop="articleBody">
 
+                <h2 id="大きく分けて2種類"><a href="#大きく分けて2種類" class="headerlink" title="大きく分けて2種類"></a>大きく分けて2種類</h2>
+                <p><strong> 1, onChangeTextでstateを変更して、valueにいれる </strong><br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">// render</span><br><span class="line">&lt;TextInput onChange=&#123;text=&gt;this.setState(&#123;text&#125;)&#125; value=&#123;this.state.text&#125; /&gt;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">_submit()&#123;</span><br><span class="line">  console.log(this.state.text);</span><br><span class="line">&#125;</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>わかりやすいが、キー打つたびコンポーネントを更新する。</p>
+                <p><strong> 2, defalutValueだけ設定して、submitのときだけrefで呼び出す </strong><br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">&lt;TextInput ref=&quot;text&quot; defaultValue=&#123;this.props.value&#125; /&gt;</span><br><span class="line">_submit()&#123;</span><br><span class="line">  console.log();</span><br><span class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line"> a = &apos;piyo&apos;</span><br><span class="line"> for(i = 1;i&lt;3;I++)&#123;</span><br><span class="line">	 echo hoge;</span><br><span class="line"> &#125;</span><br><span class="line">return hoge;</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>このとき、valueプロパティはTextInputコンポーネントが勝手に書き換える</p>
+                <p>これでひたすら再描画されることがなくなる。<br>Reactなので再描画と言っても差分のみだが、render前などに都度処理入れてる場合は重くなりうるので注意。</p>
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzph77x20001nv60o2u6b0zj" class="article-share-link">共有</a>
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
+                </ul>
+              </footer>
             </div>
-          </section>
 
+            <nav id="article-nav">
 
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2018" class="archive-year">2018</a>
-            </div>
-            <div class="archives">
+              <a href="/blog/2018/04/25/realm-error-accessing-object/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">次の記事</strong>
+                <div class="article-nav-title">
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:46:26.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
-                    </h1>
-                  </header>
+                  Error Accessing object of type TableName which has been invalidated or deleted
+
                 </div>
-              </article>
+              </a>
 
 
+            </nav>
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:34:38.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/" class="archive-article-date">
-                      <time datetime="2018-04-26T07:04:05.000Z" itemprop="datePublished">4月 26</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/25/realm-error-accessing-object/" class="archive-article-date">
-                      <time datetime="2018-04-25T04:14:43.000Z" itemprop="datePublished">4月 25</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/04/handring-input-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">4月 4</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/04/handring-input-with-react-native/">ReactNativeでのInputの値の取得方法２種</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-            </div>
-          </section>
+          </article>
         </section>
 
         <aside id="sidebar">

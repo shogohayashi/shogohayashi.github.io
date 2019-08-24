@@ -6,15 +6,20 @@
   <meta charset="utf-8">
 
 
-  <title>アーカイブ | divrots</title>
+  <title>XcodeのSimulatorを選択的に閉じる | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="divrots">
-  <meta property="og:url" content="https://divrots.com/archives/index.html">
+  <meta name="description" content="別デバイス・osバージョンでテストしたいけど、複数起動しておくとActivity Monitorにハラハラしそうで気持ち悪い時がある。全部とじるなら⌘Qで事足りるが、個別の消し方がわかりにくかったのでメモ。 環境: xcode Version 9.3 シミュレータの消し方3パターン メニューから閉じる 消したいシミュレータを選択して、File-&amp;gt;Close Window ショートカットで閉じ">
+  <meta name="keywords" content="Xcode">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="XcodeのSimulatorを選択的に閉じる">
+  <meta property="og:url" content="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/index.html">
   <meta property="og:site_name" content="divrots">
+  <meta property="og:description" content="別デバイス・osバージョンでテストしたいけど、複数起動しておくとActivity Monitorにハラハラしそうで気持ち悪い時がある。全部とじるなら⌘Qで事足りるが、個別の消し方がわかりにくかったのでメモ。 環境: xcode Version 9.3 シミュレータの消し方3パターン メニューから閉じる 消したいシミュレータを選択して、File-&amp;gt;Close Window ショートカットで閉じ">
   <meta property="og:locale" content="ja">
+  <meta property="og:updated_time" content="2019-08-24T12:44:31.392Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="divrots">
+  <meta name="twitter:title" content="XcodeのSimulatorを選択的に閉じる">
+  <meta name="twitter:description" content="別デバイス・osバージョンでテストしたいけど、複数起動しておくとActivity Monitorにハラハラしそうで気持ち悪い時がある。全部とじるなら⌘Qで事足りるが、個別の消し方がわかりにくかったのでメモ。 環境: xcode Version 9.3 シミュレータの消し方3パターン メニューから閉じる 消したいシミュレータを選択して、File-&amp;gt;Close Window ショートカットで閉じ">
 
   <link rel="alternate" href="/blog/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -225,114 +230,66 @@
       </header>
       <div class="outer">
         <section id="main">
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2019" class="archive-year">2019</a>
+          <article id="post-quit-iphone-simulator-selectively" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/" class="article-date">
+                <time datetime="2018-04-26T07:04:05.000Z" itemprop="datePublished">2018-04-26</time>
+              </a>
+              <div class="article-category">
+                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+              </div>
             </div>
-            <div class="archives">
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/" class="archive-article-date">
-                      <time datetime="2019-08-24T12:29:01.000Z" itemprop="datePublished">8月 24</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2019/08/24/react-native-reffer-to-flatlist/">react-native-reffer-to-flatlist</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
+            <div class="article-inner">
 
 
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">
+                  XcodeのSimulatorを選択的に閉じる
+                </h1>
+              </header>
 
+              <div class="article-entry" itemprop="articleBody">
 
+                <p>別デバイス・osバージョンでテストしたいけど、複数起動しておくとActivity Monitorにハラハラしそうで気持ち悪い時がある。<br><br>全部とじるなら⌘Qで事足りるが、個別の消し方がわかりにくかったのでメモ。<br></p>
+                <p>環境: xcode Version 9.3</p>
+                <h2 id="シミュレータの消し方3パターン"><a href="#シミュレータの消し方3パターン" class="headerlink" title="シミュレータの消し方3パターン"></a>シミュレータの消し方3パターン</h2>
+                <h3 id="メニューから閉じる"><a href="#メニューから閉じる" class="headerlink" title="メニューから閉じる"></a>メニューから閉じる</h3>
+                <p>消したいシミュレータを選択して、File-&gt;Close Window</p>
+                <h3 id="ショートカットで閉じる"><a href="#ショートカットで閉じる" class="headerlink" title="ショートカットで閉じる"></a>ショートカットで閉じる</h3>
+                <p>消したいシミュレータを選択して⌘W</p>
+                <h3 id="電源をオフにする"><a href="#電源をオフにする" class="headerlink" title="電源をオフにする"></a>電源をオフにする</h3>
+                <p>シミュレータをデバイス形式で表示している場合は、電源長押し-&gt;スライドで電源オフにするとシミュレータも消える。</p>
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/" data-id="cjzpj9uz9000unv60pj8lmphn" class="article-share-link">共有</a>
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Xcode/">Xcode</a></li>
+                </ul>
+              </footer>
             </div>
-          </section>
 
+            <nav id="article-nav">
 
-          <section class="archives-wrap">
-            <div class="archive-year-wrap">
-              <a href="/blog/archives/2018" class="archive-year">2018</a>
-            </div>
-            <div class="archives">
+              <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">次の記事</strong>
+                <div class="article-nav-title">
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:46:26.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
-                    </h1>
-                  </header>
+                  ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応
+
                 </div>
-              </article>
+              </a>
 
 
+              <a href="/blog/2018/04/25/realm-error-accessing-object/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">前の記事</strong>
+                <div class="article-nav-title">Error Accessing object of type TableName which has been invalidated or deleted</div>
+              </a>
 
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-29T12:34:38.000Z" itemprop="datePublished">4月 29</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
+            </nav>
 
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/" class="archive-article-date">
-                      <time datetime="2018-04-26T07:04:05.000Z" itemprop="datePublished">4月 26</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/25/realm-error-accessing-object/" class="archive-article-date">
-                      <time datetime="2018-04-25T04:14:43.000Z" itemprop="datePublished">4月 25</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-
-              <article class="archive-article archive-type-post">
-                <div class="archive-article-inner">
-                  <header class="archive-article-header">
-                    <a href="/blog/2018/04/04/handring-input-with-react-native/" class="archive-article-date">
-                      <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">4月 4</time>
-                    </a>
-                    <h1 itemprop="name">
-                      <a class="archive-article-title" href="/blog/2018/04/04/handring-input-with-react-native/">ReactNativeでのInputの値の取得方法２種</a>
-                    </h1>
-                  </header>
-                </div>
-              </article>
-
-
-            </div>
-          </section>
+          </article>
         </section>
 
         <aside id="sidebar">
