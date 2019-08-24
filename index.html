@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="divrots">
 
-  <link rel="alternate" href="/blog/atom.xml" title="divrots" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
 
 
   <link rel="icon" href="/favicon.png">
@@ -24,8 +24,8 @@
 
   <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="/blog/css/style.css">
-  <link rel="stylesheet" href="/blog/css/hexagon.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/hexagon.css">
 </head>
 
 </html>
@@ -198,7 +198,7 @@
         <div id="header-outer" class="outer">
           <div id="header-title" class="inner">
             <h1 id="logo-wrap">
-              <a href="/blog/" id="logo">divrots</a>
+              <a href="/" id="logo">divrots</a>
             </h1>
 
           </div>
@@ -206,14 +206,14 @@
             <nav id="main-nav">
               <a id="main-nav-toggle" class="nav-icon"></a>
 
-              <a class="main-nav-link" href="/blog/">Home</a>
+              <a class="main-nav-link" href="/">Home</a>
 
-              <a class="main-nav-link" href="/blog/archives">Archives</a>
+              <a class="main-nav-link" href="/archives">Archives</a>
 
             </nav>
             <nav id="sub-nav">
 
-              <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSSフィード"></a>
+              <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSSフィード"></a>
 
               <a id="nav-search-btn" class="nav-icon" title="検索"></a>
             </nav>
@@ -227,29 +227,49 @@
         <section id="main">
           <article id="post-react-native-reffer-to-flatlist" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/" class="article-date">
-                <time datetime="2019-08-24T12:29:01.000Z" itemprop="datePublished">2019-08-24</time>
+              <a href="/2018/08/25/react-native-reffer-to-flatlist/" class="article-date">
+                <time datetime="2018-08-25T05:28:01.000Z" itemprop="datePublished">2018-08-25</time>
               </a>
-
+              <div class="article-category">
+                <a class="article-category-link" href="/categories/tech/">tech</a>
+              </div>
             </div>
             <div class="article-inner">
 
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2019/08/24/react-native-reffer-to-flatlist/">react-native-reffer-to-flatlist</a>
+                  <a class="article-title" href="/2018/08/25/react-native-reffer-to-flatlist/">【React Native】FlatList内のitemへ参照をはる</a>
                 </h1>
               </header>
 
               <div class="article-entry" itemprop="articleBody">
 
-
+                <h2 id="FlatListとrefについて"><a href="#FlatListとrefについて" class="headerlink" title="FlatListとrefについて"></a>FlatListとrefについて</h2>
+                <p>FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">&lt;FlatList</span><br><span class="line">  ref=&apos;flatlist&apos; // これがいる</span><br><span class="line">  data=&#123;data&#125;</span><br><span class="line">  renderItem=&#123;</span><br><span class="line">    (&#123;item,index&#125;)=&gt;&#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;EditString</span><br><span class="line">            ref=&#123;r=&gt;this.refs[item.key]=r&#125; // こういうことしようとする時</span><br><span class="line">            defaultValue=&#123;item.value&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <p>reanderItemをAllow記法のFunctionにしても親コンポーネントのthisは継承されない模様。</p>
+                <p>でもFlatListに参照を貼ると読み込む模様。</p>
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2019/08/24/react-native-reffer-to-flatlist/" data-id="cjzpit29w000knv603hm7ak2k" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/" data-id="cjzpjqtxn0000pt603p0jof7y" class="article-share-link">共有</a>
 
-
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
+                </ul>
               </footer>
             </div>
 
@@ -257,11 +277,11 @@
 
           <article id="post-react-native-run-ios-on-certain-version" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/" class="article-date">
+              <a href="/2018/04/29/react-native-run-ios-on-certain-version/" class="article-date">
                 <time datetime="2018-04-29T12:46:26.000Z" itemprop="datePublished">2018-04-29</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+                <a class="article-category-link" href="/categories/tech/">tech</a>
               </div>
             </div>
             <div class="article-inner">
@@ -269,7 +289,7 @@
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
+                  <a class="article-title" href="/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
                 </h1>
               </header>
 
@@ -322,11 +342,11 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/" data-id="cjzpjgb0v0010nv60om8i3fqd" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/" data-id="cjzpjoqs5000qou602b3woe4j" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Xcode/">Xcode</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li>
                 </ul>
               </footer>
             </div>
@@ -335,11 +355,11 @@
 
           <article id="post-set-iphone-hedder-padding-with-react-native" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="article-date">
+              <a href="/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="article-date">
                 <time datetime="2018-04-29T12:34:38.000Z" itemprop="datePublished">2018-04-29</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+                <a class="article-category-link" href="/categories/tech/">tech</a>
               </div>
             </div>
             <div class="article-inner">
@@ -347,7 +367,7 @@
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
+                  <a class="article-title" href="/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
                 </h1>
               </header>
 
@@ -376,11 +396,11 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/" data-id="cjzpj0a5z000lnv60fsc4ycvg" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/" data-id="cjzpjoqoz0004ou60wbamleut" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li>
                 </ul>
               </footer>
             </div>
@@ -389,11 +409,11 @@
 
           <article id="post-quit-iphone-simulator-selectively" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/" class="article-date">
+              <a href="/2018/04/26/quit-iphone-simulator-selectively/" class="article-date">
                 <time datetime="2018-04-26T07:04:05.000Z" itemprop="datePublished">2018-04-26</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+                <a class="article-category-link" href="/categories/tech/">tech</a>
               </div>
             </div>
             <div class="article-inner">
@@ -401,7 +421,7 @@
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
+                  <a class="article-title" href="/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
                 </h1>
               </header>
 
@@ -419,10 +439,10 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/" data-id="cjzpj9uz9000unv60pj8lmphn" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/" data-id="cjzpjoqs0000kou60yq60i5gf" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Xcode/">Xcode</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li>
                 </ul>
               </footer>
             </div>
@@ -431,11 +451,11 @@
 
           <article id="post-realm-error-accessing-object" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2018/04/25/realm-error-accessing-object/" class="article-date">
+              <a href="/2018/04/25/realm-error-accessing-object/" class="article-date">
                 <time datetime="2018-04-25T04:14:43.000Z" itemprop="datePublished">2018-04-25</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+                <a class="article-category-link" href="/categories/tech/">tech</a>
               </div>
             </div>
             <div class="article-inner">
@@ -443,7 +463,7 @@
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
+                  <a class="article-title" href="/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
                 </h1>
               </header>
 
@@ -469,11 +489,11 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/25/realm-error-accessing-object/" data-id="cjzphfrvn0004nv60wplnwj61" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/25/realm-error-accessing-object/" data-id="cjzpjoqon0001ou60rk0fm2g7" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Realm/">Realm</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Realm/">Realm</a></li>
                 </ul>
               </footer>
             </div>
@@ -482,11 +502,11 @@
 
           <article id="post-handring-input-with-react-native" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/blog/2018/04/04/handring-input-with-react-native/" class="article-date">
+              <a href="/2018/04/04/handring-input-with-react-native/" class="article-date">
                 <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">2018-04-04</time>
               </a>
               <div class="article-category">
-                <a class="article-category-link" href="/blog/categories/tech/">tech</a>
+                <a class="article-category-link" href="/categories/tech/">tech</a>
               </div>
             </div>
             <div class="article-inner">
@@ -494,7 +514,7 @@
 
               <header class="article-header">
                 <h1 itemprop="name">
-                  <a class="article-title" href="/blog/2018/04/04/handring-input-with-react-native/">ReactNativeでのInputの値の取得方法２種</a>
+                  <a class="article-title" href="/2018/04/04/handring-input-with-react-native/">ReactNativeでのInputの値の取得方法２種</a>
                 </h1>
               </header>
 
@@ -559,10 +579,10 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzph77x20001nv60o2u6b0zj" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzpjoqrv000jou60r8nen3fn" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
                 </ul>
               </footer>
             </div>
@@ -576,7 +596,7 @@
             <h3 class="widget-title">カテゴリ</h3>
             <div class="widget">
               <ul class="category-list">
-                <li class="category-list-item"><a class="category-list-link" href="/blog/categories/tech/">tech</a></li>
+                <li class="category-list-item"><a class="category-list-link" href="/categories/tech/">tech</a></li>
               </ul>
             </div>
           </div>
@@ -585,10 +605,10 @@
             <h3 class="widget-title">タグ</h3>
             <div class="widget">
               <ul class="tag-list">
-                <li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React-Native/">React Native</a></li>
-                <li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Realm/">Realm</a></li>
-                <li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Xcode/">Xcode</a></li>
-                <li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/">Realm</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li>
               </ul>
             </div>
           </div>
@@ -596,7 +616,7 @@
           <div class="widget-wrap">
             <h3 class="widget-title">タグクラウド</h3>
             <div class="widget tagcloud">
-              <a href="/blog/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/blog/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/blog/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/blog/tags/iOS/" style="font-size: 10px;">iOS</a>
+              <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
             </div>
           </div>
 
@@ -604,8 +624,8 @@
             <h3 class="widget-title">アーカイブ</h3>
             <div class="widget">
               <ul class="archive-list">
-                <li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">八月 2019</a></li>
-                <li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li>
+                <li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li>
               </ul>
             </div>
           </div>
@@ -616,23 +636,23 @@
               <ul>
 
                 <li>
-                  <a href="/blog/2019/08/24/react-native-reffer-to-flatlist/">react-native-reffer-to-flatlist</a>
+                  <a href="/2018/08/25/react-native-reffer-to-flatlist/">【React Native】FlatList内のitemへ参照をはる</a>
                 </li>
 
                 <li>
-                  <a href="/blog/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
+                  <a href="/2018/04/29/react-native-run-ios-on-certain-version/">react-native-run-ios-on-certain-simulater</a>
                 </li>
 
                 <li>
-                  <a href="/blog/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
+                  <a href="/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
                 </li>
 
                 <li>
-                  <a href="/blog/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
+                  <a href="/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
                 </li>
 
                 <li>
-                  <a href="/blog/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
+                  <a href="/2018/04/25/realm-error-accessing-object/">Error Accessing object of type TableName which has been invalidated or deleted</a>
                 </li>
 
               </ul>
@@ -654,19 +674,19 @@
     </div>
     <nav id="mobile-nav">
 
-      <a href="/blog/" class="mobile-nav-link">Home</a>
+      <a href="/" class="mobile-nav-link">Home</a>
 
-      <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+      <a href="/archives" class="mobile-nav-link">Archives</a>
 
     </nav>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-    <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
-    <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-    <script src="/blog/js/script.js"></script>
+    <script src="/js/script.js"></script>
   </div>
 </body>
 
