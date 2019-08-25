@@ -48,6 +48,14 @@
     </url>
 
     <url>
+        <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
+        <lastmod>2019-08-24T12:21:34.426Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://divrots.com/2018/04/04/handring-input-with-react-native/</loc>
         <lastmod>2019-08-24T11:56:53.281Z</lastmod>
         <changefreq>weekly</changefreq>
