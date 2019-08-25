@@ -225,6 +225,46 @@
       </header>
       <div class="outer">
         <section id="main">
+          <article id="post-prevent-to-reset-custom-domain-with-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/2019/08/25/prevent-to-reset-custom-domain-with-hexo/" class="article-date">
+                <time datetime="2019-08-25T14:26:15.000Z" itemprop="datePublished">2019-08-25</time>
+              </a>
+              <div class="article-category">
+                <a class="article-category-link" href="/categories/tech/">tech</a>
+              </div>
+            </div>
+            <div class="article-inner">
+
+
+              <header class="article-header">
+                <h1 itemprop="name">
+                  <a class="article-title" href="/2019/08/25/prevent-to-reset-custom-domain-with-hexo/">HexoでGithub Pagesにdeployするときカスタムドメインが消えるのを防ぐ</a>
+                </h1>
+              </header>
+
+              <div class="article-entry" itemprop="articleBody">
+
+                <h2 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h2>
+                <p>Hexo + Github Pagesで運用してるとき、Githubの設定からカスタムドメインを指定してもhexo deployのたびに設定が消える</p>
+                <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2>
+                <p>Githubの設定でカスタムドメインを指定するとレポジトリのトップにドメイン名が書かれたCNAMEファイルの追加がプッシュされるが、hexo generateの際に巻き戻っている</p>
+                <h2 id="対処"><a href="#対処" class="headerlink" title="対処"></a>対処</h2>
+                <p>hexo側で該当ドメインのみが書かれたCNAMEファイルを作ってpublic直下におきdeployする</p>
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/" data-id="cjzr2oo870004re60s8axl6os" class="article-share-link">共有</a>
+
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github-pages/">Github pages</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li>
+                </ul>
+              </footer>
+            </div>
+
+          </article>
+
           <article id="post-hexo-set-default-propaties-for-post" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
               <a href="/2019/08/25/hexo-set-default-propaties-for-post/" class="article-date">
@@ -295,7 +335,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/" data-id="cjzr1m8qg0000kk60g3bcqul0" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/" data-id="cjzr2oo7v0000re60st58ymne" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li>
@@ -345,7 +385,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/" data-id="cjzr1m8qn0001kk60wi8u1r1j" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/" data-id="cjzr2oo890005re60oebf7ve6" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -422,7 +462,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/" data-id="cjzr1m8st000nkk60awklze31" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/" data-id="cjzr2ooar000xre60wxdmvc9i" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -476,7 +516,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/" data-id="cjzr1m8rf000fkk60zigl0wws" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/" data-id="cjzr2oo8f000are60f8p8ogtb" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -519,7 +559,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/" data-id="cjzr1m8sz000skk60m6rbmn2z" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/" data-id="cjzr2ooaq000wre60g3ggx21d" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li>
@@ -569,7 +609,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/25/realm-error-accessing-object/" data-id="cjzr1m8qz000akk60eque6mq5" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/25/realm-error-accessing-object/" data-id="cjzr2oo8a0006re60cmd7025a" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -659,7 +699,7 @@
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzr1m8rm000kkk60xra25dan" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzr2oo820001re603nmrh4i3" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -685,6 +725,7 @@
             <h3 class="widget-title">タグ</h3>
             <div class="widget">
               <ul class="tag-list">
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/">Github pages</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/">Realm</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a></li>
@@ -697,7 +738,7 @@
           <div class="widget-wrap">
             <h3 class="widget-title">タグクラウド</h3>
             <div class="widget tagcloud">
-              <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
+              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
             </div>
           </div>
 
@@ -718,6 +759,10 @@
               <ul>
 
                 <li>
+                  <a href="/2019/08/25/prevent-to-reset-custom-domain-with-hexo/">HexoでGithub Pagesにdeployするときカスタムドメインが消えるのを防ぐ</a>
+                </li>
+
+                <li>
                   <a href="/2019/08/25/hexo-set-default-propaties-for-post/">hexo newコマンドで生成したmdファイルの初期プロパティをカスタマイズ</a>
                 </li>
 
@@ -731,10 +776,6 @@
 
                 <li>
                   <a href="/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
-                </li>
-
-                <li>
-                  <a href="/2018/04/26/quit-iphone-simulator-selectively/">XcodeのSimulatorを選択的に閉じる</a>
                 </li>
 
               </ul>
