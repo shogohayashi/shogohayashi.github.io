@@ -8,16 +8,32 @@
     </url>
 
     <url>
-        <loc>https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/</loc>
-        <lastmod>2019-08-25T14:48:44.619Z</lastmod>
+        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
+        <lastmod>2019-08-27T03:47:45.324Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
-        <lastmod>2019-08-25T14:33:06.730Z</lastmod>
+        <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
+        <lastmod>2019-08-27T03:41:50.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
+        <lastmod>2019-08-27T02:06:59.551Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/</loc>
+        <lastmod>2019-08-25T14:48:44.619Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -50,14 +66,6 @@
     <url>
         <loc>https://divrots.com/2018/04/25/realm-error-accessing-object/</loc>
         <lastmod>2019-08-24T12:28:20.808Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
-        <lastmod>2019-08-24T12:21:34.426Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
