@@ -8,18 +8,18 @@
 
   <title>【React Native】FlatList内のitemへ参照をはる | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない                                   123456789101112131415                             &amp;lt;FlatList  ref=&amp;apos;flatlist&amp;apos; //">
+  <meta name="description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない">
   <meta name="keywords" content="React Native">
   <meta property="og:type" content="article">
   <meta property="og:title" content="【React Native】FlatList内のitemへ参照をはる">
   <meta property="og:url" content="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/index.html">
   <meta property="og:site_name" content="divrots">
-  <meta property="og:description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない                                   123456789101112131415                             &amp;lt;FlatList  ref=&amp;apos;flatlist&amp;apos; //">
+  <meta property="og:description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない">
   <meta property="og:locale" content="ja">
-  <meta property="og:updated_time" content="2019-08-24T12:55:05.496Z">
+  <meta property="og:updated_time" content="2019-08-29T12:47:35.107Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="【React Native】FlatList内のitemへ参照をはる">
-  <meta name="twitter:description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない                                   123456789101112131415                             &amp;lt;FlatList  ref=&amp;apos;flatlist&amp;apos; //">
+  <meta name="twitter:description" content="FlatListとrefについて FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない">
 
   <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -251,26 +251,26 @@
               <div class="article-entry" itemprop="articleBody">
 
                 <h2 id="FlatListとrefについて"><a href="#FlatListとrefについて" class="headerlink" title="FlatListとrefについて"></a>FlatListとrefについて</h2>
-                <p>FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない<br>
-                  <figure class="highlight plain">
-                    <table>
-                      <tr>
-                        <td class="gutter">
-                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
-                        </td>
-                        <td class="code">
-                          <pre><span class="line">&lt;FlatList</span><br><span class="line">  ref=&apos;flatlist&apos; // これがいる</span><br><span class="line">  data=&#123;data&#125;</span><br><span class="line">  renderItem=&#123;</span><br><span class="line">    (&#123;item,index&#125;)=&gt;&#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;EditString</span><br><span class="line">            ref=&#123;r=&gt;this.refs[item.key]=r&#125; // こういうことしようとする時</span><br><span class="line">            defaultValue=&#123;item.value&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre>
-                        </td>
-                      </tr>
-                    </table>
-                  </figure>
+                <p>FlatList自体ににrefを設定しないと、renderItemの中でthis.refsに設定しても読み込まない<br><a id="more"></a>
                 </p>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">&lt;FlatList</span><br><span class="line">  ref=&apos;flatlist&apos; // これがいる</span><br><span class="line">  data=&#123;data&#125;</span><br><span class="line">  renderItem=&#123;</span><br><span class="line">    (&#123;item,index&#125;)=&gt;&#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;View&gt;</span><br><span class="line">          &lt;EditString</span><br><span class="line">            ref=&#123;r=&gt;this.refs[item.key]=r&#125; // こういうことしようとする時</span><br><span class="line">            defaultValue=&#123;item.value&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        &lt;/View&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
                 <p>reanderItemをAllow記法のFunctionにしても親コンポーネントのthisは継承されない模様。</p>
                 <p>でもFlatListに参照を貼ると読み込む模様。</p>
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/" data-id="cjzwohq2e00083r60av0mz0nm" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/" data-id="cjzworl12000a7760crzwxj72" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
@@ -320,6 +320,8 @@
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/">Realm</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/cakephp2/">cakephp2</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/grep/">grep</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li>
               </ul>
@@ -329,7 +331,7 @@
           <div class="widget-wrap">
             <h3 class="widget-title">タグクラウド</h3>
             <div class="widget tagcloud">
-              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 10px;">cakephp2</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
+              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 10px;">cakephp2</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a>
             </div>
           </div>
 
