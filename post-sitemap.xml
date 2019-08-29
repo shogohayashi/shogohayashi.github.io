@@ -8,8 +8,8 @@
     </url>
 
     <url>
-        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
-        <lastmod>2019-08-27T03:47:45.324Z</lastmod>
+        <loc>https://divrots.com/2019/08/29/git-log-statistics/</loc>
+        <lastmod>2019-08-29T12:42:04.072Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,15 @@
 
     <url>
         <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
-        <lastmod>2019-08-27T03:41:50.632Z</lastmod>
+        <lastmod>2019-08-27T03:48:53.096Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
+        <lastmod>2019-08-27T03:47:45.324Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

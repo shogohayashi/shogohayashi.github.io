@@ -2,13 +2,13 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/" >
-    <title>【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる - divrots</title>
+    <link rel="canonical" href="https://divrots.com/2019/08/29/git-log-statistics/" >
+    <title>Gitでコミット数、変更行数、ファイル数を取得する色々 - divrots</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる">
+    <meta property="og:title" content="Gitでコミット数、変更行数、ファイル数を取得する色々">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/">
+	<meta property="og:url" content="https://divrots.com/2019/08/29/git-log-statistics/">
 	
 		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
@@ -16,8 +16,8 @@
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="divrots">
-	<meta name="twitter:url" content="https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/">
-	<meta name="twitter:title" content="【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる - divrots">
+	<meta name="twitter:url" content="https://divrots.com/2019/08/29/git-log-statistics/">
+	<meta name="twitter:title" content="Gitでコミット数、変更行数、ファイル数を取得する色々 - divrots">
 	
     
     	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
@@ -46,14 +46,14 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる",
+			"headline": "Gitでコミット数、変更行数、ファイル数を取得する色々",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
-			    "@id":"https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/"
+			    "@id":"https://divrots.com/2019/08/29/git-log-statistics/"
 			},
-			"datePublished": "2019-08-25T23:17:16.000Z",
-			"dateModified": "2019-08-27T03:48:53.096Z",
+			"datePublished": "2019-08-29T11:55:37.000Z",
+			"dateModified": "2019-08-29T12:42:04.072Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1765,7 +1765,7 @@ h6.categories {
   	<!-- container -->
   	<div id="container">
 	  	<div id="main">
-		    <article id="post-cakephp2-bindmodel-and-save" class="post">
+		    <article id="post-git-log-statistics" class="post">
 		    
 		   		<!-- categories and bread crumb -->
 		    	
@@ -1816,7 +1816,7 @@ h6.categories {
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/" target="_blank" itemprop="url">【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる</a>
+							    <a href="https://divrots.com/2019/08/29/git-log-statistics/" target="_blank" itemprop="url">Gitでコミット数、変更行数、ファイル数を取得する色々</a>
 							  </h1>
 							
 						</div>
@@ -1826,7 +1826,7 @@ h6.categories {
 					<div class="entry-meta-header">
 						<span class="meta-elements date">
 							<span class="fa fa-fw fa-clock-o"></span>
-							<time datetime="2019-08-26" itemprop="datePublished">2019.08.25</time>
+							<time datetime="2019-08-29" itemprop="datePublished">2019.08.29</time>
 						</span>
 					</div>
 				</div>
@@ -1843,37 +1843,177 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>hasOne&#x3092;bindModel&#x3067;&#x7E4B;&#x3044;&#x3067;saveAssociate&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;<br>bindModel&#x306E;&#x7B2C;&#x4E8C;&#x5F15;&#x6570;&#x306B;false&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x6C38;&#x7D9A;&#x5316;&#x3057;&#x306A;&#x3044;&#x3068;&#x9014;&#x4E2D;&#x3067;bind&#x304C;&#x5207;&#x308C;&#x308B;&#x3002;</p>
-<h2 id="&#x539F;&#x56E0;"><a href="#&#x539F;&#x56E0;" class="headerlink" title="&#x539F;&#x56E0;"></a>&#x539F;&#x56E0;</h2>
-<p>&#x7E4B;&#x304C;&#x3063;&#x3066;&#x3044;&#x308B;&#x5404;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x5BFE;&#x3057;UPDATE&#x305D;&#x306E;&#x4ED6;&#x8AF8;&#x3005;&#x304C;&#x8D70;&#x308B;&#x305F;&#x3081;&#x3002;<br>&#x4E00;&#x3064;&#x306E;$this-&gt;Model-&gt;saveAssociate()&#x3067;&#x3082;&#x5B9F;&#x969B;&#x306E;&#x30AF;&#x30A8;&#x30EA;&#x306B;&#x5BFE;&#x3057;&#x3066;bindModel&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30AB;&#x30B9;&#x306F;&#x6C7A;&#x307E;&#x308B;&#x3063;&#x307D;&#x3044;</p>
-<h2 id="hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;"><a href="#hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;" class="headerlink" title="hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;"></a>hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;</h2>
-<h4 id="AuthorTable-gt-hasOne-gt-AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;"><a href="#AuthorTable-gt-hasOne-gt-AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;" class="headerlink" title="AuthorTable -&gt;hasOne-&gt; AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;"></a>AuthorTable -&gt;hasOne-&gt; AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;</h4>
-<p>7&#x3064;&#x3082;&#x30AF;&#x30A8;&#x30EA;&#x304C;&#x8D70;&#x3063;&#x3066;&#x3044;&#x308B;</p>
-<ol start="0">
-  <li>&#x30C8;&#x30E9;&#x30F3;&#x30B6;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x958B;&#x59CB;</li>
-  <li>AuthorTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(validate&#x7528;) </li>
-  <li>AuthorTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(save&#x7528;)</li>
-  <li>AuthorTable&#x306E;&#x66F4;&#x65B0;</li>
-  <li>AccountTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(validate&#x7528;)</li>
-  <li>AccountTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(save&#x7528;)</li>
-  <li>AccountTable&#x306E;&#x306E;&#x66F4;&#x65B0;</li>
-  <li>&#x30C8;&#x30E9;&#x30F3;&#x30B6;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x30B3;&#x30DF;&#x30C3;&#x30C8;</li>
-</ol>
+			  		<p>&#x8907;&#x6570;&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x3044;&#x308B;repository&#x3067;&#x81EA;&#x5206;&#x306E;&#x66F8;&#x3044;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x3069;&#x308C;&#x3060;&#x3051;&#x5360;&#x3081;&#x308B;&#x304B;&#x3092;&#x77E5;&#x308A;&#x305F;&#x3044;&#x6642;&#x306B;&#x3002;</p>
+<h2 id="&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;"><a href="#&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;" class="headerlink" title="&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;"></a>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;</h2>
+<h3 id="git-shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;"><a href="#git-shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;" class="headerlink" title="git shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;"></a>git shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
       <td class="gutter">
-        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre>
+        <pre><span class="line">1</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">[0] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; BEGIN</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[1] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[2] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[3] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`author` SET `id` = 1, `login_id` = &apos;hoge&apos;, `name` = &apos;John &apos;, `tel` = &apos;000-0000-0000&apos;, `created` = &apos;2016-01-28 22:23:33&apos;, `modified` = &apos;2019-07-09 19:09:08&apos;, WHERE `database`.`author`.`id` = &apos;1&apos;</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 7</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[4] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[5] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[6] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`accounts` SET `auther_id` = 1, `id` = 1, `modified` = &apos;2019-07-09 19:49:27&apos;  WHERE `database`.`accounts`.`id` = &apos;1&apos;</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[7] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; COMMIT</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">)</span><br></pre>
+        <pre><span class="line">git shortlog -nse</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>cake&#x306E;&#x4ED5;&#x69D8;&#x3060;&#x304C;&#x3001;validate&#x3068;save&#x3067;&#x4E8C;&#x56DE;&#x3082;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308B;&#x3060;&#x308D;&#x3046;&#x304B;&#x3002;&#x3044;&#x3084;&#x3001;&#x306A;&#x3044;&#x3002;</p>
-<h3 id="&#x88DC;&#x8DB3;-&#x8907;&#x6570;&#x306E;SELECT-COUNT-&#x306B;&#x3064;&#x3044;&#x3066;"><a href="#&#x88DC;&#x8DB3;-&#x8907;&#x6570;&#x306E;SELECT-COUNT-&#x306B;&#x3064;&#x3044;&#x3066;" class="headerlink" title="&#x88DC;&#x8DB3; &#x8907;&#x6570;&#x306E;SELECT COUNT(*)&#x306B;&#x3064;&#x3044;&#x3066;"></a>&#x88DC;&#x8DB3; &#x8907;&#x6570;&#x306E;SELECT COUNT(*)&#x306B;&#x3064;&#x3044;&#x3066;</h3>
-<p>cakephp2&#x3067;&#x306F;save&#x3067;&#x3082;validate&#x3067;&#x3082;&#x3001;hasAny&#x306E;&#x6642;&#x3067;&#x3055;&#x3048;&#x3082;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3068;&#x3057;&#x3066;SELECT COUNT(<em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>$Model-&gt;find()&#x306E;&#x6642;&#x3067;&#x3059;&#x3089;&#x4EF6;&#x6570;&#x53D6;&#x5F97;&#x3068;&#x3057;&#x3066;SELECT COUNT(</em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>&#x3059;&#x3067;&#x306B;validates&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;SELECT COUNT(<em>)&#x3057;&#x3066;&#x3044;&#x3088;&#x3046;&#x304C;&#x3001;save&#x306E;&#x6642;&#x306B;&#x307E;&#x305F;SELECT COUNT(</em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>&#x8A73;&#x3057;&#x304F;&#x306F;<code>Vendor/cakephp/cakephp/lib/Cake/Model.php</code>&#x3084;<code>Vendor/cakephp/cakephp/lib/Cake/ModelBehavior.php</code>&#x306B;&#x3002;</p>
+<p>&#x8FD4;&#x308A;&#x5024;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">2651  Hoge &lt;hoge@example.com&gt;</span><br><span class="line">1431  Piyo &lt;piyo@example.com&gt;</span><br><span class="line"> 863  Honi &lt;honi@example.com&gt;</span><br><span class="line"> 698  Puni &lt;puni@example.com&gt;</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th class="table-align-center"></th>
+      <th class="table-align-center">&#x8AAC;&#x660E;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="table-align-center">-n</td>
+      <td class="table-align-center">&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;&#x964D;&#x9806;&#x306B;&#x4E26;&#x3079;&#x308B;</td>
+    </tr>
+    <tr>
+      <td class="table-align-center">-s</td>
+      <td class="table-align-center">&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x7701;&#x7565;&#x3057;&#x3066;&#x4E00;&#x884C;&#x306B;&#x3059;&#x308B;</td>
+    </tr>
+    <tr>
+      <td class="table-align-center">-e</td>
+      <td class="table-align-center">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3082;&#x8868;&#x793A;&#x3059;&#x308B;</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="&#x5909;&#x66F4;&#x884C;&#x6570;"><a href="#&#x5909;&#x66F4;&#x884C;&#x6570;" class="headerlink" title="&#x5909;&#x66F4;&#x884C;&#x6570;"></a>&#x5909;&#x66F4;&#x884C;&#x6570;</h2>
+<h3 id="author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"><a href="#author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;" class="headerlink" title="author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"></a>author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h3>
+<figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">git log  --author=&quot;hoge@example.com&quot; --numstat --pretty=&quot;%H&quot; --no-merges  | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
+<p>&#x53C2;&#x8003; <a href="https://qiita.com/Night___/items/359ff81f358968567a45" target="_blank" rel="noopener">https://qiita.com/Night___/items/359ff81f358968567a45</a></p>
+<h3 id="&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10"><a href="#&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10" class="headerlink" title="&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10"></a>&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10</h3>
+<p><code>sort -r -n</code>&#x3067;&#x964D;&#x9806;&#x306B;&#x4E26;&#x3079;&#x66FF;&#x3048;&#x3066;<code>head -10</code>&#x3067;&#x5207;&#x308A;&#x629C;&#x304F;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t&apos; | sort -r -n | head -10</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<h3 id="&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"><a href="#&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;" class="headerlink" title="&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"></a>&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;</h3>
+<p><code>grep -E</code>&#x3067;&#x7D5E;&#x308A;&#x8FBC;&#x3080;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t.+?\.(php|css|js|ctp|html|scss|json|xml)$&apos; | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<h3 id="&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"><a href="#&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;" class="headerlink" title="&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"></a>&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;</h3>
+<p><code>grep -v</code>&#x306F;&#x4E00;&#x81F4;&#x3057;&#x306A;&#x304B;&#x3063;&#x305F;&#x3082;&#x306E;&#x3092;&#x8FD4;&#x3059;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -vE &apos;^\d+?\t.+?\.(src|config|webroot)$&apos; | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<h3 id="&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"><a href="#&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;" class="headerlink" title="&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"></a>&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h3>
+<p><code>git --author</code>&#x306F;OR&#x6307;&#x5B9A;&#x3067;&#x304D;&#x308B;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">git log --author=&quot;@example.co.jp\|hoge\|piyo&quot; --name-only --no-merges |  grep -E &apos;^\d+?\t&apos;</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<h2 id="&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;"><a href="#&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;" class="headerlink" title="&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;"></a>&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;</h2>
+<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;"></a>&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;</h3>
+<p><code>git log --name-only</code>&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x306E;&#x307F;&#x53D6;&#x5F97;&#x3057;&#x3001;<code>sort</code>&#x3067;&#x4E26;&#x3079;&#x66FF;&#x3048;&#x3001;<code>uniq</code>&#x3067;&#x91CD;&#x8907;&#x884C;&#x3092;&#x6D88;&#x3059;<br><br><code>grep -vE &apos;[a-z0-9]{40}&apos;</code>&#x306F;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30CF;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x5F3E;&#x3044;&#x3066;&#x3044;&#x308B;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">git log --since=&quot;2019-08-01&quot; --name-only --no-merges --pretty=&quot;%H&quot; | grep -vE &apos;[a-z0-9]{40}&apos; | sort | uniq &gt; editfiles.txt</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
+<h2 id="&#x304A;&#x307E;&#x3051;"><a href="#&#x304A;&#x307E;&#x3051;" class="headerlink" title="&#x304A;&#x307E;&#x3051;"></a>&#x304A;&#x307E;&#x3051;</h2>
+<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;"></a>&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;</h3>
+<figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">wc -l editfiles.txt</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
+<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;"></a>&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;</h3>
+<p><code>grep -f</code>&#x3067;file&#x3067;&#x691C;&#x7D22;&#x3057;&#x3066;&#x4E00;&#x81F4;/&#x4E0D;&#x4E00;&#x81F4;&#x3092;&#x51FA;&#x305B;&#x308B;&#x3002;&#x306A;&#x304A;&#x3053;&#x306E;&#x6642;&#x306F;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x306E;&#x307F;<br>
+  </p><figure class="highlight plain">
+    <table>
+      <tbody><tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre><span class="line">grep -xvf -files.txt editfiles.txt allfiles.txt  &gt; uneditfiles.txt</span><br></pre>
+        </td>
+      </tr>
+    </tbody></table>
+  </figure>
+
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1891,25 +2031,6 @@ h6.categories {
 		  	
 		  	
 		  	<!-- TAGS -->
-		  	
-		  	<div class="meta-content">
-				
-				<div class="widget">
-				  	<h6 class="tag"><span class="fa fa-fw fa-tag"></span>TAGS</h6>
-				  	<div class="article-tag">
-						<ul class="article-tag-list">
-							
-					    		<li class="article-tag-list-item">
-					    			<a class="article-tag-list-link" href="/tags/cakephp2/">
-					    				cakephp2
-					    			</a>
-					    		</li>
-							
-						</ul>
-					</div>
-				</div>
-				
-			</div>
 		  	
 		  	
 		  	<!-- Categories posts -->

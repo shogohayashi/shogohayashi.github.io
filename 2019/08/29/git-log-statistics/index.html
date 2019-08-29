@@ -6,20 +6,19 @@
   <meta charset="utf-8">
 
 
-  <title>ReactNativeでのInputの値の取得方法２種 | divrots</title>
+  <title>Gitでコミット数、変更行数、ファイル数を取得する色々 | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
-  <meta name="keywords" content="React Native">
+  <meta name="description" content="複数ユーザがいるrepositoryで自分の書いたコードがどれだけ占めるかを知りたい時に。 ユーザーごとのコミット数 git shortlogを使えば一発                         1                       git shortlog -nse                 返り値                                   12">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="ReactNativeでのInputの値の取得方法２種">
-  <meta property="og:url" content="https://divrots.com/2018/04/04/handring-input-with-react-native/index.html">
+  <meta property="og:title" content="Gitでコミット数、変更行数、ファイル数を取得する色々">
+  <meta property="og:url" content="https://divrots.com/2019/08/29/git-log-statistics/index.html">
   <meta property="og:site_name" content="divrots">
-  <meta property="og:description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
+  <meta property="og:description" content="複数ユーザがいるrepositoryで自分の書いたコードがどれだけ占めるかを知りたい時に。 ユーザーごとのコミット数 git shortlogを使えば一発                         1                       git shortlog -nse                 返り値                                   12">
   <meta property="og:locale" content="ja">
-  <meta property="og:updated_time" content="2019-08-24T11:56:53.281Z">
+  <meta property="og:updated_time" content="2019-08-29T12:42:04.072Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ReactNativeでのInputの値の取得方法２種">
-  <meta name="twitter:description" content="大きく分けて2種類  1, onChangeTextでstateを変更して、valueにいれる                                    12                             // render&amp;lt;TextInput onChange=&amp;#123;text=&amp;gt;this.setState(&amp;#123;text&amp;#125;)&amp;#125; v">
+  <meta name="twitter:title" content="Gitでコミット数、変更行数、ファイル数を取得する色々">
+  <meta name="twitter:description" content="複数ユーザがいるrepositoryで自分の書いたコードがどれだけ占めるかを知りたい時に。 ユーザーごとのコミット数 git shortlogを使えば一発                         1                       git shortlog -nse                 返り値                                   12">
 
   <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -230,10 +229,10 @@
       </header>
       <div class="outer">
         <section id="main">
-          <article id="post-handring-input-with-react-native" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-git-log-statistics" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/2018/04/04/handring-input-with-react-native/" class="article-date">
-                <time datetime="2018-04-04T04:00:03.000Z" itemprop="datePublished">2018-04-04</time>
+              <a href="/2019/08/29/git-log-statistics/" class="article-date">
+                <time datetime="2019-08-29T11:55:37.000Z" itemprop="datePublished">2019-08-29</time>
               </a>
               <div class="article-category">
                 <a class="article-category-link" href="/categories/tech/">tech</a>
@@ -244,41 +243,28 @@
 
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">
-                  ReactNativeでのInputの値の取得方法２種
+                  Gitでコミット数、変更行数、ファイル数を取得する色々
                 </h1>
               </header>
 
               <div class="article-entry" itemprop="articleBody">
 
-                <h2 id="大きく分けて2種類"><a href="#大きく分けて2種類" class="headerlink" title="大きく分けて2種類"></a>大きく分けて2種類</h2>
-                <p><strong> 1, onChangeTextでstateを変更して、valueにいれる </strong><br>
-                  <figure class="highlight plain">
-                    <table>
-                      <tr>
-                        <td class="gutter">
-                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                        </td>
-                        <td class="code">
-                          <pre><span class="line">// render</span><br><span class="line">&lt;TextInput onChange=&#123;text=&gt;this.setState(&#123;text&#125;)&#125; value=&#123;this.state.text&#125; /&gt;</span><br></pre>
-                        </td>
-                      </tr>
-                    </table>
-                  </figure>
-                </p>
+                <p>複数ユーザがいるrepositoryで自分の書いたコードがどれだけ占めるかを知りたい時に。</p>
+                <h2 id="ユーザーごとのコミット数"><a href="#ユーザーごとのコミット数" class="headerlink" title="ユーザーごとのコミット数"></a>ユーザーごとのコミット数</h2>
+                <h3 id="git-shortlogを使えば一発"><a href="#git-shortlogを使えば一発" class="headerlink" title="git shortlogを使えば一発"></a>git shortlogを使えば一発</h3>
                 <figure class="highlight plain">
                   <table>
                     <tr>
                       <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        <pre><span class="line">1</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">_submit()&#123;</span><br><span class="line">  console.log(this.state.text);</span><br><span class="line">&#125;</span><br></pre>
+                        <pre><span class="line">git shortlog -nse</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                <p>わかりやすいが、キー打つたびコンポーネントを更新する。</p>
-                <p><strong> 2, defalutValueだけ設定して、submitのときだけrefで呼び出す </strong><br>
+                <p>返り値<br>
                   <figure class="highlight plain">
                     <table>
                       <tr>
@@ -286,48 +272,170 @@
                           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
                         </td>
                         <td class="code">
-                          <pre><span class="line">&lt;TextInput ref=&quot;text&quot; defaultValue=&#123;this.props.value&#125; /&gt;</span><br><span class="line">_submit()&#123;</span><br><span class="line">  console.log();</span><br><span class="line">&#125;</span><br></pre>
+                          <pre><span class="line">2651  Hoge &lt;hoge@example.com&gt;</span><br><span class="line">1431  Piyo &lt;piyo@example.com&gt;</span><br><span class="line"> 863  Honi &lt;honi@example.com&gt;</span><br><span class="line"> 698  Puni &lt;puni@example.com&gt;</span><br></pre>
                         </td>
                       </tr>
                     </table>
                   </figure>
                 </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="text-align:center"></th>
+                      <th style="text-align:center">説明</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="text-align:center">-n</td>
+                      <td style="text-align:center">コミット数降順に並べる</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">-s</td>
+                      <td style="text-align:center">コミットメッセージを省略して一行にする</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:center">-e</td>
+                      <td style="text-align:center">メールアドレスも表示する</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2 id="変更行数"><a href="#変更行数" class="headerlink" title="変更行数"></a>変更行数</h2>
+                <h3 id="authorを指定して合算を取得する"><a href="#authorを指定して合算を取得する" class="headerlink" title="authorを指定して合算を取得する"></a>authorを指定して合算を取得する</h3>
                 <figure class="highlight plain">
                   <table>
                     <tr>
                       <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                        <pre><span class="line">1</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line"> a = &apos;piyo&apos;</span><br><span class="line"> for(i = 1;i&lt;3;I++)&#123;</span><br><span class="line">	 echo hoge;</span><br><span class="line"> &#125;</span><br><span class="line">return hoge;</span><br></pre>
+                        <pre><span class="line">git log  --author=&quot;hoge@example.com&quot; --numstat --pretty=&quot;%H&quot; --no-merges  | awk &apos;NF==3 &#123;plus+=$1; minus+=$2&#125; END &#123;printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)&#125;&apos;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                <p>このとき、valueプロパティはTextInputコンポーネントが勝手に書き換える</p>
-                <p>これでひたすら再描画されることがなくなる。<br>Reactなので再描画と言っても差分のみだが、render前などに都度処理入れてる場合は重くなりうるので注意。</p>
+                <p>参考 <a href="https://qiita.com/Night___/items/359ff81f358968567a45" target="_blank" rel="noopener">https://qiita.com/Night___/items/359ff81f358968567a45</a></p>
+                <h3 id="一回のコミットで大きな変更があったファイルTop10"><a href="#一回のコミットで大きな変更があったファイルTop10" class="headerlink" title="一回のコミットで大きな変更があったファイルTop10"></a>一回のコミットで大きな変更があったファイルTop10</h3>
+                <p><code>sort -r -n</code>で降順に並べ替えて<code>head -10</code>で切り抜く<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t&apos; | sort -r -n | head -10</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h3 id="特定の拡張子のファイルの変更を取得"><a href="#特定の拡張子のファイルの変更を取得" class="headerlink" title="特定の拡張子のファイルの変更を取得"></a>特定の拡張子のファイルの変更を取得</h3>
+                <p><code>grep -E</code>で絞り込む<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t.+?\.(php|css|js|ctp|html|scss|json|xml)$&apos; | awk &apos;NF==3 &#123;plus+=$1; minus+=$2&#125; END &#123;printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)&#125;&apos;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h3 id="特定のパス以外のファイルの変更を取得"><a href="#特定のパス以外のファイルの変更を取得" class="headerlink" title="特定のパス以外のファイルの変更を取得"></a>特定のパス以外のファイルの変更を取得</h3>
+                <p><code>grep -v</code>は一致しなかったものを返す<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -vE &apos;^\d+?\t.+?\.(src|config|webroot)$&apos; | awk &apos;NF==3 &#123;plus+=$1; minus+=$2&#125; END &#123;printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)&#125;&apos;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h3 id="複数のユーザーのログを取得する"><a href="#複数のユーザーのログを取得する" class="headerlink" title="複数のユーザーのログを取得する"></a>複数のユーザーのログを取得する</h3>
+                <p><code>git --author</code>はOR指定できる<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">git log --author=&quot;@example.co.jp\|hoge\|piyo&quot; --name-only --no-merges |  grep -E &apos;^\d+?\t&apos;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h2 id="変更ファイル数"><a href="#変更ファイル数" class="headerlink" title="変更ファイル数"></a>変更ファイル数</h2>
+                <h3 id="編集したファイル一覧を取り出す"><a href="#編集したファイル一覧を取り出す" class="headerlink" title="編集したファイル一覧を取り出す"></a>編集したファイル一覧を取り出す</h3>
+                <p><code>git log --name-only</code>でファイルパスのみ取得し、<code>sort</code>で並べ替え、<code>uniq</code>で重複行を消す<br><br><code>grep -vE &#39;[a-z0-9]{40}&#39;</code>はコミットハッシュを弾いている<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">git log --since=&quot;2019-08-01&quot; --name-only --no-merges --pretty=&quot;%H&quot; | grep -vE &apos;[a-z0-9]&#123;40&#125;&apos; | sort | uniq &gt; editfiles.txt</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
+                <h2 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h2>
+                <h3 id="編集したファイルの行数"><a href="#編集したファイルの行数" class="headerlink" title="編集したファイルの行数"></a>編集したファイルの行数</h3>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">wc -l editfiles.txt</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <h3 id="編集してないファイル一覧"><a href="#編集してないファイル一覧" class="headerlink" title="編集してないファイル一覧"></a>編集してないファイル一覧</h3>
+                <p><code>grep -f</code>でfileで検索して一致/不一致を出せる。なおこの時は完全一致のみ<br>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">grep -xvf -files.txt editfiles.txt allfiles.txt  &gt; uneditfiles.txt</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </p>
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/04/handring-input-with-react-native/" data-id="cjzwohq2800033r608w9aa0c1" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2019/08/29/git-log-statistics/" data-id="cjzwohq1y00003r60lp2y5e1r" class="article-share-link">共有</a>
 
-                <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
-                </ul>
+
               </footer>
             </div>
 
             <nav id="article-nav">
 
-              <a href="/2018/04/25/realm-error-accessing-object/" id="article-nav-newer" class="article-nav-link-wrap">
-                <strong class="article-nav-caption">次の記事</strong>
-                <div class="article-nav-title">
 
-                  Error Accessing object of type TableName which has been invalidated or deleted
-
-                </div>
+              <a href="/2019/08/26/cakephp2-bindmodel-and-save/" id="article-nav-older" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">前の記事</strong>
+                <div class="article-nav-title">【cakephp2】hadOneをbindmodelでつないで保存しようとしても途中でbindが切れる</div>
               </a>
-
 
             </nav>
 
