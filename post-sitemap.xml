@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/</loc>
+        <lastmod>2019-10-26T09:16:32.446Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
+        <lastmod>2019-10-26T09:15:56.956Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
         <lastmod>2019-08-29T12:49:06.891Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -40,14 +56,6 @@
     </url>
 
     <url>
-        <loc>https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/</loc>
-        <lastmod>2019-08-29T12:47:35.107Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/</loc>
         <lastmod>2019-08-29T12:47:33.384Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +74,6 @@
     <url>
         <loc>https://divrots.com/2019/08/29/git-log-statistics/</loc>
         <lastmod>2019-08-29T12:46:01.338Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
-        <lastmod>2019-08-29T12:45:54.843Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
