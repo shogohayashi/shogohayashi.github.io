@@ -6,20 +6,20 @@
   <meta charset="utf-8">
 
 
-  <title>Error Accessing object of type TableName which has been invalidated or deleted | divrots</title>
+  <title>CSSとjQueryで作る、押すとぷにぷに弾むアニメーションつくってみた | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="React Native+realmでrealmObjectでFlatListを生成してるとき、deleteをするとタイトルのエラーが出てくる。どうやらFlatListにrefを貼っているとrealmへの参照が効きっぱなしで残っており、削除済みのobjectへアクセスしてしまってエラーになるらしい 改善 realmのデータベースの参照を外せば良い. こういうことではない">
-  <meta name="keywords" content="React Native,Realm">
+  <meta name="description" content="押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。">
+  <meta name="keywords" content="css,jQuery">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Error Accessing object of type TableName which has been invalidated or deleted">
-  <meta property="og:url" content="https://divrots.com/2018/04/25/realm-error-accessing-object/index.html">
+  <meta property="og:title" content="CSSとjQueryで作る、押すとぷにぷに弾むアニメーションつくってみた">
+  <meta property="og:url" content="https://divrots.com/2019/10/26/css-js-animation-bounds/index.html">
   <meta property="og:site_name" content="divrots">
-  <meta property="og:description" content="React Native+realmでrealmObjectでFlatListを生成してるとき、deleteをするとタイトルのエラーが出てくる。どうやらFlatListにrefを貼っているとrealmへの参照が効きっぱなしで残っており、削除済みのobjectへアクセスしてしまってエラーになるらしい 改善 realmのデータベースの参照を外せば良い. こういうことではない">
+  <meta property="og:description" content="押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。">
   <meta property="og:locale" content="ja">
-  <meta property="og:updated_time" content="2019-08-24T12:28:20.808Z">
+  <meta property="og:updated_time" content="2019-10-26T11:44:32.730Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Error Accessing object of type TableName which has been invalidated or deleted">
-  <meta name="twitter:description" content="React Native+realmでrealmObjectでFlatListを生成してるとき、deleteをするとタイトルのエラーが出てくる。どうやらFlatListにrefを貼っているとrealmへの参照が効きっぱなしで残っており、削除済みのobjectへアクセスしてしまってエラーになるらしい 改善 realmのデータベースの参照を外せば良い. こういうことではない">
+  <meta name="twitter:title" content="CSSとjQueryで作る、押すとぷにぷに弾むアニメーションつくってみた">
+  <meta name="twitter:description" content="押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。">
 
   <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
 
@@ -230,10 +230,10 @@
       </header>
       <div class="outer">
         <section id="main">
-          <article id="post-realm-error-accessing-object" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-css-js-animation-bounds" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/2018/04/25/realm-error-accessing-object/" class="article-date">
-                <time datetime="2018-04-25T04:14:43.000Z" itemprop="datePublished">2018-04-25</time>
+              <a href="/2019/10/26/css-js-animation-bounds/" class="article-date">
+                <time datetime="2019-10-26T09:20:08.000Z" itemprop="datePublished">2019-10-26</time>
               </a>
               <div class="article-category">
                 <a class="article-category-link" href="/categories/tech/">tech</a>
@@ -244,56 +244,69 @@
 
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">
-                  Error Accessing object of type TableName which has been invalidated or deleted
+                  CSSとjQueryで作る、押すとぷにぷに弾むアニメーションつくってみた
                 </h1>
               </header>
 
               <div class="article-entry" itemprop="articleBody">
 
-                <p>React Native+realmでrealmObjectでFlatListを生成してるとき、deleteをするとタイトルのエラーが出てくる。<br><br>どうやらFlatListにrefを貼っているとrealmへの参照が効きっぱなしで残っており、削除済みのobjectへアクセスしてしまってエラーになるらしい</p>
-                <h3 id="改善"><a href="#改善" class="headerlink" title="改善"></a>改善</h3>
-                <p>realmのデータベースの参照を外せば良い.</p>
-                <p>こういうことではない<br>
-                  <figure class="highlight plain">
-                    <table>
-                      <tr>
-                        <td class="gutter">
-                          <pre><span class="line">1</span><br></pre>
-                        </td>
-                        <td class="code">
-                          <pre><span class="line">delete this.refs[deletedObject]</span><br></pre>
-                        </td>
-                      </tr>
-                    </table>
-                  </figure>
-                </p>
+                <p>押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。</p>
+                <a id="more"></a>
+                <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2>
+                <p></p>
+                <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="4est001" data-slug-hash="MWWopgz" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css-puni-animation"><br> <span>See the Pen <a href="https://codepen.io/4est001/pen/MWWopgz" target="_blank" rel="noopener"><br> css-puni-animation</a> by 4est (<a href="https://codepen.io/4est001" target="_blank" rel="noopener">@4est001</a>)<br> on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p>
+                <p></p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+                <h2 id="解説"><a href="#解説" class="headerlink" title="解説"></a>解説</h2>
+                <h3 id="全体の挙動"><a href="#全体の挙動" class="headerlink" title="全体の挙動"></a>全体の挙動</h3>
+                <ul>
+                  <li>対象を押下で.push-puniをつけてじわじわ沈むように</li>
+                  <li>離すと.push-puniを外し.start-puniをつけて弾むアニメーション</li>
+                  <li>.start-puniのアニメーションが終わると.start-puniも外す</li>
+                </ul>
+                <h3 id="jQueryについて"><a href="#jQueryについて" class="headerlink" title="jQueryについて"></a>jQueryについて</h3>
+                <p>長押しで潰れ、離すと弾む。<br>潰れている最中にマウスポインタが外れても弾む。<br>連打でプニプニするために、押してすぐ離すとアニメーション中断=&gt;再開でぷよぷよする。</p>
+                <h3 id="cssについて"><a href="#cssについて" class="headerlink" title="cssについて"></a>cssについて</h3>
+                <h4 id="1-wrapper"><a href="#1-wrapper" class="headerlink" title="1, wrapper"></a>1, wrapper</h4>
+                <p>真ん中に持ってくるためにflexを使っているだけ</p>
+                <h4 id="2-animationとtransiton"><a href="#2-animationとtransiton" class="headerlink" title="2, animationとtransiton"></a>2, animationとtransiton</h4>
+                <p>animation要素によるアニメーションとtransition要素によるアニメーションは独立しているっぽい<br>あくまでanimationは実行中のみの状態遷移であり、transitionでの動きはanimationが途絶えると描画される。</p>
+                <h4 id="3-start-puniにtransition-0sも貼っている理由"><a href="#3-start-puniにtransition-0sも貼っている理由" class="headerlink" title="3, .start-puniにtransition:0sも貼っている理由"></a>3, .start-puniにtransition:0sも貼っている理由</h4>
+                <ul>
+                  <li>対象を押下し.push-puniがついた状態で対象の状態はtransform: scale(1.2,.8) translateY(20%);の潰れた状態になる。</li>
+                  <li>先述の通り、潰れた状態はcssを剥がして.start-puniのanimationの描画を経ても保存されており、animation終了後に潰れ=&gt;元の形に戻る挙動をしてしまう。</li>
+                  <li>その過程を描画させないために0秒で状態を遷移させている</li>
+                </ul>
+                <h4 id="4-まんじゅうっぽい形の作り方"><a href="#4-まんじゅうっぽい形の作り方" class="headerlink" title="4, まんじゅうっぽい形の作り方"></a>4, まんじゅうっぽい形の作り方</h4>
+                <p>border-radiusは左上,右上.右下,左下のx軸半径 / 左上,右上.右下,左下のy軸半径として個別に設定できる。<br>codepen上のまんじゅうは上２つの角をx軸半径100px, 半径60pxの楕円,<br>下２つの角をx軸半径40px, y軸半径30pxの楕円で描画している。</p>
+                <h4 id="5-自然に見せるポイントで意識したこと"><a href="#5-自然に見せるポイントで意識したこと" class="headerlink" title="5, 自然に見せるポイントで意識したこと"></a>5, 自然に見せるポイントで意識したこと</h4>
+                <ul>
+                  <li>弾性体の振動も高校でやった振り子と一緒で振幅依存性は無視できるものとする(つまり、縮んで伸びて元の形に戻るまでのフレーム数は一定)</li>
+                  <li>ただし最初の部分だけ早くうごかしてぷにった時の爽快感を増している</li>
+                  <li>縮んだ分だけY軸も下に動かし重力感をだす</li>
+                </ul>
+                <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
+                <p>かわいいやん</p>
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/25/realm-error-accessing-object/" data-id="ck27hr9x1000aym60wm26t4xl" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2019/10/26/css-js-animation-bounds/" data-id="ck27hr9w50000ym60ilqank1o" class="article-share-link">共有</a>
 
                 <ul class="article-tag-list">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Realm/">Realm</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li>
                 </ul>
               </footer>
             </div>
 
             <nav id="article-nav">
 
-              <a href="/2018/04/26/quit-iphone-simulator-selectively/" id="article-nav-newer" class="article-nav-link-wrap">
-                <strong class="article-nav-caption">次の記事</strong>
-                <div class="article-nav-title">
 
-                  XcodeのSimulatorを選択的に閉じる
-
-                </div>
-              </a>
-
-
-              <a href="/2018/04/04/handring-input-with-react-native/" id="article-nav-older" class="article-nav-link-wrap">
+              <a href="/2019/08/29/git-log-statistics/" id="article-nav-older" class="article-nav-link-wrap">
                 <strong class="article-nav-caption">前の記事</strong>
-                <div class="article-nav-title">ReactNativeでのInputの値の取得方法２種</div>
+                <div class="article-nav-title">Gitでコミット数、変更行数、ファイル数を取得する色々</div>
               </a>
 
             </nav>
