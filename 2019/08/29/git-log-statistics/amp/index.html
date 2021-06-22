@@ -59,7 +59,7 @@
 			    "@id":"https://divrots.com/2019/08/29/git-log-statistics/"
 			},
 			"datePublished": "2019-08-29T11:55:37.000Z",
-			"dateModified": "2019-08-29T12:46:01.338Z",
+			"dateModified": "2021-06-22T06:50:28.278Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1849,10 +1849,10 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>&#x8907;&#x6570;&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x3044;&#x308B;repository&#x3067;&#x81EA;&#x5206;&#x306E;&#x66F8;&#x3044;&#x305F;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x3069;&#x308C;&#x3060;&#x3051;&#x5360;&#x3081;&#x308B;&#x304B;&#x3092;&#x77E5;&#x308A;&#x305F;&#x3044;&#x6642;&#x306B;&#x3002;</p>
+			  		<p>複数ユーザがいるrepositoryで自分の書いたコードがどれだけ占めるかを知りたい時に。</p>
 <a id="more"></a>
-<h2 id="&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;"><a href="#&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;" class="headerlink" title="&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;"></a>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3054;&#x3068;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;</h2>
-<h3 id="git-shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;"><a href="#git-shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;" class="headerlink" title="git shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;"></a>git shortlog&#x3092;&#x4F7F;&#x3048;&#x3070;&#x4E00;&#x767A;</h3>
+<h2 id="ユーザーごとのコミット数"><a href="#ユーザーごとのコミット数" class="headerlink" title="ユーザーごとのコミット数"></a>ユーザーごとのコミット数</h2>
+<h3 id="git-shortlogを使えば一発"><a href="#git-shortlogを使えば一発" class="headerlink" title="git shortlogを使えば一発"></a>git shortlogを使えば一発</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1865,44 +1865,44 @@ h6.categories {
     </tr>
   </tbody></table>
 </figure>
-<p>&#x8FD4;&#x308A;&#x5024;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">2651  Hoge &lt;hoge@example.com&gt;</span><br><span class="line">1431  Piyo &lt;piyo@example.com&gt;</span><br><span class="line"> 863  Honi &lt;honi@example.com&gt;</span><br><span class="line"> 698  Puni &lt;puni@example.com&gt;</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<p>返り値<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">2651  Hoge &lt;hoge@example.com&gt;</span><br><span class="line">1431  Piyo &lt;piyo@example.com&gt;</span><br><span class="line"> 863  Honi &lt;honi@example.com&gt;</span><br><span class="line"> 698  Puni &lt;puni@example.com&gt;</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
 <div class="table-wrapper"><table>
   <thead>
     <tr>
       <th class="table-align-center"></th>
-      <th class="table-align-center">&#x8AAC;&#x660E;</th>
+      <th class="table-align-center">説明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="table-align-center">-n</td>
-      <td class="table-align-center">&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x6570;&#x964D;&#x9806;&#x306B;&#x4E26;&#x3079;&#x308B;</td>
+      <td class="table-align-center">コミット数降順に並べる</td>
     </tr>
     <tr>
       <td class="table-align-center">-s</td>
-      <td class="table-align-center">&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x7701;&#x7565;&#x3057;&#x3066;&#x4E00;&#x884C;&#x306B;&#x3059;&#x308B;</td>
+      <td class="table-align-center">コミットメッセージを省略して一行にする</td>
     </tr>
     <tr>
       <td class="table-align-center">-e</td>
-      <td class="table-align-center">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3082;&#x8868;&#x793A;&#x3059;&#x308B;</td>
+      <td class="table-align-center">メールアドレスも表示する</td>
     </tr>
   </tbody>
 </table></div>
-<h2 id="&#x5909;&#x66F4;&#x884C;&#x6570;"><a href="#&#x5909;&#x66F4;&#x884C;&#x6570;" class="headerlink" title="&#x5909;&#x66F4;&#x884C;&#x6570;"></a>&#x5909;&#x66F4;&#x884C;&#x6570;</h2>
-<h3 id="author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"><a href="#author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;" class="headerlink" title="author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"></a>author&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x5408;&#x7B97;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h3>
+<h2 id="変更行数"><a href="#変更行数" class="headerlink" title="変更行数"></a>変更行数</h2>
+<h3 id="authorを指定して合算を取得する"><a href="#authorを指定して合算を取得する" class="headerlink" title="authorを指定して合算を取得する"></a>authorを指定して合算を取得する</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1910,90 +1910,90 @@ h6.categories {
         <pre><span class="line">1</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">git log  --author=&quot;hoge@example.com&quot; --numstat --pretty=&quot;%H&quot; --no-merges  | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
+        <pre><span class="line">git log  --author="hoge@example.com" --numstat --pretty="%H" --no-merges  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d (+%d, -%d)\n", plus+minus, plus, minus)}'</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x53C2;&#x8003; <a href="https://qiita.com/Night___/items/359ff81f358968567a45" target="_blank" rel="noopener">https://qiita.com/Night___/items/359ff81f358968567a45</a></p>
-<h3 id="&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10"><a href="#&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10" class="headerlink" title="&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10"></a>&#x4E00;&#x56DE;&#x306E;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x3067;&#x5927;&#x304D;&#x306A;&#x5909;&#x66F4;&#x304C;&#x3042;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;Top10</h3>
-<p><code>sort -r -n</code>&#x3067;&#x964D;&#x9806;&#x306B;&#x4E26;&#x3079;&#x66FF;&#x3048;&#x3066;<code>head -10</code>&#x3067;&#x5207;&#x308A;&#x629C;&#x304F;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t&apos; | sort -r -n | head -10</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<p>参考 <a href="https://qiita.com/Night___/items/359ff81f358968567a45" target="_blank" rel="noopener">https://qiita.com/Night___/items/359ff81f358968567a45</a></p>
+<h3 id="一回のコミットで大きな変更があったファイルTop10"><a href="#一回のコミットで大きな変更があったファイルTop10" class="headerlink" title="一回のコミットで大きな変更があったファイルTop10"></a>一回のコミットで大きな変更があったファイルTop10</h3>
+<p><code>sort -r -n</code>で降順に並べ替えて<code>head -10</code>で切り抜く<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">$ git log  --numstat --pretty="%H" --no-merges | grep -E '^\d+?\t' | sort -r -n | head -10</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
-<h3 id="&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"><a href="#&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;" class="headerlink" title="&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"></a>&#x7279;&#x5B9A;&#x306E;&#x62E1;&#x5F35;&#x5B50;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;</h3>
-<p><code>grep -E</code>&#x3067;&#x7D5E;&#x308A;&#x8FBC;&#x3080;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -E &apos;^\d+?\t.+?\.(php|css|js|ctp|html|scss|json|xml)$&apos; | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<h3 id="特定の拡張子のファイルの変更を取得"><a href="#特定の拡張子のファイルの変更を取得" class="headerlink" title="特定の拡張子のファイルの変更を取得"></a>特定の拡張子のファイルの変更を取得</h3>
+<p><code>grep -E</code>で絞り込む<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">$ git log  --numstat --pretty="%H" --no-merges | grep -E '^\d+?\t.+?\.(php|css|js|ctp|html|scss|json|xml)$' | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d (+%d, -%d)\n", plus+minus, plus, minus)}'</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
-<h3 id="&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"><a href="#&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;" class="headerlink" title="&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;"></a>&#x7279;&#x5B9A;&#x306E;&#x30D1;&#x30B9;&#x4EE5;&#x5916;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53D6;&#x5F97;</h3>
-<p><code>grep -v</code>&#x306F;&#x4E00;&#x81F4;&#x3057;&#x306A;&#x304B;&#x3063;&#x305F;&#x3082;&#x306E;&#x3092;&#x8FD4;&#x3059;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">$ git log  --numstat --pretty=&quot;%H&quot; --no-merges | grep -vE &apos;^\d+?\t.+?\.(src|config|webroot)$&apos; | awk &apos;NF==3 {plus+=$1; minus+=$2} END {printf(&quot;%d (+%d, -%d)\n&quot;, plus+minus, plus, minus)}&apos;</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<h3 id="特定のパス以外のファイルの変更を取得"><a href="#特定のパス以外のファイルの変更を取得" class="headerlink" title="特定のパス以外のファイルの変更を取得"></a>特定のパス以外のファイルの変更を取得</h3>
+<p><code>grep -v</code>は一致しなかったものを返す<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">$ git log  --numstat --pretty="%H" --no-merges | grep -vE '^\d+?\t.+?\.(src|config|webroot)$' | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d (+%d, -%d)\n", plus+minus, plus, minus)}'</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
-<h3 id="&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"><a href="#&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;" class="headerlink" title="&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;"></a>&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h3>
-<p><code>git --author</code>&#x306F;OR&#x6307;&#x5B9A;&#x3067;&#x304D;&#x308B;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">git log --author=&quot;@example.co.jp\|hoge\|piyo&quot; --name-only --no-merges |  grep -E &apos;^\d+?\t&apos;</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<h3 id="複数のユーザーのログを取得する"><a href="#複数のユーザーのログを取得する" class="headerlink" title="複数のユーザーのログを取得する"></a>複数のユーザーのログを取得する</h3>
+<p><code>git --author</code>はOR指定できる<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">git log --author="@example.co.jp\|hoge\|piyo" --name-only --no-merges |  grep -E '^\d+?\t'</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
-<h2 id="&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;"><a href="#&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;" class="headerlink" title="&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;"></a>&#x5909;&#x66F4;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6570;</h2>
-<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;"></a>&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;</h3>
-<p><code>git log --name-only</code>&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x306E;&#x307F;&#x53D6;&#x5F97;&#x3057;&#x3001;<code>sort</code>&#x3067;&#x4E26;&#x3079;&#x66FF;&#x3048;&#x3001;<code>uniq</code>&#x3067;&#x91CD;&#x8907;&#x884C;&#x3092;&#x6D88;&#x3059;<br><br><code>grep -vE &apos;[a-z0-9]{40}&apos;</code>&#x306F;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30CF;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x5F3E;&#x3044;&#x3066;&#x3044;&#x308B;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">git log --since=&quot;2019-08-01&quot; --name-only --no-merges --pretty=&quot;%H&quot; | grep -vE &apos;[a-z0-9]{40}&apos; | sort | uniq &gt; editfiles.txt</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<h2 id="変更ファイル数"><a href="#変更ファイル数" class="headerlink" title="変更ファイル数"></a>変更ファイル数</h2>
+<h3 id="編集したファイル一覧を取り出す"><a href="#編集したファイル一覧を取り出す" class="headerlink" title="編集したファイル一覧を取り出す"></a>編集したファイル一覧を取り出す</h3>
+<p><code>git log --name-only</code>でファイルパスのみ取得し、<code>sort</code>で並べ替え、<code>uniq</code>で重複行を消す<br><br><code>grep -vE '[a-z0-9]{40}'</code>はコミットハッシュを弾いている<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">git log --since="2019-08-01" --name-only --no-merges --pretty="%H" | grep -vE '[a-z0-9]{40}' | sort | uniq &gt; editfiles.txt</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
-<h2 id="&#x304A;&#x307E;&#x3051;"><a href="#&#x304A;&#x307E;&#x3051;" class="headerlink" title="&#x304A;&#x307E;&#x3051;"></a>&#x304A;&#x307E;&#x3051;</h2>
-<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;"></a>&#x7DE8;&#x96C6;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x884C;&#x6570;</h3>
+<h2 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h2>
+<h3 id="編集したファイルの行数"><a href="#編集したファイルの行数" class="headerlink" title="編集したファイルの行数"></a>編集したファイルの行数</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -2006,20 +2006,20 @@ h6.categories {
     </tr>
   </tbody></table>
 </figure>
-<h3 id="&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;"><a href="#&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;" class="headerlink" title="&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;"></a>&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E00;&#x89A7;</h3>
-<p><code>grep -f</code>&#x3067;file&#x3067;&#x691C;&#x7D22;&#x3057;&#x3066;&#x4E00;&#x81F4;/&#x4E0D;&#x4E00;&#x81F4;&#x3092;&#x51FA;&#x305B;&#x308B;&#x3002;&#x306A;&#x304A;&#x3053;&#x306E;&#x6642;&#x306F;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x306E;&#x307F;<br>
-  </p><figure class="highlight plain">
-    <table>
-      <tbody><tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre><span class="line">grep -xvf -files.txt editfiles.txt allfiles.txt  &gt; uneditfiles.txt</span><br></pre>
-        </td>
-      </tr>
-    </tbody></table>
-  </figure>
+<h3 id="編集してないファイル一覧"><a href="#編集してないファイル一覧" class="headerlink" title="編集してないファイル一覧"></a>編集してないファイル一覧</h3>
+<p><code>grep -f</code>でfileで検索して一致/不一致を出せる。なおこの時は完全一致のみ<br>
+</p><figure class="highlight plain">
+  <table>
+    <tbody><tr>
+      <td class="gutter">
+        <pre><span class="line">1</span><br></pre>
+      </td>
+      <td class="code">
+        <pre><span class="line">grep -xvf -files.txt editfiles.txt allfiles.txt  &gt; uneditfiles.txt</span><br></pre>
+      </td>
+    </tr>
+  </tbody></table>
+</figure>
 
 			  		
 			  		<!-- google Adsense -->
@@ -2091,7 +2091,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

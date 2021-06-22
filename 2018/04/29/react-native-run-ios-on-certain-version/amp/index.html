@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;p&gt;&lt;code&gt;$ react-native run-ios&lt;/code&gt;の挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。&lt;/p&gt;">
@@ -24,8 +22,6 @@
 		<meta name="twitter:description" content="&lt;p&gt;&lt;code&gt;$ react-native run-ios&lt;/code&gt;の挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -59,14 +55,7 @@
 			    "@id":"https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/"
 			},
 			"datePublished": "2018-04-29T12:46:26.000Z",
-			"dateModified": "2019-08-29T12:47:33.384Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-08-29T12:47:33.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1810,14 +1799,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1849,11 +1830,11 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p><code>$ react-native run-ios</code>&#x306E;&#x6319;&#x52D5;&#x3002;Xcode&#x304B;&#x3089;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x305D;&#x3082;&#x305D;&#x3082;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x9078;&#x629E;&#x3059;&#x308B;&#x306E;&#x3067;&#x554F;&#x984C;&#x306A;&#x3044;&#x3002;</p>
+			  		<p><code>$ react-native run-ios</code>の挙動。Xcodeから起動する場合はそもそもデバイス選択するので問題ない。</p>
 <a id="more"></a>
-<p>&#x5225;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x3067;&#x306E;&#x8D77;&#x52D5;&#x306F;&#x691C;&#x7D22;&#x3057;&#x3066;&#x3088;&#x304F;&#x51FA;&#x3066;&#x304F;&#x308B;&#x3051;&#x308C;&#x3069;&#x3001;&#x65E7;iOS&#x3067;&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x305F;&#x3044;&#x6642;&#x306B;&#x691C;&#x7D22;&#x3057;&#x3066;&#x3082;&#x898B;&#x5F53;&#x305F;&#x3089;&#x306A;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x30E1;&#x30E2;&#x3002;<br><br>xcode&#x306F;Version 9.3</p>
+<p>別デバイスでの起動は検索してよく出てくるけれど、旧iOSでテストしたい時に検索しても見当たらなかったのでメモ。<br><br>xcodeはVersion 9.3</p>
 <h2 id="tl-dr"><a href="#tl-dr" class="headerlink" title="tl;dr"></a>tl;dr</h2>
-<p>&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3054;&#x3068;&#x306B;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x3066;,</p>
+<p>バージョンごとにシミュレータに名前をつけて,</p>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1861,26 +1842,26 @@ h6.categories {
         <pre><span class="line">1</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">$ react-native run-ios --simulator=&quot;iPhone6s - iOS 10.3&quot;</span><br></pre>
+        <pre><span class="line">$ react-native run-ios --simulator="iPhone6s - iOS 10.3"</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x3063;&#x3066;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x8D77;&#x52D5;&#x3059;&#x308C;&#x3070;&#x826F;&#x3044;&#x3002;</p>
-<h2 id="&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;"><a href="#&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;" class="headerlink" title="&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;"></a>&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;</h2>
-<h3 id="1-&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x7528;&#x306E;OS&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;"><a href="#1-&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x7528;&#x306E;OS&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;" class="headerlink" title="1, &#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x7528;&#x306E;OS&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;"></a>1, &#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x7528;&#x306E;OS&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;</h3>
-<p>Hardware-&gt;Device-&gt;Manage Devices&#x3092;&#x62BC;&#x3057;&#x3066;xcode&#x306E;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x7BA1;&#x7406;&#x753B;&#x9762;&#x3092;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;<br></p>
-<p>&#x30BF;&#x30D6;&#x3067;Simulators&#x306B;&#x5207;&#x308A;&#x66FF;&#x3048;&#x308B;&#x3068;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x6E08;&#x307F;&#x306E;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x304C;&#x5DE6;&#x306B;&#x4E26;&#x3073;&#x307E;&#x3059;&#x3002;<br></p>
-<p>&#x76EE;&#x7684;&#x306E;OS&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306E;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x304C;&#x3059;&#x3067;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070;&#x305D;&#x306E;&#x307E;&#x307E;2&#x3078;&#x3002;<br><br></p>
-<p>&#x307E;&#x3060;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x5DE6;&#x4E0B;&#x306E;&#xFF0B;&#x304B;&#x3089;&#x65B0;&#x898F;Device&#x8FFD;&#x52A0;&#x753B;&#x9762;&#x3092;&#x958B;&#x304D;&#x307E;&#x3059;&#x3002;<br></p>
-<p>Simulator Name&#x3068;Device Type&#x3001;OS Version&#x3068;&#x3042;&#x308B;&#x306E;&#x3067;OS Version&#x306E;&#x30D7;&#x30EB;&#x30C0;&#x30A6;&#x30F3;&#x3092;&#x9078;&#x629E;&#x3057;&#x3001;Download more simulator runtimes&#x2026; &#x3092;&#x9078;&#x629E;<br></p>
-<p>xcode&#x306E;&#x74B0;&#x5883;&#x8A2D;&#x5B9A;&#x306E;Components&#x30BF;&#x30D6;&#x304C;&#x958B;&#x304F;&#x306E;&#x3067;&#x3001;&#x6B32;&#x3057;&#x3044;os version&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;install. root&#x306E;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3068;&#x304B;&#x805E;&#x304B;&#x308C;&#x308B;&#x304B;&#x3082;<br></p>
-<p>&#x7121;&#x4E8B;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x308B;&#x3068;&#x3001;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x7BA1;&#x7406;&#x753B;&#x9762;&#x306E;&#x65B9;&#x3067;&#x5404;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x306E;OS&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x9055;&#x3044;&#x304C;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3002;<br>&#x3071;&#x3063;&#x3068;&#x898B;&#x3001;&#x91CD;&#x8907;&#x3057;&#x3066;&#x898B;&#x3048;&#x308B;.</p>
-<h3 id="2-os-&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6BCE;&#x306B;simulator&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;"><a href="#2-os-&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6BCE;&#x306B;simulator&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;" class="headerlink" title="2, os &#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6BCE;&#x306B;simulator&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;"></a>2, os &#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x6BCE;&#x306B;simulator&#x306B;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x308B;</h3>
-<p>&#x540C;&#x3058;&#x540D;&#x524D;&#x306E;simulator&#x304C;&#x8907;&#x6570;&#x4E26;&#x3093;&#x3067;&#x3044;&#x308B;&#x3068;&#x52DD;&#x624B;&#x306B;&#x9078;&#x3070;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x306E;&#x3067;&#x3001;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x3066;&#x3042;&#x3052;&#x307E;&#x3057;&#x3087;&#x3046;.<br></p>
-<p>&#x5DE6;&#x306B;&#x4E26;&#x3093;&#x3060;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3001;Rename.<br><br>&#x201C;iPhone 6s - iOS10.3&#x201D;&#x306A;&#x3069;&#x3068;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x540D;&#x3067;&#x3082;&#x8FFD;&#x8A18;&#x3057;&#x3066;&#x3042;&#x3052;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<h3 id="3-&#x6307;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;&#x306E;Simulator&#x3067;run-ios"><a href="#3-&#x6307;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;&#x306E;Simulator&#x3067;run-ios" class="headerlink" title="3, &#x6307;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;&#x306E;Simulator&#x3067;run-ios"></a>3, &#x6307;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;&#x306E;Simulator&#x3067;run-ios</h3>
-<p>run-ios&#x306F;<strong>&#x2013;simulator</strong>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x306E;&#x540D;&#x524D;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br></p>
+<p>ってシミュレータを指定して起動すれば良い。</p>
+<h2 id="チュートリアル"><a href="#チュートリアル" class="headerlink" title="チュートリアル"></a>チュートリアル</h2>
+<h3 id="1-シミュレータ用のOSをダウンロード"><a href="#1-シミュレータ用のOSをダウンロード" class="headerlink" title="1, シミュレータ用のOSをダウンロード"></a>1, シミュレータ用のOSをダウンロード</h3>
+<p>Hardware-&gt;Device-&gt;Manage Devicesを押してxcodeのデバイス管理画面を開きます。<br></p>
+<p>タブでSimulatorsに切り替えると、インストール済みのシミュレータが左に並びます。<br></p>
+<p>目的のOSバージョンのシミュレータがすでに表示されていればそのまま2へ。<br><br></p>
+<p>まだインストールされていない場合は左下の＋から新規Device追加画面を開きます。<br></p>
+<p>Simulator NameとDevice Type、OS VersionとあるのでOS Versionのプルダウンを選択し、Download more simulator runtimes… を選択<br></p>
+<p>xcodeの環境設定のComponentsタブが開くので、欲しいos versionを選択してinstall. rootのパスワードとか聞かれるかも<br></p>
+<p>無事、インストールできると、デバイス管理画面の方で各デバイスのOSバージョン違いが登録されているはず。<br>ぱっと見、重複して見える.</p>
+<h3 id="2-os-バージョン毎にsimulatorに名前をつける"><a href="#2-os-バージョン毎にsimulatorに名前をつける" class="headerlink" title="2, os バージョン毎にsimulatorに名前をつける"></a>2, os バージョン毎にsimulatorに名前をつける</h3>
+<p>同じ名前のsimulatorが複数並んでいると勝手に選ばれてしまうので、わかりやすく名前をつけてあげましょう.<br></p>
+<p>左に並んだシミュレータを右クリックし、Rename.<br><br>“iPhone 6s - iOS10.3”などとわかりやすくバージョン名でも追記してあげましょう。</p>
+<h3 id="3-指定した名前のSimulatorでrun-ios"><a href="#3-指定した名前のSimulatorでrun-ios" class="headerlink" title="3, 指定した名前のSimulatorでrun-ios"></a>3, 指定した名前のSimulatorでrun-ios</h3>
+<p>run-iosは<strong>–simulator</strong>オプションでシミュレータの名前を指定できます。<br></p>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1888,12 +1869,12 @@ h6.categories {
         <pre><span class="line">1</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">$ react-native run-ios --simulator=&quot;iPhone6s - iOS 10.3&quot; //&#x4E0A;&#x3067;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;</span><br></pre>
+        <pre><span class="line">$ react-native run-ios --simulator="iPhone6s - iOS 10.3" //上で指定した名前</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x3068;&#x3059;&#x308C;&#x3070;&#x3001;&#x76EE;&#x7684;&#x306E;iOS&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306E;&#x30B7;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x6271;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<p>とすれば、目的のiOSバージョンのシミュレータを扱えます。</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1964,7 +1945,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

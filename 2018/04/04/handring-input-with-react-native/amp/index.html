@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2018/04/04/handring-input-with-react-native/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;p&gt;基礎だけどチュートリアルには書いてなかったりする&lt;/p&gt;">
@@ -24,8 +22,6 @@
 		<meta name="twitter:description" content="&lt;p&gt;基礎だけどチュートリアルには書いてなかったりする&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -59,14 +55,7 @@
 			    "@id":"https://divrots.com/2018/04/04/handring-input-with-react-native/"
 			},
 			"datePublished": "2018-04-04T04:00:03.000Z",
-			"dateModified": "2019-08-29T12:46:47.421Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-08-29T12:46:47.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1810,14 +1799,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1849,10 +1830,10 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>&#x57FA;&#x790E;&#x3060;&#x3051;&#x3069;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x306B;&#x306F;&#x66F8;&#x3044;&#x3066;&#x306A;&#x304B;&#x3063;&#x305F;&#x308A;&#x3059;&#x308B;</p>
+			  		<p>基礎だけどチュートリアルには書いてなかったりする</p>
 <a id="more"></a>
-<h2 id="&#x5927;&#x304D;&#x304F;&#x5206;&#x3051;&#x3066;2&#x7A2E;&#x985E;"><a href="#&#x5927;&#x304D;&#x304F;&#x5206;&#x3051;&#x3066;2&#x7A2E;&#x985E;" class="headerlink" title="&#x5927;&#x304D;&#x304F;&#x5206;&#x3051;&#x3066;2&#x7A2E;&#x985E;"></a>&#x5927;&#x304D;&#x304F;&#x5206;&#x3051;&#x3066;2&#x7A2E;&#x985E;</h2>
-<p><strong> 1, onChangeText&#x3067;state&#x3092;&#x5909;&#x66F4;&#x3057;&#x3066;&#x3001;value&#x306B;&#x3044;&#x308C;&#x308B; </strong><br>
+<h2 id="大きく分けて2種類"><a href="#大きく分けて2種類" class="headerlink" title="大きく分けて2種類"></a>大きく分けて2種類</h2>
+<p><strong> 1, onChangeTextでstateを変更して、valueにいれる </strong><br>
   </p><figure class="highlight plain">
     <table>
       <tbody><tr>
@@ -1878,8 +1859,8 @@ h6.categories {
     </tr>
   </tbody></table>
 </figure>
-<p>&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;&#x304C;&#x3001;&#x30AD;&#x30FC;&#x6253;&#x3064;&#x305F;&#x3073;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x3002;</p>
-<p><strong> 2, defalutValue&#x3060;&#x3051;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3001;submit&#x306E;&#x3068;&#x304D;&#x3060;&#x3051;ref&#x3067;&#x547C;&#x3073;&#x51FA;&#x3059; </strong><br>
+<p>わかりやすいが、キー打つたびコンポーネントを更新する。</p>
+<p><strong> 2, defalutValueだけ設定して、submitのときだけrefで呼び出す </strong><br>
   </p><figure class="highlight plain">
     <table>
       <tbody><tr>
@@ -1887,7 +1868,7 @@ h6.categories {
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
         </td>
         <td class="code">
-          <pre><span class="line">&lt;TextInput ref=&quot;text&quot; defaultValue={this.props.value} /&gt;</span><br><span class="line">_submit(){</span><br><span class="line">  console.log();</span><br><span class="line">}</span><br></pre>
+          <pre><span class="line">&lt;TextInput ref="text" defaultValue={this.props.value} /&gt;</span><br><span class="line">_submit(){</span><br><span class="line">  console.log();</span><br><span class="line">}</span><br></pre>
         </td>
       </tr>
     </tbody></table>
@@ -1900,13 +1881,13 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line"> a = &apos;piyo&apos;</span><br><span class="line"> for(i = 1;i&lt;3;I++){</span><br><span class="line">	 echo hoge;</span><br><span class="line"> }</span><br><span class="line">return hoge;</span><br></pre>
+        <pre><span class="line"> a = 'piyo'</span><br><span class="line"> for(i = 1;i&lt;3;I++){</span><br><span class="line">	 echo hoge;</span><br><span class="line"> }</span><br><span class="line">return hoge;</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x3053;&#x306E;&#x3068;&#x304D;&#x3001;value&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306F;TextInput&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x304C;&#x52DD;&#x624B;&#x306B;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x308B;</p>
-<p>&#x3053;&#x308C;&#x3067;&#x3072;&#x305F;&#x3059;&#x3089;&#x518D;&#x63CF;&#x753B;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x306A;&#x304F;&#x306A;&#x308B;&#x3002;<br>React&#x306A;&#x306E;&#x3067;&#x518D;&#x63CF;&#x753B;&#x3068;&#x8A00;&#x3063;&#x3066;&#x3082;&#x5DEE;&#x5206;&#x306E;&#x307F;&#x3060;&#x304C;&#x3001;render&#x524D;&#x306A;&#x3069;&#x306B;&#x90FD;&#x5EA6;&#x51E6;&#x7406;&#x5165;&#x308C;&#x3066;&#x308B;&#x5834;&#x5408;&#x306F;&#x91CD;&#x304F;&#x306A;&#x308A;&#x3046;&#x308B;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3002;</p>
+<p>このとき、valueプロパティはTextInputコンポーネントが勝手に書き換える</p>
+<p>これでひたすら再描画されることがなくなる。<br>Reactなので再描画と言っても差分のみだが、render前などに都度処理入れてる場合は重くなりうるので注意。</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1971,7 +1952,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

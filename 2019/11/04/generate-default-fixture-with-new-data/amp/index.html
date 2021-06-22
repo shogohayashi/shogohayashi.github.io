@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2019/11/04/generate-default-fixture-with-new-data/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;p&gt;ユニットテスト用のFixtureをいちいち作るのは面倒なのでDBから生成できるようにする。&lt;/p&gt;
@@ -48,8 +46,6 @@
 &lt;p&gt;※注意 サブディレクトリ中のフィクスチャを読み込めるのはCakePHP 2.5.0以降のみなので&lt;br&gt;それ以前の方は諦めるかいい感じにimportしてください。&lt;br&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -95,14 +91,7 @@
 			    "@id":"https://divrots.com/2019/11/04/generate-default-fixture-with-new-data/"
 			},
 			"datePublished": "2019-11-04T10:52:49.000Z",
-			"dateModified": "2019-11-04T12:28:26.354Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-11-04T12:28:26.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1846,14 +1835,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1885,26 +1866,26 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>&#x30E6;&#x30CB;&#x30C3;&#x30C8;&#x30C6;&#x30B9;&#x30C8;&#x7528;&#x306E;Fixture&#x3092;&#x3044;&#x3061;&#x3044;&#x3061;&#x4F5C;&#x308B;&#x306E;&#x306F;&#x9762;&#x5012;&#x306A;&#x306E;&#x3067;DB&#x304B;&#x3089;&#x751F;&#x6210;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</p>
-<h2 id="&#x74B0;&#x5883;"><a href="#&#x74B0;&#x5883;" class="headerlink" title="&#x74B0;&#x5883;"></a>&#x74B0;&#x5883;</h2>
+			  		<p>ユニットテスト用のFixtureをいちいち作るのは面倒なのでDBから生成できるようにする。</p>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2>
 <p>CakePHP2.7.x</p>
-<h2 id="&#x8981;&#x4EF6;"><a href="#&#x8981;&#x4EF6;" class="headerlink" title="&#x8981;&#x4EF6;"></a>&#x8981;&#x4EF6;</h2>
+<h2 id="要件"><a href="#要件" class="headerlink" title="要件"></a>要件</h2>
 <ol>
-  <li>schema&#x306F;&#x81EA;&#x52D5;&#x751F;&#x6210;</li>
-  <li>&#x30C7;&#x30FC;&#x30BF;&#x3082;&#x81EA;&#x52D5;&#x751F;&#x6210;</li>
-  <li>&#x30C7;&#x30FC;&#x30BF;&#x306F;&#x65B0;&#x3057;&#x3044;&#x3082;&#x306E;&#x304B;&#x3089;&#x6700;&#x65B0;100&#x4EF6;</li>
-  <li>&#x751F;&#x6210;&#x3057;&#x305F;Fixture&#x306F;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x914D;&#x7F6E;</li>
-  <li>&#x4EE5;&#x4E0A;&#x3092;1&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x884C;&#x3046;</li>
+  <li>schemaは自動生成</li>
+  <li>データも自動生成</li>
+  <li>データは新しいものから最新100件</li>
+  <li>生成したFixtureはサブディレクトリに配置</li>
+  <li>以上を1コマンドで行う</li>
 </ol>
-<p>&#x4E0A;&#x8A18;&#x3092;&#x9054;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;bake&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x62E1;&#x5F35;&#x3059;&#x308B;&#x3002;</p>
-<p>&#x203B;&#x6CE8;&#x610F; &#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4E2D;&#x306E;&#x30D5;&#x30A3;&#x30AF;&#x30B9;&#x30C1;&#x30E3;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3081;&#x308B;&#x306E;&#x306F;CakePHP 2.5.0&#x4EE5;&#x964D;&#x306E;&#x307F;&#x306A;&#x306E;&#x3067;<br>&#x305D;&#x308C;&#x4EE5;&#x524D;&#x306E;&#x65B9;&#x306F;&#x8AE6;&#x3081;&#x308B;&#x304B;&#x3044;&#x3044;&#x611F;&#x3058;&#x306B;import&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br><a id="more"></a>
+<p>上記を達成するため、bakeコマンドを拡張する。</p>
+<p>※注意 サブディレクトリ中のフィクスチャを読み込めるのはCakePHP 2.5.0以降のみなので<br>それ以前の方は諦めるかいい感じにimportしてください。<br><a id="more"></a>
 </p>
-<h2 id="&#x6E96;&#x5099;"><a href="#&#x6E96;&#x5099;" class="headerlink" title="&#x6E96;&#x5099;"></a>&#x6E96;&#x5099;</h2>
-<p>1, 2, &#x306F;&#x521D;&#x671F;bake&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x53EF;&#x80FD;&#x3002;<br>3&#x306E;&#x65B0;&#x3057;&#x3044;&#x3082;&#x306E;&#x304B;&#x3089;&#x751F;&#x6210;&#x3001;4&#x306E;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3078;&#x306E;&#x914D;&#x7F6E;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;<br>bake&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x62E1;&#x5F35;&#x3059;&#x308B;&#x3002;</p>
-<h3 id="1-app-Lib&#x3078;FixtureTask-php&#x3092;&#x8907;&#x88FD;&#x3001;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3002;"><a href="#1-app-Lib&#x3078;FixtureTask-php&#x3092;&#x8907;&#x88FD;&#x3001;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3002;" class="headerlink" title="1, app/Lib&#x3078;FixtureTask.php&#x3092;&#x8907;&#x88FD;&#x3001;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3002;"></a>1, app/Lib&#x3078;FixtureTask.php&#x3092;&#x8907;&#x88FD;&#x3001;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3002;</h3>
-<p>Fixture&#x306E;bake&#x6642;&#x306E;&#x6319;&#x52D5;&#x306F; <code>lib/Cake/Console/Command/Task/FixtureTask.php</code> &#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;<br>&#x3053;&#x308C;&#x3092; <code>app/Lib/Cake/Console/Command/Task/FixtureTask.php</code> &#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x3066;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x308B;&#x3002;</p>
-<p>&#x203B;lib&#x306E;&#x4E2D;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;app/Lib&#x4EE5;&#x4E0B;&#x306B;&#x540C;&#x30D1;&#x30B9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x304A;&#x3051;&#x3070;override&#x3067;&#x304D;&#x308B;&#x3002;<br>&#x203B;&#x306A;&#x304A;app/Console/Command/Task/FixtureTask.php &#x306B;&#x304A;&#x3044;&#x3066;&#x3082;override&#x3067;&#x304D;&#x308B;&#x3002;Cake&#x306F;&#x8907;&#x6570;&#x306E;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x30D1;&#x30B9;&#x3092;&#x9806;&#x3005;&#x306B;&#x8AAD;&#x3093;&#x3067;&#x5B58;&#x5728;&#x3057;&#x305F;&#x3089;&#x8FD4;&#x3059;&#x3001;&#x3068;&#x3044;&#x3046;&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x3092;&#x3088;&#x304F;&#x3084;&#x308B;&#x3002;</p>
-<h3 id="2-&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x8A2D;&#x5B9A;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;"><a href="#2-&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x8A2D;&#x5B9A;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;" class="headerlink" title="2, &#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x8A2D;&#x5B9A;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;"></a>2, &#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x8A2D;&#x5B9A;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</h3>
+<h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2>
+<p>1, 2, は初期bakeコマンドで可能。<br>3の新しいものから生成、4のサブディレクトリへの配置ができるように<br>bakeコマンドを拡張する。</p>
+<h3 id="1-app-LibへFixtureTask-phpを複製、override用のファイルをコピーする。"><a href="#1-app-LibへFixtureTask-phpを複製、override用のファイルをコピーする。" class="headerlink" title="1, app/LibへFixtureTask.phpを複製、override用のファイルをコピーする。"></a>1, app/LibへFixtureTask.phpを複製、override用のファイルをコピーする。</h3>
+<p>Fixtureのbake時の挙動は <code>lib/Cake/Console/Command/Task/FixtureTask.php</code> で定義されている。<br>これを <code>app/Lib/Cake/Console/Command/Task/FixtureTask.php</code> にコピーしてoverride用のファイルを作る。</p>
+<p>※libの中のファイルはapp/Lib以下に同パスを作っておけばoverrideできる。<br>※なおapp/Console/Command/Task/FixtureTask.php においてもoverrideできる。Cakeは複数の対応するパスを順々に読んで存在したら返す、というルーティングをよくやる。</p>
+<h3 id="2-コピーしたoverride用のファイルを編集し、サブディレクトリ設定を受け取れるようにする。"><a href="#2-コピーしたoverride用のファイルを編集し、サブディレクトリ設定を受け取れるようにする。" class="headerlink" title="2, コピーしたoverride用のファイルを編集し、サブディレクトリ設定を受け取れるようにする。"></a>2, コピーしたoverride用のファイルを編集し、サブディレクトリ設定を受け取れるようにする。</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1912,7 +1893,7 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">// @l95&#x3042;&#x305F;&#x308A;</span><br><span class="line"></span><br><span class="line">))-&gt;addOption(&apos;records&apos;, array(</span><br><span class="line">  &apos;help&apos; =&gt; __d(&apos;cake_console&apos;, &apos;Used with --count and &lt;name&gt;/all commands to pull [n] records from the live tables, &apos; .</span><br><span class="line">    &apos;where [n] is either --count or the default of 10.&apos;),</span><br><span class="line">  &apos;short&apos; =&gt; &apos;r&apos;,</span><br><span class="line">  &apos;boolean&apos; =&gt; true</span><br><span class="line">/*** &#x3053;&#x3053;&#x304B;&#x3089;&#x8FFD;&#x52A0; ***/</span><br><span class="line">))-&gt;addOption(&apos;directory&apos;, array(</span><br><span class="line">  &apos;help&apos; =&gt; __d(&apos;cake_console&apos;, &apos;Set sub-directory in Test/Fixture/ for generated fixtures.&apos;),</span><br><span class="line">  &apos;short&apos; =&gt; &apos;d&apos;,</span><br><span class="line">/*** &#x3053;&#x3053;&#x307E;&#x3067;&#x8FFD;&#x52A0; ***/</span><br><span class="line">))-&gt;epilog(</span><br><span class="line">  __d(&apos;cake_console&apos;, &apos;Omitting all arguments and options will enter into an interactive mode.&apos;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">return $parser;</span><br><span class="line">}</span><br></pre>
+        <pre><span class="line">// @l95あたり</span><br><span class="line"></span><br><span class="line">))-&gt;addOption('records', array(</span><br><span class="line">  'help' =&gt; __d('cake_console', 'Used with --count and &lt;name&gt;/all commands to pull [n] records from the live tables, ' .</span><br><span class="line">    'where [n] is either --count or the default of 10.'),</span><br><span class="line">  'short' =&gt; 'r',</span><br><span class="line">  'boolean' =&gt; true</span><br><span class="line">/*** ここから追加 ***/</span><br><span class="line">))-&gt;addOption('directory', array(</span><br><span class="line">  'help' =&gt; __d('cake_console', 'Set sub-directory in Test/Fixture/ for generated fixtures.'),</span><br><span class="line">  'short' =&gt; 'd',</span><br><span class="line">/*** ここまで追加 ***/</span><br><span class="line">))-&gt;epilog(</span><br><span class="line">  __d('cake_console', 'Omitting all arguments and options will enter into an interactive mode.')</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">return $parser;</span><br><span class="line">}</span><br></pre>
       </td>
     </tr>
   </tbody></table>
@@ -1924,13 +1905,13 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">// l300&#x3042;&#x305F;&#x308A;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Get the path to the fixtures.</span><br><span class="line"> *</span><br><span class="line"> * @return string Path for the fixtures</span><br><span class="line"> */</span><br><span class="line">	public function getPath() {</span><br><span class="line">		$path = $this-&gt;path;</span><br><span class="line">		if (isset($this-&gt;plugin)) {</span><br><span class="line">			$path = $this-&gt;_pluginPath($this-&gt;plugin) . &apos;Test&apos; . DS . &apos;Fixture&apos; . DS;</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		/*** &#x3053;&#x3053;&#x304B;&#x3089;&#x8FFD;&#x52A0; ***/</span><br><span class="line">		if(isset($this-&gt;params[&quot;directory&quot;])){</span><br><span class="line">			$path .=  $this-&gt;params[&quot;directory&quot;]. DS;</span><br><span class="line">		}</span><br><span class="line">    /*** &#x3053;&#x3053;&#x307E;&#x3067;&#x8FFD;&#x52A0; ***/</span><br><span class="line"></span><br><span class="line">		return $path;</span><br><span class="line">	}</span><br></pre>
+        <pre><span class="line">// l300あたり</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * Get the path to the fixtures.</span><br><span class="line"> *</span><br><span class="line"> * @return string Path for the fixtures</span><br><span class="line"> */</span><br><span class="line">	public function getPath() {</span><br><span class="line">		$path = $this-&gt;path;</span><br><span class="line">		if (isset($this-&gt;plugin)) {</span><br><span class="line">			$path = $this-&gt;_pluginPath($this-&gt;plugin) . 'Test' . DS . 'Fixture' . DS;</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		/*** ここから追加 ***/</span><br><span class="line">		if(isset($this-&gt;params["directory"])){</span><br><span class="line">			$path .=  $this-&gt;params["directory"]. DS;</span><br><span class="line">		}</span><br><span class="line">    /*** ここまで追加 ***/</span><br><span class="line"></span><br><span class="line">		return $path;</span><br><span class="line">	}</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x3053;&#x308C;&#x3067;bake&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B; -d [subdirectory-name] &#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x5897;&#x3048;<br>Text/Fixture/[subdirectory-name]/&#x306B;&#x751F;&#x6210;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
-<h3 id="3-&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x65B0;&#x3057;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x9806;&#x306B;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;"><a href="#3-&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x65B0;&#x3057;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x9806;&#x306B;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;" class="headerlink" title="3, &#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x65B0;&#x3057;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x9806;&#x306B;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;"></a>3, &#x30B3;&#x30D4;&#x30FC;&#x3057;&#x305F;override&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x3001;&#x65B0;&#x3057;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x9806;&#x306B;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</h3>
+<p>これでbakeコマンドに -d [subdirectory-name] のオプションが増え<br>Text/Fixture/[subdirectory-name]/に生成できるようになる。</p>
+<h3 id="3-コピーしたoverride用のファイルを編集し、新しいデータから順に取得できるようにする。"><a href="#3-コピーしたoverride用のファイルを編集し、新しいデータから順に取得できるようにする。" class="headerlink" title="3, コピーしたoverride用のファイルを編集し、新しいデータから順に取得できるようにする。"></a>3, コピーしたoverride用のファイルを編集し、新しいデータから順に取得できるようにする。</h3>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1938,13 +1919,13 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">// l425&#x3042;&#x305F;&#x308A;</span><br><span class="line">protected function _getRecordsFromTable($modelName, $useTable = null) {</span><br><span class="line"></span><br><span class="line">		/** 20 lines or so *** /</span><br><span class="line"></span><br><span class="line">		$records = $modelObject-&gt;find(&apos;all&apos;, array(</span><br><span class="line">			&apos;conditions&apos; =&gt; $condition,</span><br><span class="line">			&apos;order&apos;=&gt;&apos;id desc&apos;, // &lt;= &#x3053;&#x308C;&#x3092;&#x8FFD;&#x52A0;</span><br><span class="line">			&apos;limit&apos; =&gt; $recordCount</span><br><span class="line">		));</span><br></pre>
+        <pre><span class="line">// l425あたり</span><br><span class="line">protected function _getRecordsFromTable($modelName, $useTable = null) {</span><br><span class="line"></span><br><span class="line">		/** 20 lines or so *** /</span><br><span class="line"></span><br><span class="line">		$records = $modelObject-&gt;find('all', array(</span><br><span class="line">			'conditions' =&gt; $condition,</span><br><span class="line">			'order'=&gt;'id desc', // &lt;= これを追加</span><br><span class="line">			'limit' =&gt; $recordCount</span><br><span class="line">		));</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>&#x203B;id&#x306E;field&#x304C;&#x306A;&#x3044;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3060;&#x3068;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3051;&#x3069;&#x3001;CakePHP2&#x306E;&#x898F;&#x7D04;&#x306B;&#x6CBF;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x305D;&#x3093;&#x306A;&#x3053;&#x3068;&#x306A;&#x3044;&#x306F;&#x305A;<br>&#x203B;2&#x306E;&#x3088;&#x3046;&#x306B;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x62E1;&#x5F35;&#x3057;&#x3066;&#x3082;&#x826F;&#x3044;</p>
-<h2 id="&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304F;"><a href="#&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304F;" class="headerlink" title="&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304F;"></a>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304F;</h2>
+<p>※idのfieldがないテーブルだと使えないけど、CakePHP2の規約に沿っていればそんなことないはず<br>※2のようにオプション拡張しても良い</p>
+<h2 id="コマンドを叩く"><a href="#コマンドを叩く" class="headerlink" title="コマンドを叩く"></a>コマンドを叩く</h2>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1957,8 +1938,8 @@ h6.categories {
     </tr>
   </tbody></table>
 </figure>
-<p>&#x3053;&#x308C;&#x3067;&#x5168;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x6700;&#x65B0;100&#x4EF6;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x542B;&#x3093;&#x3060;fixture&#x304C;Test/Fixture/base&#x4EE5;&#x4E0B;&#x306B;&#x751F;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<br>&#x5B9F;&#x969B;&#x306F;&#x3053;&#x308C;&#x3092;&#x53E9;&#x304D;&#x306B;&#x3057;&#x3066;&#x500B;&#x3005;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x7528;&#x306E;Fixture&#x3092;&#x4F5C;&#x308B;&#x3079;&#x304D;&#x304B;&#x306A;</p>
-<h2 id="&#x8AAD;&#x307F;&#x3053;&#x3080;"><a href="#&#x8AAD;&#x307F;&#x3053;&#x3080;" class="headerlink" title="&#x8AAD;&#x307F;&#x3053;&#x3080;"></a>&#x8AAD;&#x307F;&#x3053;&#x3080;</h2>
+<p>これで全テーブルの最新100件のデータを含んだfixtureがTest/Fixture/base以下に生成されます。<br>実際はこれを叩きにして個々のテスト用のFixtureを作るべきかな</p>
+<h2 id="読みこむ"><a href="#読みこむ" class="headerlink" title="読みこむ"></a>読みこむ</h2>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1966,71 +1947,71 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">class ArticleTest extends CakeTestCase {</span><br><span class="line">    public $fixtures = array(&apos;app.base/article&apos;, &apos;app.base/comment&apos;);</span><br><span class="line">}</span><br></pre>
+        <pre><span class="line">class ArticleTest extends CakeTestCase {</span><br><span class="line">    public $fixtures = array('app.base/article', 'app.base/comment');</span><br><span class="line">}</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p><code>app.[subdirectory]/[fixture]</code>&#x3068;&#x3059;&#x308B;&#x3002;Test/Fixture&#x76F4;&#x4E0B;&#x306B;&#x304A;&#x3044;&#x305F;&#x5834;&#x5408;app.&#x3092;&#x3064;&#x3051;&#x305A;&#x306B;&#x8AAD;&#x307F;&#x8FBC;&#x3081;&#x305F;&#x5834;&#x5408;&#x3067;&#x3082;<br>&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x7F6E;&#x304F;&#x3068;&#x304D;&#x306F;app&#x304B;&#x3089;&#x59CB;&#x3081;&#x306A;&#x3044;&#x3068;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x306A;&#x3044;&#x3002;(&#x306F;&#x307E;&#x3063;&#x305F;)</p>
-<h2 id="&#x304A;&#x307E;&#x3051;"><a href="#&#x304A;&#x307E;&#x3051;" class="headerlink" title="&#x304A;&#x307E;&#x3051;"></a>&#x304A;&#x307E;&#x3051;</h2>
-<p>bake fixture&#x3067; Fixture&#x3092;&#x751F;&#x6210;&#x3059;&#x308B;&#x306E;&#x306F;&#x3044;&#x3044;&#x3068;&#x3057;&#x3066;&#x4E00;&#x5FDC;bake&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x8AAC;&#x660E;&#x3002;<br>&#x548C;&#x8A33;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;</p>
+<p><code>app.[subdirectory]/[fixture]</code>とする。Test/Fixture直下においた場合app.をつけずに読み込めた場合でも<br>サブディレクトリに置くときはappから始めないと読み込まない。(はまった)</p>
+<h2 id="おまけ"><a href="#おまけ" class="headerlink" title="おまけ"></a>おまけ</h2>
+<p>bake fixtureで Fixtureを生成するのはいいとして一応bakeオプションの説明。<br>和訳しただけです。</p>
 <div class="table-wrapper"><table>
   <thead>
     <tr>
-      <th class="table-align-left">&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</th>
-      <th class="table-align-left">&#x8AAC;&#x660E;</th>
+      <th class="table-align-left">オプション</th>
+      <th class="table-align-left">説明</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="table-align-left">&#x2013;help, -h</td>
-      <td class="table-align-left">&#x30D8;&#x30EB;&#x30D7;&#x306E;&#x8868;&#x793A;</td>
+      <td class="table-align-left">–help, -h</td>
+      <td class="table-align-left">ヘルプの表示</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;verbose, -v</td>
-      <td class="table-align-left">bake&#x4E2D;&#x306B;&#x7D30;&#x304B;&#x304F;&#x51FA;&#x529B;&#x3059;&#x308B;</td>
+      <td class="table-align-left">–verbose, -v</td>
+      <td class="table-align-left">bake中に細かく出力する</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;quiet, -q</td>
-      <td class="table-align-left">bake&#x4E2D;&#x306B;&#x51FA;&#x529B;&#x3057;&#x306A;&#x3044;</td>
+      <td class="table-align-left">–quiet, -q</td>
+      <td class="table-align-left">bake中に出力しない</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;count, -n</td>
-      <td class="table-align-left">DB&#x304B;&#x3089;&#x751F;&#x6210;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306B;Fixture&#x5185;&#x306B;&#x542B;&#x3080;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x6570; (&#x521D;&#x671F;&#x5024;: 1)</td>
+      <td class="table-align-left">–count, -n</td>
+      <td class="table-align-left">DBから生成したデータを使うときにFixture内に含むデータの数 (初期値: 1)</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;connection, -c</td>
-      <td class="table-align-left">bake&#x3067;&#x4F7F;&#x3046;&#x53C2;&#x7167;&#x5143;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;(&#x521D;&#x671F;&#x5024;: default)</td>
+      <td class="table-align-left">–connection, -c</td>
+      <td class="table-align-left">bakeで使う参照元データベース(初期値: default)</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;plugin, -p</td>
-      <td class="table-align-left">Fixture&#x3092;bake&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x3064;&#x304B;&#x3046;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x540D;&#x524D;(&#x30AD;&#x30E3;&#x30E1;&#x30EB;&#x30B1;&#x30FC;&#x30B9;)</td>
+      <td class="table-align-left">–plugin, -p</td>
+      <td class="table-align-left">Fixtureをbakeするときにつかうプラグインの名前(キャメルケース)</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;schema, -s</td>
-      <td class="table-align-left">Fixture&#x306E;&#x4E2D;&#x306B;&#x30B9;&#x30AD;&#x30FC;&#x30DE;&#x3092;&#x30CF;&#x30FC;&#x30C9;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x305B;&#x305A;&#x306B;&#x6BCE;&#x56DE;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3002;</td>
+      <td class="table-align-left">–schema, -s</td>
+      <td class="table-align-left">Fixtureの中にスキーマをハードコーディングせずに毎回テーブルから取得する。</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;theme, -t</td>
-      <td class="table-align-left">&#x30B3;&#x30FC;&#x30C9;&#x3092;bake&#x3059;&#x308B;&#x3068;&#x304D;&#x306E;&#x30C6;&#x30FC;&#x30DE;&#x3002;&#x7D71;&#x4E00;&#x30C6;&#x30FC;&#x30DE;&#x3092;&#x6C7A;&#x3081;&#x3089;&#x308C;&#x308B;&#x3002;</td>
+      <td class="table-align-left">–theme, -t</td>
+      <td class="table-align-left">コードをbakeするときのテーマ。統一テーマを決められる。</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;force, -f</td>
-      <td class="table-align-left">&#x3059;&#x3067;&#x306B;Fixture&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x3042;&#x3063;&#x3066;&#x3082;yes/no&#x3092;&#x8A0A;&#x304B;&#x305A;&#x306B;&#x4E0A;&#x66F8;&#x304D;&#x3059;&#x308B;</td>
+      <td class="table-align-left">–force, -f</td>
+      <td class="table-align-left">すでにFixtureファイルがあってもyes/noを訊かずに上書きする</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;records, -r</td>
-      <td class="table-align-left">&#x2013;count&#x3068;&lt;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x540D;&gt;/all &#x3068;&#x4E00;&#x7DD2;&#x306B;&#x3064;&#x304B;&#x3046;&#x3068;&#x2013;count&#x3067;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x6570;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x751F;&#x304D;&#x3066;&#x3044;&#x308B;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3002;&#x2013;count&#x3067;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x521D;&#x671F;&#x5024;&#x306F;10&#x4EF6;&#x3002;</td>
+      <td class="table-align-left">–records, -r</td>
+      <td class="table-align-left">–countと&lt;テーブル名&gt;/all と一緒につかうと–countで指定した数のレコードを生きているテーブルから取得する。–countで指定しない場合初期値は10件。</td>
     </tr>
     <tr>
-      <td class="table-align-left">&#x2013;directory, -d</td>
-      <td class="table-align-left"><em>&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x3082;&#x306E;</em> &#x751F;&#x6210;&#x3057;&#x305F;Fixture&#x3092;&#x7F6E;&#x304F; Test/Fixture/ &#x4EE5;&#x4E0B;&#x306E;&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x8A2D;&#x5B9A;&#x3059;&#x308B;</td>
+      <td class="table-align-left">–directory, -d</td>
+      <td class="table-align-left"><em>追加したもの</em> 生成したFixtureを置く Test/Fixture/ 以下のサブディレクトリを設定する</td>
     </tr>
   </tbody>
 </table></div>
-<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2>
-<p>CakePHP 2.x Cookbook - &#x30C6;&#x30B9;&#x30C8;<br><a href="https://book.cakephp.org/2/ja/development/testing.html" target="_blank" rel="noopener">https://book.cakephp.org/2/ja/development/testing.html</a></p>
-<p>Qiita - CakePHP2&#x3067;Bake&#x3067;Fixture&#x3092;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x5206;&#x3051;&#x3059;&#x308B;&#x65B9;&#x6CD5;<br><a href="https://qiita.com/yyanbow/items/f8aa8dbc4240e3180cb5" target="_blank" rel="noopener">https://qiita.com/yyanbow/items/f8aa8dbc4240e3180cb5</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
+<p>CakePHP 2.x Cookbook - テスト<br><a href="https://book.cakephp.org/2/ja/development/testing.html" target="_blank" rel="noopener">https://book.cakephp.org/2/ja/development/testing.html</a></p>
+<p>Qiita - CakePHP2でBakeでFixtureをディレクトリ分けする方法<br><a href="https://qiita.com/yyanbow/items/f8aa8dbc4240e3180cb5" target="_blank" rel="noopener">https://qiita.com/yyanbow/items/f8aa8dbc4240e3180cb5</a></p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -2107,7 +2088,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

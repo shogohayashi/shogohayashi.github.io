@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;p&gt;hasOneをbindModelで繋いでsaveAssociateするとき、&lt;br&gt;bindModelの第二引数にfalseを設定して永続化しないと途中でbindが切れる。&lt;/p&gt;">
@@ -24,8 +22,6 @@
 		<meta name="twitter:description" content="&lt;p&gt;hasOneをbindModelで繋いでsaveAssociateするとき、&lt;br&gt;bindModelの第二引数にfalseを設定して永続化しないと途中でbindが切れる。&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -59,14 +55,7 @@
 			    "@id":"https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/"
 			},
 			"datePublished": "2019-08-25T23:17:16.000Z",
-			"dateModified": "2019-10-26T09:15:56.956Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-10-26T09:15:56.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1810,14 +1799,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1849,22 +1830,22 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>hasOne&#x3092;bindModel&#x3067;&#x7E4B;&#x3044;&#x3067;saveAssociate&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;<br>bindModel&#x306E;&#x7B2C;&#x4E8C;&#x5F15;&#x6570;&#x306B;false&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x6C38;&#x7D9A;&#x5316;&#x3057;&#x306A;&#x3044;&#x3068;&#x9014;&#x4E2D;&#x3067;bind&#x304C;&#x5207;&#x308C;&#x308B;&#x3002;</p>
+			  		<p>hasOneをbindModelで繋いでsaveAssociateするとき、<br>bindModelの第二引数にfalseを設定して永続化しないと途中でbindが切れる。</p>
 <a id="more"></a>
-<h2 id="&#x539F;&#x56E0;"><a href="#&#x539F;&#x56E0;" class="headerlink" title="&#x539F;&#x56E0;"></a>&#x539F;&#x56E0;</h2>
-<p>&#x7E4B;&#x304C;&#x3063;&#x3066;&#x3044;&#x308B;&#x5404;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x5BFE;&#x3057;UPDATE&#x305D;&#x306E;&#x4ED6;&#x8AF8;&#x3005;&#x304C;&#x8D70;&#x308B;&#x305F;&#x3081;&#x3002;<br>&#x4E00;&#x3064;&#x306E;$this-&gt;Model-&gt;saveAssociate()&#x3067;&#x3082;&#x5B9F;&#x969B;&#x306E;&#x30AF;&#x30A8;&#x30EA;&#x306B;&#x5BFE;&#x3057;&#x3066;bindModel&#x306E;&#x30D5;&#x30A9;&#x30FC;&#x30AB;&#x30B9;&#x306F;&#x6C7A;&#x307E;&#x308B;&#x3063;&#x307D;&#x3044;</p>
-<h2 id="hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;"><a href="#hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;" class="headerlink" title="hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;"></a>hasOne&#x306E;&#x30A2;&#x30BD;&#x30B7;&#x30A8;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;&#x3068;&#x304D;&#x5B9F;&#x969B;&#x306B;&#x8D70;&#x308B;&#x30AF;&#x30A8;&#x30EA;</h2>
-<h4 id="AuthorTable-gt-hasOne-gt-AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;"><a href="#AuthorTable-gt-hasOne-gt-AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;" class="headerlink" title="AuthorTable -&gt;hasOne-&gt; AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;"></a>AuthorTable -&gt;hasOne-&gt; AccountTable&#x306E;&#x6642;&#x306E;&#x4F8B;</h4>
-<p>7&#x3064;&#x3082;&#x30AF;&#x30A8;&#x30EA;&#x304C;&#x8D70;&#x3063;&#x3066;&#x3044;&#x308B;</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2>
+<p>繋がっている各テーブルに対しUPDATEその他諸々が走るため。<br>一つの$this-&gt;Model-&gt;saveAssociate()でも実際のクエリに対してbindModelのフォーカスは決まるっぽい</p>
+<h2 id="hasOneのアソシエーションを保存するとき実際に走るクエリ"><a href="#hasOneのアソシエーションを保存するとき実際に走るクエリ" class="headerlink" title="hasOneのアソシエーションを保存するとき実際に走るクエリ"></a>hasOneのアソシエーションを保存するとき実際に走るクエリ</h2>
+<h4 id="AuthorTable-gt-hasOne-gt-AccountTableの時の例"><a href="#AuthorTable-gt-hasOne-gt-AccountTableの時の例" class="headerlink" title="AuthorTable ->hasOne-> AccountTableの時の例"></a>AuthorTable -&gt;hasOne-&gt; AccountTableの時の例</h4>
+<p>7つもクエリが走っている</p>
 <ol start="0">
-  <li>&#x30C8;&#x30E9;&#x30F3;&#x30B6;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x958B;&#x59CB;</li>
-  <li>AuthorTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(validate&#x7528;) </li>
-  <li>AuthorTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(save&#x7528;)</li>
-  <li>AuthorTable&#x306E;&#x66F4;&#x65B0;</li>
-  <li>AccountTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(validate&#x7528;)</li>
-  <li>AccountTable&#x306E;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;(save&#x7528;)</li>
-  <li>AccountTable&#x306E;&#x306E;&#x66F4;&#x65B0;</li>
-  <li>&#x30C8;&#x30E9;&#x30F3;&#x30B6;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x30B3;&#x30DF;&#x30C3;&#x30C8;</li>
+  <li>トランザクション開始</li>
+  <li>AuthorTableの存在チェック(validate用) </li>
+  <li>AuthorTableの存在チェック(save用)</li>
+  <li>AuthorTableの更新</li>
+  <li>AccountTableの存在チェック(validate用)</li>
+  <li>AccountTableの存在チェック(save用)</li>
+  <li>AccountTableのの更新</li>
+  <li>トランザクションコミット</li>
 </ol>
 <figure class="highlight plain">
   <table>
@@ -1873,14 +1854,14 @@ h6.categories {
         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre>
       </td>
       <td class="code">
-        <pre><span class="line">[0] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; BEGIN</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[1] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[2] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[3] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`author` SET `id` = 1, `login_id` = &apos;hoge&apos;, `name` = &apos;John &apos;, `tel` = &apos;000-0000-0000&apos;, `created` = &apos;2016-01-28 22:23:33&apos;, `modified` = &apos;2019-07-09 19:09:08&apos;, WHERE `database`.`author`.`id` = &apos;1&apos;</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 7</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[4] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[5] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[6] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`accounts` SET `auther_id` = 1, `id` = 1, `modified` = &apos;2019-07-09 19:49:27&apos;  WHERE `database`.`accounts`.`id` = &apos;1&apos;</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[7] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; COMMIT</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">)</span><br></pre>
+        <pre><span class="line">[0] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; BEGIN</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[1] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[2] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`author` AS `Author`   WHERE `Author`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[3] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`author` SET `id` = 1, `login_id` = 'hoge', `name` = 'John ', `tel` = '000-0000-0000', `created` = '2016-01-28 22:23:33', `modified` = '2019-07-09 19:09:08', WHERE `database`.`author`.`id` = '1'</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 7</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[4] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[5] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; SELECT COUNT(*) AS `count` FROM `database`.`accounts` AS `Account`   WHERE `Account`.`id` = 1</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[6] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; UPDATE `database`.`accounts` SET `auther_id` = 1, `id` = 1, `modified` = '2019-07-09 19:49:27'  WHERE `database`.`accounts`.`id` = '1'</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">[7] =&gt; Array</span><br><span class="line">    (</span><br><span class="line">        [query] =&gt; COMMIT</span><br><span class="line">        [params] =&gt; Array</span><br><span class="line">            (</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        [affected] =&gt; 1</span><br><span class="line">        [numRows] =&gt; 1</span><br><span class="line">        [took] =&gt; 0</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">)</span><br></pre>
       </td>
     </tr>
   </tbody></table>
 </figure>
-<p>cake&#x306E;&#x4ED5;&#x69D8;&#x3060;&#x304C;&#x3001;validate&#x3068;save&#x3067;&#x4E8C;&#x56DE;&#x3082;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308B;&#x3060;&#x308D;&#x3046;&#x304B;&#x3002;&#x3044;&#x3084;&#x3001;&#x306A;&#x3044;&#x3002;</p>
-<h3 id="&#x88DC;&#x8DB3;-&#x8907;&#x6570;&#x306E;SELECT-COUNT-&#x306B;&#x3064;&#x3044;&#x3066;"><a href="#&#x88DC;&#x8DB3;-&#x8907;&#x6570;&#x306E;SELECT-COUNT-&#x306B;&#x3064;&#x3044;&#x3066;" class="headerlink" title="&#x88DC;&#x8DB3; &#x8907;&#x6570;&#x306E;SELECT COUNT(*)&#x306B;&#x3064;&#x3044;&#x3066;"></a>&#x88DC;&#x8DB3; &#x8907;&#x6570;&#x306E;SELECT COUNT(*)&#x306B;&#x3064;&#x3044;&#x3066;</h3>
-<p>cakephp2&#x3067;&#x306F;save&#x3067;&#x3082;validate&#x3067;&#x3082;&#x3001;hasAny&#x306E;&#x6642;&#x3067;&#x3055;&#x3048;&#x3082;&#x5B58;&#x5728;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3068;&#x3057;&#x3066;SELECT COUNT(<em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>$Model-&gt;find()&#x306E;&#x6642;&#x3067;&#x3059;&#x3089;&#x4EF6;&#x6570;&#x53D6;&#x5F97;&#x3068;&#x3057;&#x3066;SELECT COUNT(</em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>&#x3059;&#x3067;&#x306B;validates&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;SELECT COUNT(<em>)&#x3057;&#x3066;&#x3044;&#x3088;&#x3046;&#x304C;&#x3001;save&#x306E;&#x6642;&#x306B;&#x307E;&#x305F;SELECT COUNT(</em>)&#x3092;&#x4F7F;&#x3046;&#x3002;<br>&#x8A73;&#x3057;&#x304F;&#x306F;<code>Vendor/cakephp/cakephp/lib/Cake/Model.php</code>&#x3084;<code>Vendor/cakephp/cakephp/lib/Cake/ModelBehavior.php</code>&#x306B;&#x3002;</p>
+<p>cakeの仕様だが、validateとsaveで二回も存在チェックする必要はあるだろうか。いや、ない。</p>
+<h3 id="補足-複数のSELECT-COUNT-について"><a href="#補足-複数のSELECT-COUNT-について" class="headerlink" title="補足 複数のSELECT COUNT(*)について"></a>補足 複数のSELECT COUNT(*)について</h3>
+<p>cakephp2ではsaveでもvalidateでも、hasAnyの時でさえも存在チェックとしてSELECT COUNT(<em>)を使う。<br>$Model-&gt;find()の時ですら件数取得としてSELECT COUNT(</em>)を使う。<br>すでにvalidatesメソッドでSELECT COUNT(<em>)していようが、saveの時にまたSELECT COUNT(</em>)を使う。<br>詳しくは<code>Vendor/cakephp/cakephp/lib/Cake/Model.php</code>や<code>Vendor/cakephp/cakephp/lib/Cake/ModelBehavior.php</code>に。</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1945,7 +1926,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

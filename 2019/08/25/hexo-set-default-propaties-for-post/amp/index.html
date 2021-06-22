@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;h2 id=&#34;tl-dr&#34;&gt;&lt;a href=&#34;#tl-dr&#34; class=&#34;headerlink&#34; title=&#34;tl;dr&#34;&gt;&lt;/a&gt;tl;dr&lt;/h2&gt;
@@ -26,8 +24,6 @@
 &lt;p&gt;&lt;code&gt;scaffolds/post.md&lt;/code&gt;をいじる&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -62,14 +58,7 @@
 			    "@id":"https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/"
 			},
 			"datePublished": "2019-08-25T12:08:31.000Z",
-			"dateModified": "2019-08-29T12:49:06.891Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-08-29T12:49:06.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1813,14 +1802,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1853,10 +1834,10 @@ h6.categories {
                     
 			    	<!-- content -->
 			  		<h2 id="tl-dr"><a href="#tl-dr" class="headerlink" title="tl;dr"></a>tl;dr</h2>
-<p><code>scaffolds/post.md</code>&#x3092;&#x3044;&#x3058;&#x308B;</p>
+<p><code>scaffolds/post.md</code>をいじる</p>
 <a id="more"></a>
-<h2 id="hexo-new-&#x306E;&#x6319;&#x52D5;"><a href="#hexo-new-&#x306E;&#x6319;&#x52D5;" class="headerlink" title="hexo new &#x306E;&#x6319;&#x52D5;"></a>hexo new &#x306E;&#x6319;&#x52D5;</h2>
-<p><code>hexo new [title]</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x6253;&#x3064;&#x3068;&#x3001;&#x521D;&#x671F;&#x8A2D;&#x5B9A;&#x306E;&#x307E;&#x307E;&#x3060;&#x3068;<code>source/_posts/[title].md</code>&#x306B;<br>
+<h2 id="hexo-new-の挙動"><a href="#hexo-new-の挙動" class="headerlink" title="hexo new の挙動"></a>hexo new の挙動</h2>
+<p><code>hexo new [title]</code>コマンドを打つと、初期設定のままだと<code>source/_posts/[title].md</code>に<br>
   </p><figure class="highlight plain">
     <table>
       <tbody><tr>
@@ -1864,14 +1845,14 @@ h6.categories {
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
         </td>
         <td class="code">
-          <pre><span class="line">---</span><br><span class="line">title: [title]</span><br><span class="line">date:  &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x6253;&#x3063;&#x305F;&#x65E5;&#x4ED8;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre>
+          <pre><span class="line">---</span><br><span class="line">title: [title]</span><br><span class="line">date:  コマンド打った日付</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre>
         </td>
       </tr>
     </tbody></table>
   </figure>
 
-<p>&#x304C;&#x66F8;&#x304B;&#x308C;&#x305F;&#x30DE;&#x30FC;&#x30AF;&#x30C0;&#x30A6;&#x30F3;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x3002;</p>
-<p>&#x3053;&#x308C;&#x306F;&#x3001;scaffold/post.md&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5143;&#x306B;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;<br>
+<p>が書かれたマークダウンのファイルが生成される。</p>
+<p>これは、scaffold/post.mdのファイルを元に読み込まれている<br>
   </p><figure class="highlight plain">
     <table>
       <tbody><tr>
@@ -1885,7 +1866,7 @@ h6.categories {
     </tbody></table>
   </figure>
 
-<p>&#x5FC5;&#x305A;cateogries&#x3092;&#x4F7F;&#x3063;&#x305F;&#x308A;&#x6BCE;&#x56DE;&#x540C;&#x3058;&#x30BF;&#x30B0;&#x5165;&#x308C;&#x308B;&#x3088;&#x3046;&#x306A;&#x5834;&#x5408;&#x306F;&#x3001;<code>hexo new</code>&#x3057;&#x305F;&#x6642;&#x70B9;&#x3067;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x8868;&#x793A;&#x3067;&#x5165;&#x529B;&#x3055;&#x308C;&#x3066;&#x3066;&#x307B;&#x3057;&#x3044;&#x306E;&#x3067;&#x3001;&#x3053;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;</p>
+<p>必ずcateogriesを使ったり毎回同じタグ入れるような場合は、<code>hexo new</code>した時点でデフォルトの表示で入力されててほしいので、このファイルを</p>
 <figure class="highlight plain">
   <table>
     <tbody><tr>
@@ -1898,8 +1879,8 @@ h6.categories {
     </tr>
   </tbody></table>
 </figure>
-<p>&#x307F;&#x305F;&#x3044;&#x306A;&#x611F;&#x3058;&#x306B;&#x3059;&#x308B;&#x3068;&#x5E78;&#x305B;&#x306B;&#x306A;&#x308C;&#x308B;&#x3002;</p>
-<p>&#x8907;&#x6570;&#x4EBA;&#x3067;&#x904B;&#x7528;&#x3057;&#x3066;&#x3066;&#x81EA;&#x5206;&#x306E;&#x540D;&#x524D;&#x3092;&#x6BCE;&#x56DE;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x304D;&#x3068;&#x304B;&#x3001;&#x4ECA;&#x65E5;&#x306F;tech&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x306E;&#x8A18;&#x4E8B;10&#x672C;&#x63CF;&#x304F;&#x305E;&#x30FC;&#x307F;&#x305F;&#x3044;&#x306A;&#x3068;&#x304D;&#x306B;&#x4FBF;&#x5229;</p>
+<p>みたいな感じにすると幸せになれる。</p>
+<p>複数人で運用してて自分の名前を毎回設定するときとか、今日はtechカテゴリの記事10本描くぞーみたいなときに便利</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1964,7 +1945,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

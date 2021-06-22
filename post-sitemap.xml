@@ -8,80 +8,8 @@
     </url>
 
     <url>
-        <loc>https://divrots.com/2019/11/04/generate-default-fixture-with-new-data/</loc>
-        <lastmod>2019-11-04T12:28:26.354Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/10/26/css-js-animation-bounds/</loc>
-        <lastmod>2019-10-26T11:44:32.730Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/</loc>
-        <lastmod>2019-10-26T09:16:32.446Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
-        <lastmod>2019-10-26T09:15:56.956Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
-        <lastmod>2019-08-29T12:49:06.891Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/</loc>
-        <lastmod>2019-08-29T12:47:57.481Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
-        <lastmod>2019-08-29T12:47:37.357Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/</loc>
-        <lastmod>2019-08-29T12:47:36.253Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/</loc>
-        <lastmod>2019-08-29T12:47:33.384Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://divrots.com/2018/04/04/handring-input-with-react-native/</loc>
-        <lastmod>2019-08-29T12:46:47.421Z</lastmod>
+        <loc>https://divrots.com/2021/06/22/use-different-model-from-voyage-default/</loc>
+        <lastmod>2021-06-22T12:41:29.197Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -89,7 +17,87 @@
 
     <url>
         <loc>https://divrots.com/2019/08/29/git-log-statistics/</loc>
-        <lastmod>2019-08-29T12:46:01.338Z</lastmod>
+        <lastmod>2021-06-22T06:50:28.278Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/11/04/generate-default-fixture-with-new-data/</loc>
+        <lastmod>2019-11-04T12:28:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/10/26/css-js-animation-bounds/</loc>
+        <lastmod>2019-10-26T11:44:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/08/25/react-native-reffer-to-flatlist/</loc>
+        <lastmod>2019-10-26T09:16:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/26/cakephp2-bindmodel-and-save/</loc>
+        <lastmod>2019-10-26T09:15:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/</loc>
+        <lastmod>2019-08-29T12:49:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/</loc>
+        <lastmod>2019-08-29T12:47:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/</loc>
+        <lastmod>2019-08-29T12:47:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/04/26/quit-iphone-simulator-selectively/</loc>
+        <lastmod>2019-08-29T12:47:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/04/29/react-native-run-ios-on-certain-version/</loc>
+        <lastmod>2019-08-29T12:47:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://divrots.com/2018/04/04/handring-input-with-react-native/</loc>
+        <lastmod>2019-08-29T12:46:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,7 +105,7 @@
 
     <url>
         <loc>https://divrots.com/2018/04/25/realm-error-accessing-object/</loc>
-        <lastmod>2019-08-24T12:28:20.808Z</lastmod>
+        <lastmod>2019-08-24T12:28:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

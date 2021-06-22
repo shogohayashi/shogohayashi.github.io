@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2019/10/26/css-js-animation-bounds/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;p&gt;押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。&lt;/p&gt;">
@@ -24,8 +22,6 @@
 		<meta name="twitter:description" content="&lt;p&gt;押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -59,14 +55,7 @@
 			    "@id":"https://divrots.com/2019/10/26/css-js-animation-bounds/"
 			},
 			"datePublished": "2019-10-26T09:20:08.000Z",
-			"dateModified": "2019-10-26T11:44:32.730Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-10-26T11:44:32.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1810,14 +1799,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1849,45 +1830,45 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<p>&#x62BC;&#x3059;&#x3068;&#x6F70;&#x308C;&#x3066;&#x3001;&#x8A71;&#x3059;&#x3068;&#x81EA;&#x7136;&#x306B;&#x3077;&#x306B;&#x3077;&#x306B;&#x5F3E;&#x307F;&#x306A;&#x304C;&#x3089;&#x623B;&#x308B;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;css&#x306E;transition&#x3068;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x5B9F;&#x88C5;&#x3002;jQuery&#x306F;css&#x7740;&#x8131;&#x306E;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30CF;&#x30F3;&#x30C9;&#x30E9;&#x3068;&#x3057;&#x3066;&#x306E;&#x307F;&#x4F7F;&#x7528;&#x3002;</p>
+			  		<p>押すと潰れて、話すと自然にぷにぷに弾みながら戻るアニメーションをcssのtransitionとアニメーションで実装。jQueryはcss着脱のイベントハンドラとしてのみ使用。</p>
 <a id="more"></a>
-<h2 id="&#x7D50;&#x8AD6;"><a href="#&#x7D50;&#x8AD6;" class="headerlink" title="&#x7D50;&#x8AD6;"></a>&#x7D50;&#x8AD6;</h2>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2>
 
 <p class="codepen" data-height="265" data-theme-id="0" data-default-tab="css,result" data-user="4est001" data-slug-hash="MWWopgz" data-pen-title="css-puni-animation"><br> <span>See the Pen <a href="https://codepen.io/4est001/pen/MWWopgz" target="_blank" rel="noopener"><br> css-puni-animation</a> by 4est (<a href="https://codepen.io/4est001" target="_blank" rel="noopener">@4est001</a>)<br> on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</span><br></p>
 
 
 
 
-<h2 id="&#x89E3;&#x8AAC;"><a href="#&#x89E3;&#x8AAC;" class="headerlink" title="&#x89E3;&#x8AAC;"></a>&#x89E3;&#x8AAC;</h2>
-<h3 id="&#x5168;&#x4F53;&#x306E;&#x6319;&#x52D5;"><a href="#&#x5168;&#x4F53;&#x306E;&#x6319;&#x52D5;" class="headerlink" title="&#x5168;&#x4F53;&#x306E;&#x6319;&#x52D5;"></a>&#x5168;&#x4F53;&#x306E;&#x6319;&#x52D5;</h3>
+<h2 id="解説"><a href="#解説" class="headerlink" title="解説"></a>解説</h2>
+<h3 id="全体の挙動"><a href="#全体の挙動" class="headerlink" title="全体の挙動"></a>全体の挙動</h3>
 <ul>
-  <li>&#x5BFE;&#x8C61;&#x3092;&#x62BC;&#x4E0B;&#x3067;.push-puni&#x3092;&#x3064;&#x3051;&#x3066;&#x3058;&#x308F;&#x3058;&#x308F;&#x6C88;&#x3080;&#x3088;&#x3046;&#x306B;</li>
-  <li>&#x96E2;&#x3059;&#x3068;.push-puni&#x3092;&#x5916;&#x3057;.start-puni&#x3092;&#x3064;&#x3051;&#x3066;&#x5F3E;&#x3080;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;</li>
-  <li>.start-puni&#x306E;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x7D42;&#x308F;&#x308B;&#x3068;.start-puni&#x3082;&#x5916;&#x3059;</li>
+  <li>対象を押下で.push-puniをつけてじわじわ沈むように</li>
+  <li>離すと.push-puniを外し.start-puniをつけて弾むアニメーション</li>
+  <li>.start-puniのアニメーションが終わると.start-puniも外す</li>
 </ul>
-<h3 id="jQuery&#x306B;&#x3064;&#x3044;&#x3066;"><a href="#jQuery&#x306B;&#x3064;&#x3044;&#x3066;" class="headerlink" title="jQuery&#x306B;&#x3064;&#x3044;&#x3066;"></a>jQuery&#x306B;&#x3064;&#x3044;&#x3066;</h3>
-<p>&#x9577;&#x62BC;&#x3057;&#x3067;&#x6F70;&#x308C;&#x3001;&#x96E2;&#x3059;&#x3068;&#x5F3E;&#x3080;&#x3002;<br>&#x6F70;&#x308C;&#x3066;&#x3044;&#x308B;&#x6700;&#x4E2D;&#x306B;&#x30DE;&#x30A6;&#x30B9;&#x30DD;&#x30A4;&#x30F3;&#x30BF;&#x304C;&#x5916;&#x308C;&#x3066;&#x3082;&#x5F3E;&#x3080;&#x3002;<br>&#x9023;&#x6253;&#x3067;&#x30D7;&#x30CB;&#x30D7;&#x30CB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x62BC;&#x3057;&#x3066;&#x3059;&#x3050;&#x96E2;&#x3059;&#x3068;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x4E2D;&#x65AD;=&gt;&#x518D;&#x958B;&#x3067;&#x3077;&#x3088;&#x3077;&#x3088;&#x3059;&#x308B;&#x3002;</p>
-<h3 id="css&#x306B;&#x3064;&#x3044;&#x3066;"><a href="#css&#x306B;&#x3064;&#x3044;&#x3066;" class="headerlink" title="css&#x306B;&#x3064;&#x3044;&#x3066;"></a>css&#x306B;&#x3064;&#x3044;&#x3066;</h3>
+<h3 id="jQueryについて"><a href="#jQueryについて" class="headerlink" title="jQueryについて"></a>jQueryについて</h3>
+<p>長押しで潰れ、離すと弾む。<br>潰れている最中にマウスポインタが外れても弾む。<br>連打でプニプニするために、押してすぐ離すとアニメーション中断=&gt;再開でぷよぷよする。</p>
+<h3 id="cssについて"><a href="#cssについて" class="headerlink" title="cssについて"></a>cssについて</h3>
 <h4 id="1-wrapper"><a href="#1-wrapper" class="headerlink" title="1, wrapper"></a>1, wrapper</h4>
-<p>&#x771F;&#x3093;&#x4E2D;&#x306B;&#x6301;&#x3063;&#x3066;&#x304F;&#x308B;&#x305F;&#x3081;&#x306B;flex&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x3060;&#x3051;</p>
-<h4 id="2-animation&#x3068;transiton"><a href="#2-animation&#x3068;transiton" class="headerlink" title="2, animation&#x3068;transiton"></a>2, animation&#x3068;transiton</h4>
-<p>animation&#x8981;&#x7D20;&#x306B;&#x3088;&#x308B;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;transition&#x8981;&#x7D20;&#x306B;&#x3088;&#x308B;&#x30A2;&#x30CB;&#x30E1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x72EC;&#x7ACB;&#x3057;&#x3066;&#x3044;&#x308B;&#x3063;&#x307D;&#x3044;<br>&#x3042;&#x304F;&#x307E;&#x3067;animation&#x306F;&#x5B9F;&#x884C;&#x4E2D;&#x306E;&#x307F;&#x306E;&#x72B6;&#x614B;&#x9077;&#x79FB;&#x3067;&#x3042;&#x308A;&#x3001;transition&#x3067;&#x306E;&#x52D5;&#x304D;&#x306F;animation&#x304C;&#x9014;&#x7D76;&#x3048;&#x308B;&#x3068;&#x63CF;&#x753B;&#x3055;&#x308C;&#x308B;&#x3002;</p>
-<h4 id="3-start-puni&#x306B;transition-0s&#x3082;&#x8CBC;&#x3063;&#x3066;&#x3044;&#x308B;&#x7406;&#x7531;"><a href="#3-start-puni&#x306B;transition-0s&#x3082;&#x8CBC;&#x3063;&#x3066;&#x3044;&#x308B;&#x7406;&#x7531;" class="headerlink" title="3, .start-puni&#x306B;transition:0s&#x3082;&#x8CBC;&#x3063;&#x3066;&#x3044;&#x308B;&#x7406;&#x7531;"></a>3, .start-puni&#x306B;transition:0s&#x3082;&#x8CBC;&#x3063;&#x3066;&#x3044;&#x308B;&#x7406;&#x7531;</h4>
+<p>真ん中に持ってくるためにflexを使っているだけ</p>
+<h4 id="2-animationとtransiton"><a href="#2-animationとtransiton" class="headerlink" title="2, animationとtransiton"></a>2, animationとtransiton</h4>
+<p>animation要素によるアニメーションとtransition要素によるアニメーションは独立しているっぽい<br>あくまでanimationは実行中のみの状態遷移であり、transitionでの動きはanimationが途絶えると描画される。</p>
+<h4 id="3-start-puniにtransition-0sも貼っている理由"><a href="#3-start-puniにtransition-0sも貼っている理由" class="headerlink" title="3, .start-puniにtransition:0sも貼っている理由"></a>3, .start-puniにtransition:0sも貼っている理由</h4>
 <ul>
-  <li>&#x5BFE;&#x8C61;&#x3092;&#x62BC;&#x4E0B;&#x3057;.push-puni&#x304C;&#x3064;&#x3044;&#x305F;&#x72B6;&#x614B;&#x3067;&#x5BFE;&#x8C61;&#x306E;&#x72B6;&#x614B;&#x306F;transform: scale(1.2,.8) translateY(20%);&#x306E;&#x6F70;&#x308C;&#x305F;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308B;&#x3002;</li>
-  <li>&#x5148;&#x8FF0;&#x306E;&#x901A;&#x308A;&#x3001;&#x6F70;&#x308C;&#x305F;&#x72B6;&#x614B;&#x306F;css&#x3092;&#x5265;&#x304C;&#x3057;&#x3066;.start-puni&#x306E;animation&#x306E;&#x63CF;&#x753B;&#x3092;&#x7D4C;&#x3066;&#x3082;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;animation&#x7D42;&#x4E86;&#x5F8C;&#x306B;&#x6F70;&#x308C;=&gt;&#x5143;&#x306E;&#x5F62;&#x306B;&#x623B;&#x308B;&#x6319;&#x52D5;&#x3092;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x3002;</li>
-  <li>&#x305D;&#x306E;&#x904E;&#x7A0B;&#x3092;&#x63CF;&#x753B;&#x3055;&#x305B;&#x306A;&#x3044;&#x305F;&#x3081;&#x306B;0&#x79D2;&#x3067;&#x72B6;&#x614B;&#x3092;&#x9077;&#x79FB;&#x3055;&#x305B;&#x3066;&#x3044;&#x308B;</li>
+  <li>対象を押下し.push-puniがついた状態で対象の状態はtransform: scale(1.2,.8) translateY(20%);の潰れた状態になる。</li>
+  <li>先述の通り、潰れた状態はcssを剥がして.start-puniのanimationの描画を経ても保存されており、animation終了後に潰れ=&gt;元の形に戻る挙動をしてしまう。</li>
+  <li>その過程を描画させないために0秒で状態を遷移させている</li>
 </ul>
-<h4 id="4-&#x307E;&#x3093;&#x3058;&#x3085;&#x3046;&#x3063;&#x307D;&#x3044;&#x5F62;&#x306E;&#x4F5C;&#x308A;&#x65B9;"><a href="#4-&#x307E;&#x3093;&#x3058;&#x3085;&#x3046;&#x3063;&#x307D;&#x3044;&#x5F62;&#x306E;&#x4F5C;&#x308A;&#x65B9;" class="headerlink" title="4, &#x307E;&#x3093;&#x3058;&#x3085;&#x3046;&#x3063;&#x307D;&#x3044;&#x5F62;&#x306E;&#x4F5C;&#x308A;&#x65B9;"></a>4, &#x307E;&#x3093;&#x3058;&#x3085;&#x3046;&#x3063;&#x307D;&#x3044;&#x5F62;&#x306E;&#x4F5C;&#x308A;&#x65B9;</h4>
-<p>border-radius&#x306F;&#x5DE6;&#x4E0A;,&#x53F3;&#x4E0A;.&#x53F3;&#x4E0B;,&#x5DE6;&#x4E0B;&#x306E;x&#x8EF8;&#x534A;&#x5F84; / &#x5DE6;&#x4E0A;,&#x53F3;&#x4E0A;.&#x53F3;&#x4E0B;,&#x5DE6;&#x4E0B;&#x306E;y&#x8EF8;&#x534A;&#x5F84;&#x3068;&#x3057;&#x3066;&#x500B;&#x5225;&#x306B;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3002;<br>codepen&#x4E0A;&#x306E;&#x307E;&#x3093;&#x3058;&#x3085;&#x3046;&#x306F;&#x4E0A;&#xFF12;&#x3064;&#x306E;&#x89D2;&#x3092;x&#x8EF8;&#x534A;&#x5F84;100px, &#x534A;&#x5F84;60px&#x306E;&#x6955;&#x5186;,<br>&#x4E0B;&#xFF12;&#x3064;&#x306E;&#x89D2;&#x3092;x&#x8EF8;&#x534A;&#x5F84;40px, y&#x8EF8;&#x534A;&#x5F84;30px&#x306E;&#x6955;&#x5186;&#x3067;&#x63CF;&#x753B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</p>
-<h4 id="5-&#x81EA;&#x7136;&#x306B;&#x898B;&#x305B;&#x308B;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3067;&#x610F;&#x8B58;&#x3057;&#x305F;&#x3053;&#x3068;"><a href="#5-&#x81EA;&#x7136;&#x306B;&#x898B;&#x305B;&#x308B;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3067;&#x610F;&#x8B58;&#x3057;&#x305F;&#x3053;&#x3068;" class="headerlink" title="5, &#x81EA;&#x7136;&#x306B;&#x898B;&#x305B;&#x308B;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3067;&#x610F;&#x8B58;&#x3057;&#x305F;&#x3053;&#x3068;"></a>5, &#x81EA;&#x7136;&#x306B;&#x898B;&#x305B;&#x308B;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x3067;&#x610F;&#x8B58;&#x3057;&#x305F;&#x3053;&#x3068;</h4>
+<h4 id="4-まんじゅうっぽい形の作り方"><a href="#4-まんじゅうっぽい形の作り方" class="headerlink" title="4, まんじゅうっぽい形の作り方"></a>4, まんじゅうっぽい形の作り方</h4>
+<p>border-radiusは左上,右上.右下,左下のx軸半径 / 左上,右上.右下,左下のy軸半径として個別に設定できる。<br>codepen上のまんじゅうは上２つの角をx軸半径100px, 半径60pxの楕円,<br>下２つの角をx軸半径40px, y軸半径30pxの楕円で描画している。</p>
+<h4 id="5-自然に見せるポイントで意識したこと"><a href="#5-自然に見せるポイントで意識したこと" class="headerlink" title="5, 自然に見せるポイントで意識したこと"></a>5, 自然に見せるポイントで意識したこと</h4>
 <ul>
-  <li>&#x5F3E;&#x6027;&#x4F53;&#x306E;&#x632F;&#x52D5;&#x3082;&#x9AD8;&#x6821;&#x3067;&#x3084;&#x3063;&#x305F;&#x632F;&#x308A;&#x5B50;&#x3068;&#x4E00;&#x7DD2;&#x3067;&#x632F;&#x5E45;&#x4F9D;&#x5B58;&#x6027;&#x306F;&#x7121;&#x8996;&#x3067;&#x304D;&#x308B;&#x3082;&#x306E;&#x3068;&#x3059;&#x308B;(&#x3064;&#x307E;&#x308A;&#x3001;&#x7E2E;&#x3093;&#x3067;&#x4F38;&#x3073;&#x3066;&#x5143;&#x306E;&#x5F62;&#x306B;&#x623B;&#x308B;&#x307E;&#x3067;&#x306E;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x6570;&#x306F;&#x4E00;&#x5B9A;)</li>
-  <li>&#x305F;&#x3060;&#x3057;&#x6700;&#x521D;&#x306E;&#x90E8;&#x5206;&#x3060;&#x3051;&#x65E9;&#x304F;&#x3046;&#x3054;&#x304B;&#x3057;&#x3066;&#x3077;&#x306B;&#x3063;&#x305F;&#x6642;&#x306E;&#x723D;&#x5FEB;&#x611F;&#x3092;&#x5897;&#x3057;&#x3066;&#x3044;&#x308B;</li>
-  <li>&#x7E2E;&#x3093;&#x3060;&#x5206;&#x3060;&#x3051;Y&#x8EF8;&#x3082;&#x4E0B;&#x306B;&#x52D5;&#x304B;&#x3057;&#x91CD;&#x529B;&#x611F;&#x3092;&#x3060;&#x3059;</li>
+  <li>弾性体の振動も高校でやった振り子と一緒で振幅依存性は無視できるものとする(つまり、縮んで伸びて元の形に戻るまでのフレーム数は一定)</li>
+  <li>ただし最初の部分だけ早くうごかしてぷにった時の爽快感を増している</li>
+  <li>縮んだ分だけY軸も下に動かし重力感をだす</li>
 </ul>
-<h2 id="&#x52D5;&#x6A5F;"><a href="#&#x52D5;&#x6A5F;" class="headerlink" title="&#x52D5;&#x6A5F;"></a>&#x52D5;&#x6A5F;</h2>
-<p>&#x304B;&#x308F;&#x3044;&#x3044;&#x3084;&#x3093;</p>
+<h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
+<p>かわいいやん</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1958,7 +1939,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				

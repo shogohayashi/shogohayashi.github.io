@@ -10,8 +10,6 @@
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/">
 	
-		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	<meta property="og:site_name" content="divrots">
 	
 		<meta property="og:description" content="&lt;h2 id=&#34;現象&#34;&gt;&lt;a href=&#34;#現象&#34; class=&#34;headerlink&#34; title=&#34;現象&#34;&gt;&lt;/a&gt;現象&lt;/h2&gt;
@@ -26,8 +24,6 @@
 &lt;p&gt;Hexo + Github Pagesで運用してるとき、Githubの設定からカスタムドメインを指定してもhexo deployのたびに設定が消える&lt;/p&gt;">
 	
     
-    	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
-	
 	
 	
     
@@ -62,14 +58,7 @@
 			    "@id":"https://divrots.com/2019/08/25/prevent-to-reset-custom-domain-with-hexo/"
 			},
 			"datePublished": "2019-08-25T14:26:15.000Z",
-			"dateModified": "2019-08-29T12:47:37.357Z",
-			
-			"image": {
-				"@type": "ImageObject",
-				"url": "/amp-dist/sample/sample-substituteTitleImage.png",
-				"width" : "1024",
-				"height" : "800"
-			},
+			"dateModified": "2019-08-29T12:47:37.000Z",
 			
 			"author": {
 			    "@type": "Person",
@@ -1813,14 +1802,6 @@ h6.categories {
 					<div class="entry-header">
 						
 						
-						
-			          	<div class="header-thumb flx">
-			          		<div class="thumbImg-w circle">
-			          			<amp-img class="thumbImg" layout="fixed" width="128" height="100" src="/amp-dist/sample/sample-substituteTitleImage.png">
-			          			</amp-img>
-			          		</div>
-			          	</div>
-			            
 			            
 			            <div class="header-cap flx">
 							
@@ -1852,13 +1833,13 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<h2 id="&#x73FE;&#x8C61;"><a href="#&#x73FE;&#x8C61;" class="headerlink" title="&#x73FE;&#x8C61;"></a>&#x73FE;&#x8C61;</h2>
-<p>Hexo + Github Pages&#x3067;&#x904B;&#x7528;&#x3057;&#x3066;&#x308B;&#x3068;&#x304D;&#x3001;Github&#x306E;&#x8A2D;&#x5B9A;&#x304B;&#x3089;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3082;hexo deploy&#x306E;&#x305F;&#x3073;&#x306B;&#x8A2D;&#x5B9A;&#x304C;&#x6D88;&#x3048;&#x308B;</p>
+			  		<h2 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h2>
+<p>Hexo + Github Pagesで運用してるとき、Githubの設定からカスタムドメインを指定してもhexo deployのたびに設定が消える</p>
 <a id="more"></a>
-<h2 id="&#x539F;&#x56E0;"><a href="#&#x539F;&#x56E0;" class="headerlink" title="&#x539F;&#x56E0;"></a>&#x539F;&#x56E0;</h2>
-<p>Github&#x306E;&#x8A2D;&#x5B9A;&#x3067;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x30EC;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306E;&#x30C8;&#x30C3;&#x30D7;&#x306B;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x540D;&#x304C;&#x66F8;&#x304B;&#x308C;&#x305F;CNAME&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8FFD;&#x52A0;&#x304C;&#x30D7;&#x30C3;&#x30B7;&#x30E5;&#x3055;&#x308C;&#x308B;&#x304C;&#x3001;hexo generate&#x306E;&#x969B;&#x306B;&#x5DFB;&#x304D;&#x623B;&#x3063;&#x3066;&#x3044;&#x308B;</p>
-<h2 id="&#x5BFE;&#x51E6;"><a href="#&#x5BFE;&#x51E6;" class="headerlink" title="&#x5BFE;&#x51E6;"></a>&#x5BFE;&#x51E6;</h2>
-<p>hexo&#x5074;&#x3067;&#x8A72;&#x5F53;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x306E;&#x307F;&#x304C;&#x66F8;&#x304B;&#x308C;&#x305F;CNAME&#x3068;&#x3044;&#x3046;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;public&#x76F4;&#x4E0B;&#x306B;&#x3042;&#x308B;&#x72B6;&#x614B;&#x3067;<code>hexo deploy</code></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2>
+<p>Githubの設定でカスタムドメインを指定するとレポジトリのトップにドメイン名が書かれたCNAMEファイルの追加がプッシュされるが、hexo generateの際に巻き戻っている</p>
+<h2 id="対処"><a href="#対処" class="headerlink" title="対処"></a>対処</h2>
+<p>hexo側で該当ドメインのみが書かれたCNAMEというファイルがpublic直下にある状態で<code>hexo deploy</code></p>
 <p><code>@public/CNAME</code><br>
   </p><figure class="highlight plain">
     <table>
@@ -1873,7 +1854,7 @@ h6.categories {
     </tbody></table>
   </figure>
 
-<p>&#x305F;&#x3060;&#x3057;&#x3001;public&#x4EE5;&#x4E0B;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x3082;<code>hexo clean</code>&#x3067;&#x6D88;&#x3055;&#x308C;&#x308B;&#x306E;&#x3067;&#x3001;source&#x76F4;&#x4E0B;&#x306B;CNAME&#x3092;&#x304A;&#x3044;&#x3066;<code>hexo generate</code>&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;</p>
+<p>ただし、public以下に作っても<code>hexo clean</code>で消されるので、source直下にCNAMEをおいて<code>hexo generate</code>することに注意</p>
 			  		
 			  		<!-- google Adsense -->
 			  		
@@ -1944,7 +1925,7 @@ h6.categories {
 				
 				<div class="copyright-title">
 					<span>
-					&copy; 2019&nbsp;divrots
+					&copy; 2021&nbsp;divrots
 					</span>
 				</div>
 				
