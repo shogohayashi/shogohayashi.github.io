@@ -25,19 +25,20 @@
 
 
 
-  <title>hexo newコマンドで生成したmdファイルの初期プロパティをカスタマイズ | divrots</title>
+  <title>Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話 | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="tl;dr scaffolds&#x2F;post.mdをいじる">
+  <meta name="description" content="動機このブログを2年ぶりに再開するにあたって、deployしようと思ったらTypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integerのエラーが発生。どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様 https:&#x2F;&#x2F;github.c">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="hexo newコマンドで生成したmdファイルの初期プロパティをカスタマイズ">
-  <meta property="og:url" content="https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/index.html">
+  <meta property="og:title" content="Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話">
+  <meta property="og:url" content="https://divrots.com/2021/06/23/update-hexo-from38-to54/index.html">
   <meta property="og:site_name" content="divrots">
-  <meta property="og:description" content="tl;dr scaffolds&#x2F;post.mdをいじる">
+  <meta property="og:description" content="動機このブログを2年ぶりに再開するにあたって、deployしようと思ったらTypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integerのエラーが発生。どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様 https:&#x2F;&#x2F;github.c">
   <meta property="og:locale" content="ja_JP">
-  <meta property="article:published_time" content="2019-08-25T12:08:31.000Z">
-  <meta property="article:modified_time" content="2019-08-29T12:49:06.000Z">
+  <meta property="article:published_time" content="2021-06-23T14:22:56.000Z">
+  <meta property="article:modified_time" content="2021-06-23T15:09:15.046Z">
   <meta property="article:author" content="showgo">
-  <meta property="article:tag" content="hexo">
+  <meta property="article:tag" content="Hexo">
+  <meta property="article:tag" content="npm">
   <meta name="twitter:card" content="summary">
 
   <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
@@ -202,10 +203,10 @@
       </header>
       <div class="outer">
         <section id="main">
-          <article id="post-hexo-set-default-propaties-for-post" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-update-hexo-from38-to54" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
-              <a href="/2019/08/25/hexo-set-default-propaties-for-post/" class="article-date">
-                <time datetime="2019-08-25T12:08:31.000Z" itemprop="datePublished">2019-08-25</time>
+              <a href="/2021/06/23/update-hexo-from38-to54/" class="article-date">
+                <time datetime="2021-06-23T14:22:56.000Z" itemprop="datePublished">2021-06-23</time>
               </a>
 
               <div class="article-category">
@@ -220,7 +221,7 @@
 
 
                 <h1 class="article-title" itemprop="name">
-                  hexo newコマンドで生成したmdファイルの初期プロパティをカスタマイズ
+                  Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話
                 </h1>
 
 
@@ -228,62 +229,85 @@
 
               <div class="article-entry" itemprop="articleBody">
 
-                <h2 id="tl-dr"><a href="#tl-dr" class="headerlink" title="tl;dr"></a>tl;dr</h2>
-                <p><code>scaffolds/post.md</code>をいじる</p>
-                <a id="more"></a>
-                <h2 id="hexo-new-の挙動"><a href="#hexo-new-の挙動" class="headerlink" title="hexo new の挙動"></a>hexo new の挙動</h2>
-                <p><code>hexo new [title]</code>コマンドを打つと、初期設定のままだと<code>source/_posts/[title].md</code>に<br>
-                <figure class="highlight plain">
+                <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
+                <p>このブログを2年ぶりに再開するにあたって、deployしようと思ったら<br><code>TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer</code><br>のエラーが発生。<br>どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様</p>
+                <p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4263">https://github.com/hexojs/hexo/issues/4263</a></p>
+                <p>ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。</p>
+                <span id="more"></span>
+
+                <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2>
+                <p>特に問題なかった</p>
+                <h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2>
+                <h2 id="package-jsonの更新"><a href="#package-jsonの更新" class="headerlink" title="package.jsonの更新"></a>package.jsonの更新</h2>
+                <p>Hexoのリリースノートでbreaking changesを拾い読みする限り、特に問題はなさそうだった。<br>ただし、git-deployerやその他依存ライブラリもアップデートしないといけないので<code>npm-check-updates</code>でまとめて更新する。</p>
+                <p>リリース状況チェックしてpackage-jsonをまとめて最新版へ書き換えるのに<code>npm-check-updates</code>を使う。<br>大体^(キャレット)がついていてマイナーバージョンアップしかしてくれないが、手動で書き換えるのも手間なので。<br><code>ncu</code>がショートハンド。</p>
+                <p><code>ncu</code> で更新があるパッケージを表示、<code>ncu -u</code>でpackage.jsonを更新する</p>
+                <figure class="highlight json">
                   <table>
                     <tr>
                       <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">---</span><br><span class="line">title: [title]</span><br><span class="line">date:  コマンド打った日付</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre>
+                        <pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;hexo-site&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;3.8.0&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^3.8.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-beautify&quot;</span>: <span class="string">&quot;^1.0.2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-codepen-v2&quot;</span>: <span class="string">&quot;^0.2.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-deployer-git&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-fontawesome&quot;</span>: <span class="string">&quot;^1.1.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-amp&quot;</span>: <span class="string">&quot;^3.0.19&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span>: <span class="string">&quot;^0.1.5&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span>: <span class="string">&quot;^0.1.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span>: <span class="string">&quot;^0.2.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-seo-friendly-sitemap&quot;</span>: <span class="string">&quot;0.0.25&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span>: <span class="string">&quot;^0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-include-markdown&quot;</span>: <span class="string">&quot;^1.0.2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span>: <span class="string">&quot;^0.3.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span>: <span class="string">&quot;^0.3.2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span>: <span class="string">&quot;^0.3.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span>: <span class="string">&quot;^0.3.3&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p>が書かれたマークダウンのファイルが生成される。</p>
-                <p>これは、scaffold/post.mdのファイルを元に読み込まれている<br>
-                <figure class="highlight plain">
+                <p>が</p>
+                <figure class="highlight json">
                   <table>
                     <tr>
                       <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">@scaffold/post.md</span><br><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre>
+                        <pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;hexo-site&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;private&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;5.4.0&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^5.4.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-beautify&quot;</span>: <span class="string">&quot;^1.0.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-codepen-v2&quot;</span>: <span class="string">&quot;^0.2.3&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-deployer-git&quot;</span>: <span class="string">&quot;^3.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-fontawesome&quot;</span>: <span class="string">&quot;^2.2.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-amp&quot;</span>: <span class="string">&quot;^3.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-seo-friendly-sitemap&quot;</span>: <span class="string">&quot;0.2.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-include-markdown&quot;</span>: <span class="string">&quot;^1.0.2&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span>: <span class="string">&quot;^1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span>: <span class="string">&quot;^4.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span>: <span class="string">&quot;^2.0.1&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span>: <span class="string">&quot;^2.0.0&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p>必ずcateogriesを使ったり毎回同じタグ入れるような場合は、<code>hexo new</code>した時点でデフォルトの表示で入力されててほしいので、このファイルを</p>
-                <figure class="highlight plain">
+                <p>に書き換わった。</p>
+                <h2 id="インストール〜deploy"><a href="#インストール〜deploy" class="headerlink" title="インストール〜deploy"></a>インストール〜deploy</h2>
+                <p>一応きれいにしてからインストール</p>
+                <figure class="highlight plaintext">
                   <table>
                     <tr>
                       <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">@scaffold/post.md</span><br><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">tags: apple</span><br><span class="line">---</span><br></pre>
+                        <pre><span class="line">$ rm -rf ./node_modules</span><br><span class="line">npm -i</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                <p>みたいな感じにすると幸せになれる。</p>
-                <p>複数人で運用してて自分の名前を毎回設定するときとか、今日はtechカテゴリの記事10本描くぞーみたいなときに便利</p>
+
+                <p>Hexoで静的ファイルを生成してからdeploy</p>
+                <figure class="highlight plaintext">
+                  <table>
+                    <tr>
+                      <td class="gutter">
+                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                      </td>
+                      <td class="code">
+                        <pre><span class="line">hexo generate -f</span><br><span class="line">hexo deploy</span><br></pre>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+
+                <p>なお、どっかのタイミングでcss/jsが空で出力されたせいか<code>hexo generate</code>だけだとcss/jsが反映されなかったので<code>-f</code>オプション付けて強制上書きしている</p>
+
 
               </div>
               <footer class="article-footer">
-                <a data-url="https://divrots.com/2019/08/25/hexo-set-default-propaties-for-post/" data-id="ckq6lenrv000q4xzxq6lh19i1" class="article-share-link">共有</a>
+                <a data-url="https://divrots.com/2021/06/23/update-hexo-from38-to54/" data-id="ckq9m1uhw0000z2zx0b8hbig6" class="article-share-link">共有</a>
 
 
                 <ul class="article-tag-list" itemprop="keywords">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li>
                 </ul>
 
               </footer>
@@ -292,19 +316,10 @@
 
             <nav id="article-nav">
 
-              <a href="/2019/08/25/prevent-to-reset-custom-domain-with-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
-                <strong class="article-nav-caption">次の記事</strong>
-                <div class="article-nav-title">
 
-                  HexoでGithub Pagesにdeployするときカスタムドメインが消えるのを防ぐ
-
-                </div>
-              </a>
-
-
-              <a href="/2018/08/25/react-native-reffer-to-flatlist/" id="article-nav-older" class="article-nav-link-wrap">
+              <a href="/2021/06/22/use-different-model-from-voyage-default/" id="article-nav-older" class="article-nav-link-wrap">
                 <strong class="article-nav-caption">前の記事</strong>
-                <div class="article-nav-title">【React Native】FlatList内のitemへ参照をはる</div>
+                <div class="article-nav-title">Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う</div>
               </a>
 
             </nav>

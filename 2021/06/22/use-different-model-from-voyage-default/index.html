@@ -25,20 +25,20 @@
 
 
 
-  <title>Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う | divrots</title>
+  <title>Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う | divrots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="環境 Laravel 8.x Voyager 1.4  参考：https:&#x2F;&#x2F;voyager-docs.devdojo.com&#x2F;customization&#x2F;custom-guardここにいい感じの例が乗ってます。大体これの翻訳と追記。 動機デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでV">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う">
+  <meta property="og:title" content="Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う">
   <meta property="og:url" content="https://divrots.com/2021/06/22/use-different-model-from-voyage-default/index.html">
   <meta property="og:site_name" content="divrots">
   <meta property="og:description" content="環境 Laravel 8.x Voyager 1.4  参考：https:&#x2F;&#x2F;voyager-docs.devdojo.com&#x2F;customization&#x2F;custom-guardここにいい感じの例が乗ってます。大体これの翻訳と追記。 動機デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでV">
   <meta property="og:locale" content="ja_JP">
   <meta property="article:published_time" content="2021-06-22T12:29:06.000Z">
-  <meta property="article:modified_time" content="2021-06-22T12:41:29.197Z">
+  <meta property="article:modified_time" content="2021-06-23T15:07:19.657Z">
   <meta property="article:author" content="showgo">
   <meta property="article:tag" content="Laravel">
-  <meta property="article:tag" content="Voyage">
+  <meta property="article:tag" content="Voyager">
   <meta name="twitter:card" content="summary">
 
   <link rel="alternate" href="/atom.xml" title="divrots" type="application/atom+xml">
@@ -221,7 +221,7 @@
 
 
                 <h1 class="article-title" itemprop="name">
-                  Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う
+                  Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う
                 </h1>
 
 
@@ -238,9 +238,11 @@
                 <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
                 <p>デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。<br>Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する</p>
                 <p>今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。</p>
+                <span id="more"></span>
+
                 <h2 id="変更手順"><a href="#変更手順" class="headerlink" title="変更手順"></a>変更手順</h2>
                 <h3 id="1、adminsテーブルを作る"><a href="#1、adminsテーブルを作る" class="headerlink" title="1、adminsテーブルを作る"></a>1、adminsテーブルを作る</h3>
-                <p>artisanでModelとmigrationファイルを作る<br>
+                <p>artisanでModelとmigrationファイルを作る</p>
                 <figure class="highlight plaintext">
                   <table>
                     <tr>
@@ -253,22 +255,22 @@
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p>カラムをいろいろ設定<br>@migrations/create_admins_table.php<br>
-                <figure class="highlight plaintext">
+
+                <p>カラムをいろいろ設定<br>@migrations/create_admins_table.php</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line">Schema::create(&#x27;admins&#x27;, function (Blueprint $table) &#123;</span><br><span class="line">    $table-&gt;bigIncrements(&#x27;id&#x27;);</span><br><span class="line">    $table-&gt;bigInteger(&#x27;role_id&#x27;)-&gt;unsigned()-&gt;nullable();</span><br><span class="line">    $table-&gt;string(&#x27;name&#x27;);</span><br><span class="line">    $table-&gt;string(&#x27;email&#x27;)-&gt;unique();</span><br><span class="line">    $table-&gt;string(&#x27;avatar&#x27;)-&gt;nullable()-&gt;default(&#x27;users/default.png&#x27;);</span><br><span class="line">    $table-&gt;string(&#x27;password&#x27;)-&gt;nullable();</span><br><span class="line">    $table-&gt;string(&#x27;remember_token&#x27;)-&gt;nullable();</span><br><span class="line">    $table-&gt;text(&#x27;settings&#x27;)-&gt;nullable()-&gt;default(null);</span><br><span class="line">    $table-&gt;timestamps();</span><br><span class="line">    $table-&gt;foreign(&#x27;role_id&#x27;)-&gt;references(&#x27;id&#x27;)-&gt;on(&#x27;roles&#x27;);</span><br><span class="line">&#125;);</span><br></pre>
+                        <pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">Schema::create(<span class="string">&#x27;admins&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">Blueprint <span class="variable">$table</span></span>) </span>&#123;</span><br><span class="line">    <span class="variable">$table</span>-&gt;bigIncrements(<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;bigInteger(<span class="string">&#x27;role_id&#x27;</span>)-&gt;unsigned()-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">&#x27;name&#x27;</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">&#x27;email&#x27;</span>)-&gt;unique();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">&#x27;avatar&#x27;</span>)-&gt;nullable()-&gt;default(<span class="string">&#x27;users/default.png&#x27;</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">&#x27;password&#x27;</span>)-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">&#x27;remember_token&#x27;</span>)-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;text(<span class="string">&#x27;settings&#x27;</span>)-&gt;nullable()-&gt;default(<span class="literal">null</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;timestamps();</span><br><span class="line">    <span class="variable">$table</span>-&gt;foreign(<span class="string">&#x27;role_id&#x27;</span>)-&gt;references(<span class="string">&#x27;id&#x27;</span>)-&gt;on(<span class="string">&#x27;roles&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p>DB作る<br>
+
+                <p>DB作る</p>
                 <figure class="highlight plaintext">
                   <table>
                     <tr>
@@ -281,79 +283,81 @@
                     </tr>
                   </table>
                 </figure>
-                </p>
+
                 <h3 id="2、AdminモデルでVoyagerを継承する"><a href="#2、AdminモデルでVoyagerを継承する" class="headerlink" title="2、AdminモデルでVoyagerを継承する"></a>2、AdminモデルでVoyagerを継承する</h3>
-                <p>モデル側もAdminモデルでVoyagerを読むように<br>@Models/Admin.php<br>
-                <figure class="highlight plaintext">
+                <p>モデル側もAdminモデルでVoyagerを読むように<br>@Models/Admin.php</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Factories\HasFactory;</span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line"></span><br><span class="line">class Admin extends \TCG\Voyager\Models\User</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre>
+                        <pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Models</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Factories</span>\<span class="title">HasFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Admin</span> <span class="keyword">extends</span> \<span class="title">TCG</span>\<span class="title">Voyager</span>\<span class="title">Models</span>\<span class="title">User</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p>Voyagerを既にインストールしてると、Userモデルで継承しちゃってるので外しとく<br>@Models/User.php<br>
-                <figure class="highlight plaintext">
+
+                <p>Voyagerを既にインストールしてると、Userモデルで継承しちゃってるので外しとく<br>@Models/User.php</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Contracts\Auth\MustVerifyEmail;</span><br><span class="line">use Illuminate\Database\Eloquent\Factories\HasFactory;</span><br><span class="line">use Illuminate\Foundation\Auth\User as Authenticatable;</span><br><span class="line">use Illuminate\Notifications\Notifiable;</span><br><span class="line">use Laravel\Fortify\TwoFactorAuthenticatable;</span><br><span class="line">use Laravel\Jetstream\HasProfilePhoto;</span><br><span class="line">use Laravel\Sanctum\HasApiTokens;</span><br><span class="line"></span><br><span class="line">class User extends Authenticatable // &lt;- ここをVoyagerからかえる</span><br><span class="line">// ※Jetstreamつかわないなら</span><br><span class="line">// class User extends Model にする</span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre>
+                        <pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Models</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Auth</span>\<span class="title">MustVerifyEmail</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Factories</span>\<span class="title">HasFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Auth</span>\<span class="title">User</span> <span class="title">as</span> <span class="title">Authenticatable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Notifications</span>\<span class="title">Notifiable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Fortify</span>\<span class="title">TwoFactorAuthenticatable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Jetstream</span>\<span class="title">HasProfilePhoto</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Sanctum</span>\<span class="title">HasApiTokens</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Authenticatable</span> // &lt;- ここを<span class="title">Voyager</span>からかえる</span></span><br><span class="line"><span class="class">// ※<span class="title">Jetstream</span>つかわないなら</span></span><br><span class="line"><span class="class">// <span class="title">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span> にする</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
+
+
                 <h3 id="3、コンフィグ設定でguardを登録する"><a href="#3、コンフィグ設定でguardを登録する" class="headerlink" title="3、コンフィグ設定でguardを登録する"></a>3、コンフィグ設定でguardを登録する</h3>
-                <p><code>admin</code>というguardを作って、<br>@config/auth.php<br>
-                <figure class="highlight plaintext">
+                <p><code>admin</code>というguardを作って、<br>@config/auth.php</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">&#x27;guards&#x27; =&gt; [</span><br><span class="line">    &#x27;admin&#x27; =&gt; [</span><br><span class="line">        &#x27;driver&#x27; =&gt; &#x27;session&#x27;,</span><br><span class="line">        &#x27;provider&#x27; =&gt; &#x27;admins&#x27;,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    // ...</span><br><span class="line">],</span><br></pre>
+                        <pre><span class="line"><span class="string">&#x27;guards&#x27;</span> =&gt; [</span><br><span class="line">    <span class="string">&#x27;admin&#x27;</span> =&gt; [</span><br><span class="line">        <span class="string">&#x27;driver&#x27;</span> =&gt; <span class="string">&#x27;session&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;provider&#x27;</span> =&gt; <span class="string">&#x27;admins&#x27;</span>,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">],</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
-                <p><code>admin</code>というproviderも作る<br>
-                <figure class="highlight plaintext">
+
+                <p><code>admin</code>というproviderも作る</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">&#x27;providers&#x27; =&gt; [</span><br><span class="line">    &#x27;admins&#x27; =&gt; [</span><br><span class="line">        &#x27;driver&#x27; =&gt; &#x27;eloquent&#x27;,</span><br><span class="line">        &#x27;model&#x27; =&gt; App\Models\Admin::class, // ↓注意</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    // ...</span><br><span class="line">],</span><br></pre>
+                        <pre><span class="line"><span class="string">&#x27;providers&#x27;</span> =&gt; [</span><br><span class="line">    <span class="string">&#x27;admins&#x27;</span> =&gt; [</span><br><span class="line">        <span class="string">&#x27;driver&#x27;</span> =&gt; <span class="string">&#x27;eloquent&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;model&#x27;</span> =&gt; App\Models\Admin::class, <span class="comment">// ↓注意</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">],</span><br></pre>
                       </td>
                     </tr>
                   </table>
-                </figure><br><strong> 注意 </strong> ドキュメントでは <code>App\Admin::class</code>になっているが(2021/06/21現在)、Laravel 8からモデルのデフォルトのnamespaseが<code>App\Models</code>になってるので対応させておく。</p>
+                </figure>
+                <p>** 注意 ** ドキュメントでは <code>App\Admin::class</code>になっているが(2021/06/21現在)、Laravel 8からモデルのデフォルトのnamespaseが<code>App\Models</code>になってるので対応させておく。</p>
                 <h3 id="Voyagerに新しいguardを伝える"><a href="#Voyagerに新しいguardを伝える" class="headerlink" title="Voyagerに新しいguardを伝える"></a>Voyagerに新しいguardを伝える</h3>
-                <p>@AppServiceProvider.php<br>
-                <figure class="highlight plaintext">
+                <p>@AppServiceProvider.php</p>
+                <figure class="highlight php">
                   <table>
                     <tr>
                       <td class="gutter">
                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
                       </td>
                       <td class="code">
-                        <pre><span class="line">public function register()</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;app-&gt;singleton(&#x27;VoyagerGuard&#x27;, function () &#123;</span><br><span class="line">        return &#x27;admin&#x27;;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre>
+                        <pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;app-&gt;singleton(<span class="string">&#x27;VoyagerGuard&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;admin&#x27;</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre>
                       </td>
                     </tr>
                   </table>
                 </figure>
-                </p>
+
                 <p>以上で設定完了。</p>
                 <h3 id="新しくAdminモデルにユーザー作ってログインしてみる"><a href="#新しくAdminモデルにユーザー作ってログインしてみる" class="headerlink" title="新しくAdminモデルにユーザー作ってログインしてみる"></a>新しくAdminモデルにユーザー作ってログインしてみる</h3>
                 <figure class="highlight plaintext">
@@ -382,7 +386,7 @@
 
                 <ul class="article-tag-list" itemprop="keywords">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Voyage/" rel="tag">Voyage</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Voyager/" rel="tag">Voyager</a></li>
                 </ul>
 
               </footer>
@@ -390,6 +394,15 @@
 
 
             <nav id="article-nav">
+
+              <a href="/2021/06/23/update-hexo-from38-to54/" id="article-nav-newer" class="article-nav-link-wrap">
+                <strong class="article-nav-caption">次の記事</strong>
+                <div class="article-nav-title">
+
+                  Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話
+
+                </div>
+              </a>
 
 
               <a href="/2019/11/04/generate-default-fixture-with-new-data/" id="article-nav-older" class="article-nav-link-wrap">
@@ -424,10 +437,11 @@
             <div class="widget">
               <ul class="tag-list" itemprop="keywords">
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/" rel="tag">Github pages</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/" rel="tag">Realm</a></li>
-                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Voyage/" rel="tag">Voyage</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Voyager/" rel="tag">Voyager</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/cakephp2/" rel="tag">cakephp2</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li>
@@ -437,6 +451,7 @@
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/unittest/" rel="tag">unittest</a></li>
               </ul>
             </div>
@@ -448,7 +463,7 @@
           <div class="widget-wrap">
             <h3 class="widget-title">タグクラウド</h3>
             <div class="widget tagcloud">
-              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Voyage/" style="font-size: 10px;">Voyage</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 15px;">cakephp2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/fixture/" style="font-size: 10px;">fixture</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/unittest/" style="font-size: 10px;">unittest</a>
+              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Voyager/" style="font-size: 10px;">Voyager</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 15px;">cakephp2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/fixture/" style="font-size: 10px;">fixture</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/unittest/" style="font-size: 10px;">unittest</a>
             </div>
           </div>
 
@@ -477,7 +492,11 @@
               <ul>
 
                 <li>
-                  <a href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う</a>
+                  <a href="/2021/06/23/update-hexo-from38-to54/">Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話</a>
+                </li>
+
+                <li>
+                  <a href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う</a>
                 </li>
 
                 <li>
@@ -490,10 +509,6 @@
 
                 <li>
                   <a href="/2019/08/29/git-log-statistics/">Gitでコミット数、変更行数、ファイル数を取得する色々</a>
-                </li>
-
-                <li>
-                  <a href="/2019/08/26/cakephp2-bindmodel-and-save/">【cakephp2】hasOneをbindmodelでつないで保存しようとしても途中でbindが切れる</a>
                 </li>
 
               </ul>

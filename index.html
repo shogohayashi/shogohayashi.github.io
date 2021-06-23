@@ -198,6 +198,59 @@
       <div class="outer">
         <section id="main">
 
+          <article id="post-update-hexo-from38-to54" class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-meta">
+              <a href="/2021/06/23/update-hexo-from38-to54/" class="article-date">
+                <time datetime="2021-06-23T14:22:56.000Z" itemprop="datePublished">2021-06-23</time>
+              </a>
+
+              <div class="article-category">
+                <a class="article-category-link" href="/categories/tech/">tech</a>
+              </div>
+
+            </div>
+            <div class="article-inner">
+
+
+              <header class="article-header">
+
+
+                <h1 itemprop="name">
+                  <a class="article-title" href="/2021/06/23/update-hexo-from38-to54/">Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話</a>
+                </h1>
+
+
+              </header>
+
+              <div class="article-entry" itemprop="articleBody">
+
+                <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
+                <p>このブログを2年ぶりに再開するにあたって、deployしようと思ったら<br><code>TypeError [ERR_INVALID_ARG_TYPE]: The &quot;mode&quot; argument must be integer</code><br>のエラーが発生。<br>どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様</p>
+                <p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/4263">https://github.com/hexojs/hexo/issues/4263</a></p>
+                <p>ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。</p>
+
+                <p class="article-more-link">
+                  <a href="/2021/06/23/update-hexo-from38-to54/#more">Read More</a>
+                </p>
+
+
+              </div>
+              <footer class="article-footer">
+                <a data-url="https://divrots.com/2021/06/23/update-hexo-from38-to54/" data-id="ckq9m1uhw0000z2zx0b8hbig6" class="article-share-link">共有</a>
+
+
+                <ul class="article-tag-list" itemprop="keywords">
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li>
+                </ul>
+
+              </footer>
+            </div>
+
+          </article>
+
+
+
           <article id="post-use-different-model-from-voyage-default" class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-meta">
               <a href="/2021/06/22/use-different-model-from-voyage-default/" class="article-date">
@@ -216,7 +269,7 @@
 
 
                 <h1 itemprop="name">
-                  <a class="article-title" href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う</a>
+                  <a class="article-title" href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う</a>
                 </h1>
 
 
@@ -233,141 +286,10 @@
                 <h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2>
                 <p>デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。<br>Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する</p>
                 <p>今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。</p>
-                <h2 id="変更手順"><a href="#変更手順" class="headerlink" title="変更手順"></a>変更手順</h2>
-                <h3 id="1、adminsテーブルを作る"><a href="#1、adminsテーブルを作る" class="headerlink" title="1、adminsテーブルを作る"></a>1、adminsテーブルを作る</h3>
-                <p>artisanでModelとmigrationファイルを作る<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">$artisan make:model Admin -m</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
+
+                <p class="article-more-link">
+                  <a href="/2021/06/22/use-different-model-from-voyage-default/#more">Read More</a>
                 </p>
-                <p>カラムをいろいろ設定<br>@migrations/create_admins_table.php<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line">Schema::create(&#x27;admins&#x27;, function (Blueprint $table) &#123;</span><br><span class="line">    $table-&gt;bigIncrements(&#x27;id&#x27;);</span><br><span class="line">    $table-&gt;bigInteger(&#x27;role_id&#x27;)-&gt;unsigned()-&gt;nullable();</span><br><span class="line">    $table-&gt;string(&#x27;name&#x27;);</span><br><span class="line">    $table-&gt;string(&#x27;email&#x27;)-&gt;unique();</span><br><span class="line">    $table-&gt;string(&#x27;avatar&#x27;)-&gt;nullable()-&gt;default(&#x27;users/default.png&#x27;);</span><br><span class="line">    $table-&gt;string(&#x27;password&#x27;)-&gt;nullable();</span><br><span class="line">    $table-&gt;string(&#x27;remember_token&#x27;)-&gt;nullable();</span><br><span class="line">    $table-&gt;text(&#x27;settings&#x27;)-&gt;nullable()-&gt;default(null);</span><br><span class="line">    $table-&gt;timestamps();</span><br><span class="line">    $table-&gt;foreign(&#x27;role_id&#x27;)-&gt;references(&#x27;id&#x27;)-&gt;on(&#x27;roles&#x27;);</span><br><span class="line">&#125;);</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <p>DB作る<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">artisan migrate</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <h3 id="2、AdminモデルでVoyagerを継承する"><a href="#2、AdminモデルでVoyagerを継承する" class="headerlink" title="2、AdminモデルでVoyagerを継承する"></a>2、AdminモデルでVoyagerを継承する</h3>
-                <p>モデル側もAdminモデルでVoyagerを読むように<br>@Models/Admin.php<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Database\Eloquent\Factories\HasFactory;</span><br><span class="line">use Illuminate\Database\Eloquent\Model;</span><br><span class="line"></span><br><span class="line">class Admin extends \TCG\Voyager\Models\User</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <p>Voyagerを既にインストールしてると、Userモデルで継承しちゃってるので外しとく<br>@Models/User.php<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace App\Models;</span><br><span class="line"></span><br><span class="line">use Illuminate\Contracts\Auth\MustVerifyEmail;</span><br><span class="line">use Illuminate\Database\Eloquent\Factories\HasFactory;</span><br><span class="line">use Illuminate\Foundation\Auth\User as Authenticatable;</span><br><span class="line">use Illuminate\Notifications\Notifiable;</span><br><span class="line">use Laravel\Fortify\TwoFactorAuthenticatable;</span><br><span class="line">use Laravel\Jetstream\HasProfilePhoto;</span><br><span class="line">use Laravel\Sanctum\HasApiTokens;</span><br><span class="line"></span><br><span class="line">class User extends Authenticatable // &lt;- ここをVoyagerからかえる</span><br><span class="line">// ※Jetstreamつかわないなら</span><br><span class="line">// class User extends Model にする</span><br><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <h3 id="3、コンフィグ設定でguardを登録する"><a href="#3、コンフィグ設定でguardを登録する" class="headerlink" title="3、コンフィグ設定でguardを登録する"></a>3、コンフィグ設定でguardを登録する</h3>
-                <p><code>admin</code>というguardを作って、<br>@config/auth.php<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">&#x27;guards&#x27; =&gt; [</span><br><span class="line">    &#x27;admin&#x27; =&gt; [</span><br><span class="line">        &#x27;driver&#x27; =&gt; &#x27;session&#x27;,</span><br><span class="line">        &#x27;provider&#x27; =&gt; &#x27;admins&#x27;,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    // ...</span><br><span class="line">],</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <p><code>admin</code>というproviderも作る<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">&#x27;providers&#x27; =&gt; [</span><br><span class="line">    &#x27;admins&#x27; =&gt; [</span><br><span class="line">        &#x27;driver&#x27; =&gt; &#x27;eloquent&#x27;,</span><br><span class="line">        &#x27;model&#x27; =&gt; App\Models\Admin::class, // ↓注意</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    // ...</span><br><span class="line">],</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure><br><strong> 注意 </strong> ドキュメントでは <code>App\Admin::class</code>になっているが(2021/06/21現在)、Laravel 8からモデルのデフォルトのnamespaseが<code>App\Models</code>になってるので対応させておく。</p>
-                <h3 id="Voyagerに新しいguardを伝える"><a href="#Voyagerに新しいguardを伝える" class="headerlink" title="Voyagerに新しいguardを伝える"></a>Voyagerに新しいguardを伝える</h3>
-                <p>@AppServiceProvider.php<br>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">public function register()</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;app-&gt;singleton(&#x27;VoyagerGuard&#x27;, function () &#123;</span><br><span class="line">        return &#x27;admin&#x27;;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                </p>
-                <p>以上で設定完了。</p>
-                <h3 id="新しくAdminモデルにユーザー作ってログインしてみる"><a href="#新しくAdminモデルにユーザー作ってログインしてみる" class="headerlink" title="新しくAdminモデルにユーザー作ってログインしてみる"></a>新しくAdminモデルにユーザー作ってログインしてみる</h3>
-                <figure class="highlight plaintext">
-                  <table>
-                    <tr>
-                      <td class="gutter">
-                        <pre><span class="line">1</span><br></pre>
-                      </td>
-                      <td class="code">
-                        <pre><span class="line">php artisan voyager:admin your@email.com --create</span><br></pre>
-                      </td>
-                    </tr>
-                  </table>
-                </figure>
-                <p>でCLIで初期ユーザー登録したときに、adminsテーブルに保存されてることを確認しましょう</p>
-                <p>なお、user-breadはuserテーブルのBREADなので(それはそう)<br>必要ならadminsテーブル用のBREADを作ること。</p>
-                <hr>
-                <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2>
-                <p><a target="_blank" rel="noopener" href="https://voyager-docs.devdojo.com/customization/custom-guard">https://voyager-docs.devdojo.com/customization/custom-guard</a><br><a target="_blank" rel="noopener" href="https://github.com/the-control-group/voyager/issues/2568">https://github.com/the-control-group/voyager/issues/2568</a></p>
 
 
               </div>
@@ -377,7 +299,7 @@
 
                 <ul class="article-tag-list" itemprop="keywords">
                   <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Voyage/" rel="tag">Voyage</a></li>
+                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Voyager/" rel="tag">Voyager</a></li>
                 </ul>
 
               </footer>
@@ -800,57 +722,6 @@
 
 
 
-          <article id="post-set-iphone-hedder-padding-with-react-native" class="article article-type-post" itemscope itemprop="blogPost">
-            <div class="article-meta">
-              <a href="/2018/04/29/set-iphone-hedder-padding-with-react-native/" class="article-date">
-                <time datetime="2018-04-29T12:34:38.000Z" itemprop="datePublished">2018-04-29</time>
-              </a>
-
-              <div class="article-category">
-                <a class="article-category-link" href="/categories/tech/">tech</a>
-              </div>
-
-            </div>
-            <div class="article-inner">
-
-
-              <header class="article-header">
-
-
-                <h1 itemprop="name">
-                  <a class="article-title" href="/2018/04/29/set-iphone-hedder-padding-with-react-native/">ReactNativeでiphoneバージョンごとのアプリヘッダーのパディング対応</a>
-                </h1>
-
-
-              </header>
-
-              <div class="article-entry" itemprop="articleBody">
-
-                <h2 id="アプリヘッダーのパディング"><a href="#アプリヘッダーのパディング" class="headerlink" title="アプリヘッダーのパディング"></a>アプリヘッダーのパディング</h2>
-                <p>iphoneX系統とそれまでのもの(5.5インチ系と6.5インチ系)ではサイズが変わる</p>
-
-                <p class="article-more-link">
-                  <a href="/2018/04/29/set-iphone-hedder-padding-with-react-native/#more">Read More</a>
-                </p>
-
-
-              </div>
-              <footer class="article-footer">
-                <a data-url="https://divrots.com/2018/04/29/set-iphone-hedder-padding-with-react-native/" data-id="ckq6lens400114xzx40md9qk5" class="article-share-link">共有</a>
-
-
-                <ul class="article-tag-list" itemprop="keywords">
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li>
-                  <li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li>
-                </ul>
-
-              </footer>
-            </div>
-
-          </article>
-
-
-
 
 
           <nav id="page-nav">
@@ -880,10 +751,11 @@
             <div class="widget">
               <ul class="tag-list" itemprop="keywords">
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-pages/" rel="tag">Github pages</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/" rel="tag">React Native</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Realm/" rel="tag">Realm</a></li>
-                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Voyage/" rel="tag">Voyage</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/Voyager/" rel="tag">Voyager</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/cakephp2/" rel="tag">cakephp2</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li>
@@ -893,6 +765,7 @@
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/" rel="tag">iOS</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li>
+                <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li>
                 <li class="tag-list-item"><a class="tag-list-link" href="/tags/unittest/" rel="tag">unittest</a></li>
               </ul>
             </div>
@@ -904,7 +777,7 @@
           <div class="widget-wrap">
             <h3 class="widget-title">タグクラウド</h3>
             <div class="widget tagcloud">
-              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Voyage/" style="font-size: 10px;">Voyage</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 15px;">cakephp2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/fixture/" style="font-size: 10px;">fixture</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/unittest/" style="font-size: 10px;">unittest</a>
+              <a href="/tags/Github-pages/" style="font-size: 10px;">Github pages</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Realm/" style="font-size: 10px;">Realm</a> <a href="/tags/Voyager/" style="font-size: 10px;">Voyager</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/cakephp2/" style="font-size: 15px;">cakephp2</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/fixture/" style="font-size: 10px;">fixture</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/unittest/" style="font-size: 10px;">unittest</a>
             </div>
           </div>
 
@@ -933,7 +806,11 @@
               <ul>
 
                 <li>
-                  <a href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyage1.4でUserテーブル以外を管理者ログインに使う</a>
+                  <a href="/2021/06/23/update-hexo-from38-to54/">Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話</a>
+                </li>
+
+                <li>
+                  <a href="/2021/06/22/use-different-model-from-voyage-default/">Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う</a>
                 </li>
 
                 <li>
@@ -946,10 +823,6 @@
 
                 <li>
                   <a href="/2019/08/29/git-log-statistics/">Gitでコミット数、変更行数、ファイル数を取得する色々</a>
-                </li>
-
-                <li>
-                  <a href="/2019/08/26/cakephp2-bindmodel-and-save/">【cakephp2】hasOneをbindmodelでつないで保存しようとしても途中でbindが切れる</a>
                 </li>
 
               </ul>

@@ -2,38 +2,30 @@
 <html ⚡>
   <head>
     <meta charset="utf-8">
-    <link rel="canonical" href="https://divrots.com/2021/06/22/use-different-model-from-voyage-default/" >
-    <title>Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う - divrots</title>
+    <link rel="canonical" href="https://divrots.com/2021/06/23/update-hexo-from38-to54/" >
+    <title>Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話 - divrots</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     
-    <meta property="og:title" content="Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う">
+    <meta property="og:title" content="Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="https://divrots.com/2021/06/22/use-different-model-from-voyage-default/">
+	<meta property="og:url" content="https://divrots.com/2021/06/23/update-hexo-from38-to54/">
 	
 		<meta property="og:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
 	
 	<meta property="og:site_name" content="divrots">
 	
-		<meta property="og:description" content="&lt;h2 id=&#34;環境&#34;&gt;&lt;a href=&#34;#環境&#34; class=&#34;headerlink&#34; title=&#34;環境&#34;&gt;&lt;/a&gt;環境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Laravel 8.x&lt;/li&gt;
-&lt;li&gt;Voyager 1.4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考：&lt;a href=&#34;https://voyager-docs.devdojo.com/customization/custom-guard&#34;&gt;https://voyager-docs.devdojo.com/customization/custom-guard&lt;/a&gt;&lt;br&gt;ここにいい感じの例が乗ってます。&lt;br&gt;大体これの翻訳と追記。&lt;/p&gt;
-&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。&lt;br&gt;Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する&lt;/p&gt;
-&lt;p&gt;今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。&lt;/p&gt;">
+		<meta property="og:description" content="&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;このブログを2年ぶりに再開するにあたって、deployしようと思ったら&lt;br&gt;&lt;code&gt;TypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer&lt;/code&gt;&lt;br&gt;のエラーが発生。&lt;br&gt;どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hexojs/hexo/issues/4263&#34;&gt;https://github.com/hexojs/hexo/issues/4263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。&lt;/p&gt;">
 	
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="divrots">
-	<meta name="twitter:url" content="https://divrots.com/2021/06/22/use-different-model-from-voyage-default/">
-	<meta name="twitter:title" content="Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う - divrots">
+	<meta name="twitter:url" content="https://divrots.com/2021/06/23/update-hexo-from38-to54/">
+	<meta name="twitter:title" content="Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話 - divrots">
 	
-		<meta name="twitter:description" content="&lt;h2 id=&#34;環境&#34;&gt;&lt;a href=&#34;#環境&#34; class=&#34;headerlink&#34; title=&#34;環境&#34;&gt;&lt;/a&gt;環境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Laravel 8.x&lt;/li&gt;
-&lt;li&gt;Voyager 1.4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考：&lt;a href=&#34;https://voyager-docs.devdojo.com/customization/custom-guard&#34;&gt;https://voyager-docs.devdojo.com/customization/custom-guard&lt;/a&gt;&lt;br&gt;ここにいい感じの例が乗ってます。&lt;br&gt;大体これの翻訳と追記。&lt;/p&gt;
-&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。&lt;br&gt;Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する&lt;/p&gt;
-&lt;p&gt;今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。&lt;/p&gt;">
+		<meta name="twitter:description" content="&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;このブログを2年ぶりに再開するにあたって、deployしようと思ったら&lt;br&gt;&lt;code&gt;TypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer&lt;/code&gt;&lt;br&gt;のエラーが発生。&lt;br&gt;どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hexojs/hexo/issues/4263&#34;&gt;https://github.com/hexojs/hexo/issues/4263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。&lt;/p&gt;">
 	
     
     	<meta name="twitter:image" content="/amp-dist/sample/sample-substituteTitleImage.png">
@@ -62,22 +54,18 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "BlogPosting",
-			"headline": "Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う",
+			"headline": "Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話",
 			
-			"description": "&lt;h2 id=&#34;環境&#34;&gt;&lt;a href=&#34;#環境&#34; class=&#34;headerlink&#34; title=&#34;環境&#34;&gt;&lt;/a&gt;環境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Laravel 8.x&lt;/li&gt;
-&lt;li&gt;Voyager 1.4&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;参考：&lt;a href=&#34;https://voyager-docs.devdojo.com/customization/custom-guard&#34;&gt;https://voyager-docs.devdojo.com/customization/custom-guard&lt;/a&gt;&lt;br&gt;ここにいい感じの例が乗ってます。&lt;br&gt;大体これの翻訳と追記。&lt;/p&gt;
-&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。&lt;br&gt;Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する&lt;/p&gt;
-&lt;p&gt;今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。&lt;/p&gt;",
+			"description": "&lt;h2 id=&#34;動機&#34;&gt;&lt;a href=&#34;#動機&#34; class=&#34;headerlink&#34; title=&#34;動機&#34;&gt;&lt;/a&gt;動機&lt;/h2&gt;&lt;p&gt;このブログを2年ぶりに再開するにあたって、deployしようと思ったら&lt;br&gt;&lt;code&gt;TypeError [ERR_INVALID_ARG_TYPE]: The &amp;quot;mode&amp;quot; argument must be integer&lt;/code&gt;&lt;br&gt;のエラーが発生。&lt;br&gt;どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hexojs/hexo/issues/4263&#34;&gt;https://github.com/hexojs/hexo/issues/4263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。&lt;/p&gt;",
 			
 			"mainEntityOfPage":{
 			    "@type":"WebPage",
-			    "@id":"https://divrots.com/2021/06/22/use-different-model-from-voyage-default/"
+			    "@id":"https://divrots.com/2021/06/23/update-hexo-from38-to54/"
 			},
-			"datePublished": "2021-06-22T12:29:06.000Z",
-			"dateModified": "2021-06-23T15:07:19.657Z",
+			"datePublished": "2021-06-23T14:22:56.000Z",
+			"dateModified": "2021-06-23T15:09:15.046Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1789,7 +1777,7 @@ h6.categories {
   	<!-- container -->
   	<div id="container">
 	  	<div id="main">
-		    <article id="post-use-different-model-from-voyage-default" class="post">
+		    <article id="post-update-hexo-from38-to54" class="post">
 		    
 		   		<!-- categories and bread crumb -->
 		    	
@@ -1840,7 +1828,7 @@ h6.categories {
 			            <div class="header-cap flx">
 							
 							  <h1 class="article-title entry-title" itemprop="name">
-							    <a href="https://divrots.com/2021/06/22/use-different-model-from-voyage-default/" target="_blank" itemprop="url">Laravel8.x &amp; Voyager1.4でUserテーブル以外を管理者ログインに使う</a>
+							    <a href="https://divrots.com/2021/06/23/update-hexo-from38-to54/" target="_blank" itemprop="url">Hexo v3.8からv5.4へのバージョンアップがとても簡単だった話</a>
 							  </h1>
 							
 						</div>
@@ -1850,7 +1838,7 @@ h6.categories {
 					<div class="entry-meta-header">
 						<span class="meta-elements date">
 							<span class="fa fa-fw fa-clock-o"></span>
-							<time datetime="2021-06-22" itemprop="datePublished">2021.06.22</time>
+							<time datetime="2021-06-23" itemprop="datePublished">2021.06.23</time>
 						</span>
 					</div>
 				</div>
@@ -1867,46 +1855,26 @@ h6.categories {
                     
                     
 			    	<!-- content -->
-			  		<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ul>
-<li>Laravel 8.x</li>
-<li>Voyager 1.4</li>
-</ul>
-<p>参考：<a href="https://voyager-docs.devdojo.com/customization/custom-guard">https://voyager-docs.devdojo.com/customization/custom-guard</a><br>ここにいい感じの例が乗ってます。<br>大体これの翻訳と追記。</p>
-<h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2><p>デフォルトだとVoyagerはusersテーブルで管理者ユーザーを管理する。<br>Jetstreamなどを入れていて、同じユーザーテーブルで管理するのが嫌だったのでVoyagerのデフォルトで設定されているテーブルを変更する</p>
-<p>今回は usersテーブルをadminsテーブルに変えます。ドキュメントと一緒。</p>
+			  		<h2 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h2><p>このブログを2年ぶりに再開するにあたって、deployしようと思ったら<br><code>TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer</code><br>のエラーが発生。<br>どうもnodeがv14以降だと発生するらしく、v13に戻せば解消するそうだが、Hexo v5.0.0でも修正された模様</p>
+<p><a href="https://github.com/hexojs/hexo/issues/4263">https://github.com/hexojs/hexo/issues/4263</a></p>
+<p>ということで、せっかくなら現行最新にあげようと思ったが、いきなりメジャーバージョン2つあげることになるので慎重に。</p>
 <span id="more"></span>
 
-<h2 id="変更手順"><a href="#変更手順" class="headerlink" title="変更手順"></a>変更手順</h2><h3 id="1、adminsテーブルを作る"><a href="#1、adminsテーブルを作る" class="headerlink" title="1、adminsテーブルを作る"></a>1、adminsテーブルを作る</h3><p>artisanでModelとmigrationファイルを作る</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$artisan make:model Admin -m</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>特に問題なかった</p>
+<h2 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h2><h2 id="package-jsonの更新"><a href="#package-jsonの更新" class="headerlink" title="package.jsonの更新"></a>package.jsonの更新</h2><p>Hexoのリリースノートでbreaking changesを拾い読みする限り、特に問題はなさそうだった。<br>ただし、git-deployerやその他依存ライブラリもアップデートしないといけないので<code>npm-check-updates</code>でまとめて更新する。</p>
+<p>リリース状況チェックしてpackage-jsonをまとめて最新版へ書き換えるのに<code>npm-check-updates</code>を使う。<br>大体^(キャレット)がついていてマイナーバージョンアップしかしてくれないが、手動で書き換えるのも手間なので。<br><code>ncu</code>がショートハンド。</p>
+<p><code>ncu</code> で更新があるパッケージを表示、<code>ncu -u</code>でpackage.jsonを更新する</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"hexo"</span>: {</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"3.8.0"</span></span><br><span class="line">  },</span><br><span class="line">  <span class="attr">"dependencies"</span>: {</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"^3.8.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-beautify"</span>: <span class="string">"^1.0.2"</span>,</span><br><span class="line">    <span class="attr">"hexo-codepen-v2"</span>: <span class="string">"^0.2.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-deployer-git"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-fontawesome"</span>: <span class="string">"^1.1.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-amp"</span>: <span class="string">"^3.0.19"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"^0.1.5"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"^0.1.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"^0.2.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-seo-friendly-sitemap"</span>: <span class="string">"0.0.25"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"^0.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-include-markdown"</span>: <span class="string">"^1.0.2"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"^0.3.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"^0.3.2"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"^0.3.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"^0.3.3"</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>が</p>
+<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"hexo-site"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.0.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"hexo"</span>: {</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"5.4.0"</span></span><br><span class="line">  },</span><br><span class="line">  <span class="attr">"dependencies"</span>: {</span><br><span class="line">    <span class="attr">"hexo"</span>: <span class="string">"^5.4.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-beautify"</span>: <span class="string">"^1.0.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-codepen-v2"</span>: <span class="string">"^0.2.3"</span>,</span><br><span class="line">    <span class="attr">"hexo-deployer-git"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-fontawesome"</span>: <span class="string">"^2.2.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-amp"</span>: <span class="string">"^3.2.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-archive"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-category"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-index"</span>: <span class="string">"^2.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-seo-friendly-sitemap"</span>: <span class="string">"0.2.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-generator-tag"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-include-markdown"</span>: <span class="string">"^1.0.2"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-ejs"</span>: <span class="string">"^1.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-marked"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">    <span class="attr">"hexo-renderer-stylus"</span>: <span class="string">"^2.0.1"</span>,</span><br><span class="line">    <span class="attr">"hexo-server"</span>: <span class="string">"^2.0.0"</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>に書き換わった。</p>
+<h2 id="インストール〜deploy"><a href="#インストール〜deploy" class="headerlink" title="インストール〜deploy"></a>インストール〜deploy</h2><p>一応きれいにしてからインストール</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf ./node_modules</span><br><span class="line">npm -i</span><br></pre></td></tr></tbody></table></figure>
 
-<p>カラムをいろいろ設定<br>@migrations/create_admins_table.php</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">Schema::create(<span class="string">'admins'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">Blueprint <span class="variable">$table</span></span>) </span>{</span><br><span class="line">    <span class="variable">$table</span>-&gt;bigIncrements(<span class="string">'id'</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;bigInteger(<span class="string">'role_id'</span>)-&gt;unsigned()-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">'name'</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">'email'</span>)-&gt;unique();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">'avatar'</span>)-&gt;nullable()-&gt;default(<span class="string">'users/default.png'</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">'password'</span>)-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;string(<span class="string">'remember_token'</span>)-&gt;nullable();</span><br><span class="line">    <span class="variable">$table</span>-&gt;text(<span class="string">'settings'</span>)-&gt;nullable()-&gt;default(<span class="literal">null</span>);</span><br><span class="line">    <span class="variable">$table</span>-&gt;timestamps();</span><br><span class="line">    <span class="variable">$table</span>-&gt;foreign(<span class="string">'role_id'</span>)-&gt;references(<span class="string">'id'</span>)-&gt;on(<span class="string">'roles'</span>);</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>Hexoで静的ファイルを生成してからdeploy</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate -f</span><br><span class="line">hexo deploy</span><br></pre></td></tr></tbody></table></figure>
 
-<p>DB作る</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">artisan migrate</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="2、AdminモデルでVoyagerを継承する"><a href="#2、AdminモデルでVoyagerを継承する" class="headerlink" title="2、AdminモデルでVoyagerを継承する"></a>2、AdminモデルでVoyagerを継承する</h3><p>モデル側もAdminモデルでVoyagerを読むように<br>@Models/Admin.php</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Models</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Factories</span>\<span class="title">HasFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Admin</span> <span class="keyword">extends</span> \<span class="title">TCG</span>\<span class="title">Voyager</span>\<span class="title">Models</span>\<span class="title">User</span></span></span><br><span class="line"><span class="class"></span>{</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Voyagerを既にインストールしてると、Userモデルで継承しちゃってるので外しとく<br>@Models/User.php</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Models</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Auth</span>\<span class="title">MustVerifyEmail</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Database</span>\<span class="title">Eloquent</span>\<span class="title">Factories</span>\<span class="title">HasFactory</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Auth</span>\<span class="title">User</span> <span class="title">as</span> <span class="title">Authenticatable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Notifications</span>\<span class="title">Notifiable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Fortify</span>\<span class="title">TwoFactorAuthenticatable</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Jetstream</span>\<span class="title">HasProfilePhoto</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Laravel</span>\<span class="title">Sanctum</span>\<span class="title">HasApiTokens</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Authenticatable</span> // &lt;- ここを<span class="title">Voyager</span>からかえる</span></span><br><span class="line"><span class="class">// ※<span class="title">Jetstream</span>つかわないなら</span></span><br><span class="line"><span class="class">// <span class="title">class</span> <span class="title">User</span> <span class="keyword">extends</span> <span class="title">Model</span> にする</span></span><br><span class="line"><span class="class"></span>{</span><br><span class="line">  ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h3 id="3、コンフィグ設定でguardを登録する"><a href="#3、コンフィグ設定でguardを登録する" class="headerlink" title="3、コンフィグ設定でguardを登録する"></a>3、コンフィグ設定でguardを登録する</h3><p><code>admin</code>というguardを作って、<br>@config/auth.php</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'guards'</span> =&gt; [</span><br><span class="line">    <span class="string">'admin'</span> =&gt; [</span><br><span class="line">        <span class="string">'driver'</span> =&gt; <span class="string">'session'</span>,</span><br><span class="line">        <span class="string">'provider'</span> =&gt; <span class="string">'admins'</span>,</span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">],</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>admin</code>というproviderも作る</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'providers'</span> =&gt; [</span><br><span class="line">    <span class="string">'admins'</span> =&gt; [</span><br><span class="line">        <span class="string">'driver'</span> =&gt; <span class="string">'eloquent'</span>,</span><br><span class="line">        <span class="string">'model'</span> =&gt; App\Models\Admin::class, <span class="comment">// ↓注意</span></span><br><span class="line">    ],</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">],</span><br></pre></td></tr></tbody></table></figure>
-<p>** 注意 **  ドキュメントでは <code>App\Admin::class</code>になっているが(2021/06/21現在)、Laravel 8からモデルのデフォルトのnamespaseが<code>App\Models</code>になってるので対応させておく。</p>
-<h3 id="Voyagerに新しいguardを伝える"><a href="#Voyagerに新しいguardを伝える" class="headerlink" title="Voyagerに新しいguardを伝える"></a>Voyagerに新しいguardを伝える</h3><p>@AppServiceProvider.php</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">$this</span>-&gt;app-&gt;singleton(<span class="string">'VoyagerGuard'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'admin'</span>;</span><br><span class="line">    });</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>以上で設定完了。</p>
-<h3 id="新しくAdminモデルにユーザー作ってログインしてみる"><a href="#新しくAdminモデルにユーザー作ってログインしてみる" class="headerlink" title="新しくAdminモデルにユーザー作ってログインしてみる"></a>新しくAdminモデルにユーザー作ってログインしてみる</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan voyager:admin your@email.com --create</span><br></pre></td></tr></tbody></table></figure>
-<p>でCLIで初期ユーザー登録したときに、adminsテーブルに保存されてることを確認しましょう</p>
-<p>なお、user-breadはuserテーブルのBREADなので(それはそう)<br>必要ならadminsテーブル用のBREADを作ること。</p>
-<hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://voyager-docs.devdojo.com/customization/custom-guard">https://voyager-docs.devdojo.com/customization/custom-guard</a><br><a href="https://github.com/the-control-group/voyager/issues/2568">https://github.com/the-control-group/voyager/issues/2568</a></p>
+<p>なお、どっかのタイミングでcss/jsが空で出力されたせいか<code>hexo generate</code>だけだとcss/jsが反映されなかったので<code>-f</code>オプション付けて強制上書きしている</p>
 
 			  		
 			  		<!-- google Adsense -->
@@ -1934,14 +1902,14 @@ h6.categories {
 						<ul class="article-tag-list">
 							
 					    		<li class="article-tag-list-item">
-					    			<a class="article-tag-list-link" href="/tags/Laravel/">
-					    				Laravel
+					    			<a class="article-tag-list-link" href="/tags/Hexo/">
+					    				Hexo
 					    			</a>
 					    		</li>
 							
 					    		<li class="article-tag-list-item">
-					    			<a class="article-tag-list-link" href="/tags/Voyager/">
-					    				Voyager
+					    			<a class="article-tag-list-link" href="/tags/npm/">
+					    				npm
 					    			</a>
 					    		</li>
 							
